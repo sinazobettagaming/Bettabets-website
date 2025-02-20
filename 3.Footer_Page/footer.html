@@ -1,0 +1,670 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+<script src="https://kit.fontawesome.com/b01430fafc.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<head>
+  <!-- Our project just needs Font Awesome Solid + Brands -->
+  <script defer src="/your-path-to-fontawesome/js/brands.js"></script>
+  <script defer src="/your-path-to-fontawesome/js/solid.js"></script>
+  <script defer src="/your-path-to-fontawesome/js/fontawesome.js"></script>
+  <script defer src="/your-path-to-fontawesome/js/sharp-thin.js"></script>
+  <script defer src="/your-path-to-fontawesome/js/duotone-thin.js"></script>
+  <script defer src="/your-path-to-fontawesome/js/sharp-duotone-thin.js"></script>
+</head>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+  body {
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+  }
+
+  #signup-block .sign-up-btn[data-v-11e6d258] {
+    border-radius: 20px !important;
+    color: gold !important;
+    background: black !important;
+    margin-left: 13px;
+  }
+
+  #app nav .button-holder {
+    text-align: center;
+  }
+
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .explore-games {
+    display: none;
+  }
+
+  #slot-game.desktop .explore-games-list-container[data-v-6504999a] {
+    display: none;
+  }
+
+  #slot-game.desktop .explore-games-list-container[data-v-e6c17854] {
+    display: none;
+  }
+
+  #slot-game.desktop .explore-games-list-container[data-v-613b379b] {
+    display: none;
+  }
+
+  #slot-game.desktop .explore-games-list-container[data-v-4013a7e3] {
+    display: none;
+  }
+
+  .rowFooter {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer {
+    /* padding: 70px 0; */
+    text-align: center;
+  }
+
+  .footer-col {
+    width: 25%;
+    padding: 0 15px;
+  }
+
+  .footer-col h4 {
+    font-size: 18px;
+    color: #000000;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .footer-col h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+
+  .footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 300;
+    color: #000000;
+    transition: all 0.3s ease;
+  }
+
+  .footer-col ul li a:hover {
+    color: #000000;
+    outline-offset: -2px;
+    text-decoration: 2px underline rgb(0, 0, 0);
+  }
+
+  .footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: #000000;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffe600;
+    transition: all 0.5s ease;
+    visibility: visible;
+  }
+
+  .footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+    visibility: visible;
+  }
+
+  /*responsive*/
+  @media (max-width: 767px) {
+    .footer-col {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (max-width: 574px) {
+    .footer-col {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 360px) {
+    .link.deposit[data-v-38d48cca] {
+      font-size: 10px;
+      line-height: 12px;
+      background: #ffe600;
+      color: #000;
+      text-decoration: none;
+      border-radius: 25px;
+      text-decoration: none;
+      color: inherit;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+  .bettabets div[data-aardvark-id="MobileHeaderComp"].line .right-side .right-side-inner .action.register {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 25%;
+}
+#signup-block .sign-up-btn[data-v-650ebbfa] {
+    background: #000000;
+    color: #ffffff;
+    border-radius: 25%;}
+
+  .bettabets div[data-aardvark-id=HeaderComp] .top-line .right .deposit {
+    color: var(--main-primary);
+    padding-right: 8px;
+    background: #ffe600;
+    color: #000 !important;
+    text-decoration: none;
+    border-radius: 25px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+    font-weight: bold;
+
+    padding: 4px 7px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+
+  body {
+    background: linear-gradient(153deg, #ffc800 10%, #ffe600 80%, #fff709 96%);
+  }
+
+  .Bettabets-footer-rowFooter {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+  }
+
+  .Bettabets-footer-column-div {
+    display: flex;
+    text-align: justify;
+    font-size: 12px;
+  }
+
+  .compliance-image img {
+    height: 45px;
+    margin-right: 10px;
+    margin-left: 15px;
+  }
+
+  .Bettabets-compliance-text {
+    padding-bottom: 10px;
+  }
+
+  #app .line .uploaded-logo-holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 2;
+    -ms-flex: 2;
+    flex: 1;
+  }
+
+  .user-name-comp .user-short[data-v-42ad9528] {
+    background: #000000;
+    color: #ffffff;
+  }
+
+  #signup-block .sign-up-btn[data-v-29b94c78] {
+    background: #000000;
+    color: #ffffff;
+  }
+
+  /* MOBILE VERSION */
+  .bettabets div[data-aardvark-id="MobileHeaderComp"].line .right-side .right-side-inner .action.register {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .user-short[data-v-003b80a2] {
+    background: #000000;
+    color: #ffffff;
+  }
+
+  .right {
+    color: #ffffff;
+  }
+
+  .main-line .header-line .left[data-v-32741ea0] {
+    background: linear-gradient(90deg, #ffe600 10%, #ffe600 80%, #ffc800 96%);
+  }
+
+  .main-line .header-line .right[data-v-32741ea0] {
+    background: linear-gradient(2693deg, #ffc800 10%, #ffc800 80%, #ffc800 96%);
+  }
+
+  #app #arrow-scroll-menu .arrow {
+    color: #106398;
+  }
+
+  #deposit {
+    border: solid 4px #e21836;
+    background-color: #e21836;
+    border-radius: 25px;
+    font-size: 14px;
+  }
+
+  #app .main-page .list-container .category-content:first-of-type {
+    padding-top: 30px;
+    background-color: #383838;
+  }
+
+  #app .payment {
+    background: #535353;
+  }
+
+  #app .lobby {
+    background-color: #000000;
+    color: #fff;
+  }
+
+  #footer {
+    background: linear-gradient(153deg, #ffc800 10%, #ffe600 80%, #fff709 96%);
+  }
+
+  .afri-footer-div-content {
+    font-family: Poppins, sans-serif;
+    padding-bottom: 20px;
+  }
+
+  .click-area {
+    color: #000000;
+  }
+
+  @media screen and (max-width: 600px) {
+    .col-s1 {
+      width: 8.33%;
+    }
+
+    .col-s2 {
+      width: 16.66%;
+    }
+
+    .col-s3 {
+      width: 25%;
+    }
+
+    .col-s4 {
+      width: 33.33%;
+    }
+
+    .col-s5 {
+      width: 41.66%;
+    }
+
+    .col-s6 {
+      width: 50%;
+    }
+
+    .col-s7 {
+      width: 58.33%;
+    }
+
+    .col-s8 {
+      width: 66.66%;
+    }
+
+    .col-s9 {
+      width: 75%;
+    }
+
+    .col-s910 {
+      width: 83.33%;
+    }
+
+    .col-s11 {
+      width: 91.66%;
+    }
+
+    .col-s12 {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 9992px) {
+    .col-m1 {
+      width: 8.33%;
+    }
+
+    .col-m2 {
+      width: 16.66%;
+    }
+
+    .col-m3 {
+      width: 25%;
+    }
+
+    .col-m4 {
+      width: 33.33%;
+    }
+
+    .col-m5 {
+      width: 41.66%;
+    }
+
+    .col-m6 {
+      width: 50%;
+    }
+
+    .col-m7 {
+      width: 58.33%;
+    }
+
+    .col-m8 {
+      width: 66.66%;
+    }
+
+    .col-m9 {
+      width: 75%;
+    }
+
+    .col-m910 {
+      width: 83.33%;
+    }
+
+    .col-m11 {
+      width: 91.66%;
+    }
+
+    .col-m12 {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 993px) {
+    .col-l1 {
+      width: 8.33%;
+    }
+
+    .col-l2 {
+      width: 16.66%;
+    }
+
+    .col-l3 {
+      width: 25%;
+    }
+
+    .col-l4 {
+      width: 33.33%;
+    }
+
+    .col-l5 {
+      width: 41.66%;
+    }
+
+    .col-l6 {
+      width: 50%;
+    }
+
+    .col-l7 {
+      width: 58.33%;
+    }
+
+    .col-l8 {
+      width: 66.66%;
+    }
+
+    .col-l9 {
+      width: 75%;
+    }
+
+    .col-l910 {
+      width: 83.33%;
+    }
+
+    .col-l11 {
+      width: 91.66%;
+    }
+
+    .col-l12 {
+      width: 100%;
+    }
+  }
+
+  .content-holder[data-v-fa61a252] {
+    font-family: din-2014;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+    line-height: 23px;
+    color: var(--footer-content-text);
+  }
+
+  #app .copyright .left .uploaded-logo-holder .uploaded-logo {
+    filter: grayscale(0%);
+  }
+
+  .Bettabets-headings {
+    color: #000000;
+  }
+
+  .black-text {
+    color: #000000;
+  }
+
+  p {
+    margin: 0 0 1em;
+    line-height: 1.4285em;
+  }
+
+  *,
+  :after,
+  :before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+
+  .black-text {
+    color: #000000;
+  }
+
+  .Bettabets-footer-container1 {
+    overflow-x: auto;
+  }
+
+  .paymentImagesContainer1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  .paymentImagesContainer1 img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 5em;
+    margin-left: 4em;
+    transition: transform 0.3s;
+  }
+
+  .paymentImagesContainer1 img:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .paymentImagesContainer1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      justify-content: flex-start;
+    }
+
+    .paymentImagesContainer1 img {
+      max-width: 100%;
+      height: auto;
+      margin-right: 0em;
+      margin-left: 0em;
+      transition: transform 0.3s;
+    }
+  }
+
+  .Bettabets-footer-container {
+    overflow-x: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe60000;
+    padding: 20px 50px;
+    margin-top: 20px;
+  }
+
+  .paymentImagesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .paymentImagesContainer img {
+    max-width: 100%;
+    height: auto;
+    margin: 5px;
+  }
+
+  #app .payment .logo img {
+    max-height: 100%;
+    max-width: 100%;
+    visibility: visible;
+  }
+</style>
+
+<div data-v-fa61a252="" data-v-7c0e5616="" id="cms-footer-content-holder" class="content-holder content-holder">
+  <section>
+    <div class="Bettabets-footer-container1">
+      <br>
+      <div class="paymentImagesContainer1">
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/1Voucher_New.png?raw=trueg" alt="1 For You Vouchers" width="90px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/visa_New.png?raw=true" alt="Visa Credit Card" width="100px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/mastercard_New.png?raw=trueg" alt="Mastercard Credit Card" width="75px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/eft_New.png?raw=true" alt="Instant EFT" width="45px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/BluVoucher2_New.png?raw=true" alt="Blu Vouchers" width="125px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/OZOW_New.png?raw=trueg" alt="OZOW" width="130px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/OTTVoucher1_New.png?raw=true" alt="OTT Vouchers" width="200px" height="auto"></a>
+      </div>
+    </div>
+  </section>
+  <script src="https://kit.fontawesome.com/b01430fafc.js" crossorigin="anonymous"></script>
+  <footer class="footer">
+    <section>
+      <div class="container">
+        <div class="rowFooter">
+          <div class="footer-col">
+            <h4 style="text-align: left; text-decoration: underline"></h4>
+            <ul style="text-align: left">
+              <li>
+                <a href="https://bettabets.co.za/page/Contact_Us">Contact Info</a>
+              </li>
+              <li>
+                <a href="https://bettabets.co.za/page/Terms%20And%20Conditions">Terms and Conditions</a>
+              </li>
+              <li>
+                <a href="https://bettabets.co.za/page/Bettabets%20Game%20Rules">Betting Rules</a>
+              </li>
+              <li>
+                <a href="https://mer.org.za/live/">Mpumalanga Economic Regulator</a>
+              </li>
+              <li><a href="https://ngb.org.za/">National Gambling Board</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 style="
+                text-align: left;
+                text-decoration: underline;
+                color: #00000000;
+              "></h4>
+            <ul style="text-align: left">
+              <li><a href="https://popia.co.za/">POPIA</a></li>
+              <li>
+                <a href="https://bettabets.co.za/page/Terms%20And%20Conditions/PAIA_Manual">PAIA</a>
+              </li>
+              <li><a href="https://fic.gov.za/Pages/Home.aspx">FICA</a></li>
+              <li>
+                <a href="https://bettabets.co.za/page/Terms%20And%20Conditions/Responsible%20Gambling">Responsible
+                  Gambling</a>
+              </li>
+              <li>
+                <a href="https://github.com/DinoBettaBets/BettaImages/blob/main/PDF/Self-exclusion-form.pdf?raw=true">Self
+                  Exclusion Application</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 style="text-align: left; text-decoration: underline"></h4>
+            <ul style="text-align: left">
+              <li>
+                <a href="https://bettabets.co.za/page/Promotions">Promotions</a>
+              </li>
+              <li>
+                <a href="https://group.bettabets.co.za/soccer-fixtures/">Fixtures</a>
+              </li>
+              <li>
+                <a href="https://group.bettabets.co.za/our-stores/">Branches</a>
+              </li>
+              <li>
+                <a href="https://bettabets.co.za/page/Direct%20Deposit">Direct Deposits</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 style="text-align: left; text-decoration: underline"></h4>
+            <div class="social-links" style="text-align: center">
+              <a href="https://www.facebook.com/bettabetsonline"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/bettabetsonline/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+              <a href="https://www.linkedin.com/company/bettabets/"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="https://x.com/Bettabetsonline"> <i class="fab fa-twitter" aria-hidden="true"></i></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br>
+
+    <section id="dropdown1" class="Bettabets-footer-container">
+      <div class="paymentImagesContainer">
+        <h4 style="text-align: center; color: #000000; text-decoration:none">Disclaimer</h4>
+        <p style="margin: 0; color: #000000 !important">
+          Winners Know When To Stop. National Responsible Gambling Program
+          Toll-Free Helpline: 0800 006 008 or WhatsApp Help to 076 675 0710 No
+          persons under the age of 18 allowed to gamble. Bettagaming Mpumalanga
+          (Pty) Ltd t/a BETTABETS Registration Number 2011/123025/07 with
+          License Number 9-2-1-09303 and License issue date 2020-10-26 is
+          licensed by the Mpumalanga Economic Regulator
+        </p>
+        <br>
+        <br>
+        <p style="margin: 0; color: #000000 !important">Warning Gambling Is Addictive</p>
+      </div>
+    </section>
+  </footer>
+</div>
