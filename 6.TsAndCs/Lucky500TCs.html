@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="desktop-image">
-      <img src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Aviator%20Feb-Thumb01.png?raw=true" alt="">
+      <img src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Spina%20to%20Wina%20feb-Thumb01.png?raw=true" alt="">
     </div><br>
     <!--SUB-Text-->
     <!--<h3 style="text-align: center; margin-top: 14px">
@@ -24,11 +24,11 @@
         </a>
       </div>
       <div class="buttonClass">
-        <a href="https://bettabets.co.za/spribe/8202" class="bettaButton BettaButtonYellow">
+        <a href="https://bettabets.co.za/casino/slots" class="bettaButton BettaButtonYellow">
           Play Now
         </a>
       </div>
-      <div class="buttonClass">
+ <div class="buttonClass">
         <a href="https://bettabets.co.za/page/BettaInfoVideos" class="bettaButton BettaButtonYellow">
           How-To <br> Deposit
         </a>
@@ -56,7 +56,11 @@
         color: #000;
         text-decoration: none;
         border-radius: 25px;
-        text-transform: uppercase;
+      }
+
+      #cms-page img {
+        max-width: 100%;
+        border-radius: 13px;
       }
 
       .buttonClass2 {
@@ -75,19 +79,6 @@
         color: #000;
         text-decoration: none;
         border-radius: 25px;
-        text-transform: uppercase;
-      }
-
-      .buttonClass2 :hover {
-        background-color: rgba(0, 0, 0, 0.12);
-        color: #ffc800;
-        border: 2px solid #ffc800;
-      }
-
-      .buttonClass :hover {
-        background-color: rgba(0, 0, 0, 0.12);
-        color: #ffc800;
-        border: 2px solid #ffc800;
       }
 
       @media (max-width: 768px) {
@@ -97,85 +88,84 @@
         }
       }
 
+      @media (max-width: 768px) {
+        .countdown {
+          text-align: center;
+          margin: 5px;
+          justify-content: center;
+        }
+      }
+
       .countdown {
         text-align: center;
         font-size: 24px;
-        margin: 5px -35px;
+       margin: 5px -35px;
         height: 38px;
-        width: 378px;
+        width: 358px;
         background-color: #00CD46;
         border-radius: 14px;
         color: #000;
-        padding: 7px;
+        padding: 9px;
+        text-transform: uppercase;
+        font-weight: bold;
       }
     </style>
 
     <!--HEADER-->
-
-    <h3>What do I Win?</h3>
-
+    <h3>What do I Win? </h3>
     <ul>
-      <li>	Stand a chance to win your share of 55 000 Free Bets with Aviator Rain between 13 – 23 February 2025, 23:59p.m SAST.   </li>
-      <li>	There will be a total of 11 Rain events during the entire Promotion Period.</li>
+      <li>One (1) lucky player will win a brand new PlayStation 5. </li>
+      <li>	Five (5) lucky players will each win R1,000 Cash. </li>
+      <li> 	Winners will be chosen randomly, notified and credited at the end of the promotion: 03 March 2025.</li>
 
     </ul>
 
     <h3>What is the Promo Duration?</h3>
-
     <ul>
       <li>
-        Aviator Rain promo is applicable between the date 13– 23 February 2025, 23:59p.m SAST, and time period between 17:00p.m – 20:00p.m, only. (Considered “Promotion Period”)
+        The Spina To Wina promotion is applicable between 22 February – 02 March 2025, 23:59 SAST, only. (Considered “Promotion Period”)
       </li>
+      <div class="countdown" id="countdown" style="background-color: white;">
+  </div>
 
-    </ul>
-    <div class="countdown" id="countdown" style="background-color: rgb(246, 244, 244);"></div>
+      <!-- Countdown Timer -->
 
-    <!-- Countdown Timer -->
+      <script>
+          // Set the date for your promotion end
+          const promotionEnd = new Date('2025-03-02T23:59:59').getTime();
+        const countdownElement = document.getElementById('countdown');
 
-    <script>
-      // Set the date for your promotion end
-      const promotionEnd = new Date('2025-02-23T23:59:59').getTime();
-      const countdownElement = document.getElementById('countdown');
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = promotionEnd - now;
 
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = promotionEnd - now;
+          if (distance < 0) {
+            countdownElement.innerHTML = 'Promotion has ended!';
+            return; // Stop the recursion
+          }
 
-        if (distance < 0) {
-          countdownElement.innerHTML = 'Promotion has ended!';
-          return; // Stop the recursion
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          countdownElement.innerHTML = `${days}days ${hours}hours ${minutes}m ${seconds}s`;
+
+          // Request the next frame
+          requestAnimationFrame(updateCountdown);
         }
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdownElement.innerHTML = `${days}days ${hours}hours ${minutes}m ${seconds}s`;
-
-        // Request the next frame
-        requestAnimationFrame(updateCountdown);
-      }
-
-      // Start the countdown
-      updateCountdown();
-
-    </script>
-
-
-
+        // Start the countdown
+        updateCountdown();
+      </script>
+    </ul>
 
     <h3>How do I Enter?</h3>
     <ul>
-      <li> To be eligible and claim your Free Bets, simply place a bet of R10 or more on <a href="https://bettabets.co.za/spribe/8202">Aviator </a>within the last 15 minutes during the Promotion Period
-        and have a minimum R10 balance in your Bettabets main cash wallet.
-      </li>
-      <li> Keep the game chat opened and as soon as it starts to RAIN Free Bets (within qualifying promo time), click
-        “CLAIM” to redeem your share </li>
-
-
+      <li> Deposit R75 or more and play any slot for an entry into the competition.  </li>
+      <li> There is no restriction to the number of entries per person. </li>
+      <li>	You will be automatically opted into the competition when you deposit R75 or more and play on any slot, only.¬</li>
     </ul>
-
 
 
     <br>
@@ -184,38 +174,42 @@
       <!--Ts and Cs-->
       <h3>What are the Promo Rules?</h3>
       <ul>
-        <li>There will be 2x Rain events each day throughout the Promotion Period.</li>
-        <li>Qualifying players can redeem their Free Bets worth R20 and R30 (twenty rands and thirty rands only) awarded at random intervals in the Aviator game chat. </li>
-        <li>You will have 30 minutes to use your Free Bets on Aviator until your Free Bets expire.</li>
-        <li>Free Bets will be limited to 50 customers during each of the 2x Rain events for the duration of 13 – 23 February 2025, 23:59p.m SAST.</li>
-        <li>Free Bets are limited to one per qualifying customer during each rain event.</li>
-        <li>Your Free Bets are exclusive for Aviator use only.</li>
-        <li>Minimum multiplier to cashout is 3.00x.</li>
-        <li>Players must have placed real money bets for at least R10 in the completed rounds within the 15 minutes prior to claiming a Free Bet.</li>
-        <li>Players must have at least R10 in their main cash wallet in order to claim a Free Bet.</li>
-        <li>This promotion applies to online customers only who are over 18.</li>
+        <li>Winner of the PlayStation 5 will be notified directly by the Bettabets team, via a verified phone call on the 03rd of March 2025 after the end of the promotion.</li>
+        <li>All cash winners will be notified directly by the Bettabets team, via a verified phone call. </li>
+        <li>	Cash winnings will be deposited directly to the winner’s Bettabets account, which can be withdrawn.</li>
+        <li>	The PlayStation cannot be exchanged for cash. </li>
+        <li>	Lost or stolen Prizes will not be replaced or refunded by Bettabets.</li>
+        <li>You may enter the competition an unlimited number of times; however, you may only win once during the promo
+          period.</li>
         <li>Any wagers placed and settled outside the promotional period will not count towards this promotion.</li>
-        <li>Only cash wagers will count towards earning your Free Bets (Bonus wagers and promo cash bets will not count).</li>
-        <li>Winnings from Free Bets will be credited to customers as real funds.</li>
-        <li>Duplicate accounts don't qualify for the promotion and Free Bets will be awarded once per account, person, IP, and household.</li>
-        <li>Fraudulent accounts and accounts open under false details don't qualify for any promotion. In such cases, all winnings and balances will be forfeited.</li>
-        <li>Bettabets reserves the right to revoke this promotion at any time, without cause or notice.</li>
-        <li>Bettabets reserves the right to change any of its terms and conditions at any time, without cause or notice.</li>
-        <li>Every entrant participating in the promotion shall be deemed to have acknowledged and accepted the rules by virtue of their participation.</li>
+        <li>Only cash wagers will count towards competition entry (bonus wagers and promo cash bets will not count).
+        </li>
+        <li>Duplicate accounts don't qualify for the promotion. Free Spins will be awarded once per account, person, IP,
+          and household.</li>
+        <li>Fraudulent accounts and accounts opened under false details don't qualify for any promotion. In such cases,
+          all winnings and balances will be forfeited.</li>
+        <li>	In order to participate, the customer must be over the age of 18.</li>
+        <li>Bettabets reserves the right to revoke this promotion at any time without cause or notice.</li>
+        <li>Bettabets reserves the right to change any of its terms and conditions at any time without cause or notice.
+        </li>
+        <li>	Every entrant participating in the promotion shall be deemed to have acknowledged and accepted the rules by virtue of their participation.
+        </li>
         <li>Should any accounts be suspected of abuse (including any form of bonus abuse) or irregular activities noted at Bettabets discretion, Bettabets has the right to revoke any allocated funds and exclude any individual from the promotional campaign.</li>
-
+        
         <li><a href="https://bettabets.co.za/terms-and-conditions">Bettabets Standard Terms and Conditions</a> apply.
         </li>
         <li>Winners Know When To Stop. National Responsible Gambling Program. Toll-Free Helpline: 0800 006 008 or
           WhatsApp Help to 076 675 0710</li>
       </ul>
 
+
+
     </div>
 
     <br>
     <div class="buttonClass2">
       <div class="ButtonJoin">
-        <a href="https://bettabets.co.za/spribe/8202">
+        <a href="https://bettabets.co.za/lottery">
           <div class="bettaButton BettaButtonYellow"><span>PLAY NOW</span></div>
         </a>
       </div>
@@ -224,11 +218,6 @@
     <p></p>
 
     <style>
-      #cms-page img {
-        max-width: 100%;
-        border-radius: 14px;
-      }
-
       #cms-page .page-header {
         display: none !important;
       }
@@ -268,6 +257,7 @@
         background: #ffe600;
         text-align: center;
         font-weight: bold;
+        text-transform: uppercase;
       }
 
       .content-holder.contents {
@@ -294,12 +284,7 @@
           padding: 10.5px 35.3px !important;
         }
 
-        #cms-page img {
-          max-width: 100%;
-          border-radius: 14px;
-        }
-
-        .bettaButton a {
+        .bettaButton {
           padding: 10.5px 15.3px;
           display: flex;
           justify-content: center;
@@ -313,19 +298,3 @@
     </style>
   </div>
 </div>
-<script>
-  document.getElementById('deposit-button').addEventListener('click', function (event) {
-    // Assume we have a function isLoggedIn that checks the user's login status
-    if (!isLoggedIn()) {
-      event.preventDefault();
-      alert('Please log in first Or Join. Cancel if logged in');
-    }
-  });
-
-  function isLoggedIn() {
-    // This is a placeholder function. Replace with actual login check.
-    // For example, check a cookie or local storage value.
-    return false; // Set to true if the user is logged in
-  }
-
-</script>

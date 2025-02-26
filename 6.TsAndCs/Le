@@ -120,7 +120,8 @@
     <h3>What do I Win?</h3>
 
     <ul>
-      <li>250 Players will be chosen randomly to receive 25 FREE SPINS on the Pragmatic slots: Tree of Riches or Triple Tigers.</li>
+      <li>250 Players will be chosen randomly to receive 25 FREE SPINS on the Pragmatic slots: Tree of Riches or Triple
+        Tigers.</li>
 
     </ul>
 
@@ -131,10 +132,10 @@
         BETTA ZONKE JACKPOT promo is applicable ONLY on the following days:
       </li>
       <li>
-        	05 February
+        05 February
       </li>
       <li>
-        	07 February
+        07 February
       </li>
       <li>
         12 February
@@ -154,7 +155,7 @@
       <li>
         28 February
       </li>
-     
+
       <li>
         And time: 18:00 – 20:00 SAST only
       </li>
@@ -170,7 +171,7 @@
     <script>
       // Set the date for your promotion end
       // Set the date for your promotion end
-      const promotionEnd = new Date('2025-02-19T20:00:59').getTime();
+      const promotionEnd = new Date('2025-02-21T20:00:59').getTime();
       const countdownElement = document.getElementById('countdown');
 
       function updateCountdown() {
@@ -205,7 +206,8 @@
 
     <h3>How do I Enter?</h3>
     <ul>
-      <li>	Bet R2 or more on any slot every selected Wednesday & Friday between the 05th and 28th of February 2025, during the promotional time to qualify for entry.
+      <li> Bet R2 or more on any slot every selected Wednesday & Friday between the 05th and 28th of February 2025,
+        during the promotional time to qualify for entry.
       </li>
       <li> You will receive 1 entry for every R2 bet placed on slots – entries are unlimited.</li>
       <li> You will be automatically opted in when you take any bet of R2 or more on any slot games within the promotion
