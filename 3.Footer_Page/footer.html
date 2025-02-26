@@ -4,15 +4,7 @@
 <script src="https://kit.fontawesome.com/b01430fafc.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<head>
-  <!-- Our project just needs Font Awesome Solid + Brands -->
-  <script defer src="/your-path-to-fontawesome/js/brands.js"></script>
-  <script defer src="/your-path-to-fontawesome/js/solid.js"></script>
-  <script defer src="/your-path-to-fontawesome/js/fontawesome.js"></script>
-  <script defer src="/your-path-to-fontawesome/js/sharp-thin.js"></script>
-  <script defer src="/your-path-to-fontawesome/js/duotone-thin.js"></script>
-  <script defer src="/your-path-to-fontawesome/js/sharp-duotone-thin.js"></script>
-</head>
+
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
@@ -531,6 +523,7 @@
       margin-right: 0em;
       margin-left: 0em;
       transition: transform 0.3s;
+      background-color: #000;
     }
   }
 
@@ -561,6 +554,26 @@
     max-width: 100%;
     visibility: visible;
   }
+  #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    #backToTop:hover {
+      background-color: #0056b3;
+    }
+
 </style>
 
 <div data-v-fa61a252="" data-v-7c0e5616="" id="cms-footer-content-holder" class="content-holder content-holder">
@@ -689,5 +702,26 @@
         <p style="margin: 0; color: #000000 !important">Warning Gambling Is Addictive</p>
       </div>
     </section>
+    
+  <button id="backToTop" onclick="scrollToTop()">⬆ Back to Top</button>
+
+  <script>
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
   </footer>
 </div>
