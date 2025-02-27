@@ -523,7 +523,6 @@
       margin-right: 0em;
       margin-left: 0em;
       transition: transform 0.3s;
-      background-color: #000;
     }
   }
 
@@ -554,27 +553,114 @@
     max-width: 100%;
     visibility: visible;
   }
+
   #backToTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #007bff;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  #backToTop:hover {
+    background-color: #0056b3;
+  }
+
+  .icon-bar {
+    position:sticky;
+    top: 50%;
+    transform: translateY(50%);
+  }
+
+  .icon-bar a {
+    display: flex;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+  }
+
+  .icon-bar a:hover {
+    background-color: #000;
+  }
+
+  .facebook {
+    background: #8f9bb6;
+    color: white;
+  }
+
+  .twitter {
+    background: #8f9bb6;
+    color: white;
+  }
+
+  .google {
+    background: #8f9bb6;
+    color: white;
+  }
+
+  .linkedin {
+    background: #8f9bb6;
+    color: white;
+  }
+
+  .youtube {
+    background: #8f9bb6;
+    color: white;
+  }
+
+  .content {
+    margin-left: 75px;
+    font-size: 30px;
+  }
+
+  .icon-bar {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .icon-bar {
+      display: flex;
+      text-align: center;
+      padding: 16px;
+      transition: all 0.3s ease;
       color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      display: none;
-      transition: opacity 0.3s ease-in-out;
+      font-size: 20px;
     }
 
-    #backToTop:hover {
-      background-color: #0056b3;
+    .icon-bar a {
+      color: white;
+      text-align: center;
+      padding: 10px;
+      flex-grow: 1;
     }
 
+    .icon-bar a:hover {
+      background-color: #555;
+    }
+  }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<div class="icon-bar">
+  <a href="https://bettabets.co.za/page/landing_page" class="facebook"><i class="fa fa-home"></i></a>
+  <a href="https://bettabets.co.za/page/Promotions" class="twitter"><i class="fa fa-gift"></i></a>
+  <a href="#" class="google"><i class="fa fa-money"></i></a>
+  <a href="https://bettabets.co.za/sports" class="linkedin"><i class="fa fa-basketball-ball"></i></a>
+  <a href="http://bettabets.co.za/my-account/betting-history" class="youtube"><i class="fa fa-ticket"></i></a>
+</div>
+
 
 <div data-v-fa61a252="" data-v-7c0e5616="" id="cms-footer-content-holder" class="content-holder content-holder">
   <section>
@@ -702,26 +788,26 @@
         <p style="margin: 0; color: #000000 !important">Warning Gambling Is Addictive</p>
       </div>
     </section>
-    
-  <button id="backToTop" onclick="scrollToTop()">⬆ Back to Top</button>
 
-  <script>
-    const backToTopButton = document.getElementById('backToTop');
+    <button id="backToTop" onclick="scrollToTop()">⬆ Back to Top</button>
 
-    window.onscroll = function() {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopButton.style.display = 'block';
-      } else {
-        backToTopButton.style.display = 'none';
+    <script>
+      const backToTopButton = document.getElementById('backToTop');
+
+      window.onscroll = function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          backToTopButton.style.display = 'block';
+        } else {
+          backToTopButton.style.display = 'none';
+        }
+      };
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       }
-    };
-
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  </script>
+    </script>
   </footer>
 </div>
