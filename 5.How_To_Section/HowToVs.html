@@ -1,0 +1,1058 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+    background-color: #ffe600;
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    color: black;
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ffc800;
+  }
+
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #000000;
+    color: white;
+  }
+
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 2px solid #000000 !important;
+    border-top: none;
+    font-family: "Poppins", sans-serif;
+    background: #ffe600;
+  }
+
+  table {
+    border: 2px solid #000000 !important;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    table-layout: fixed;
+  }
+
+  table caption {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.75em;
+    color: black;
+    font-family: "Poppins", sans-serif;
+  }
+
+  table tr {
+    background-color: #ffc800;
+    border: 2px solid #000000 !important;
+    color: rgb(0, 0, 0);
+    padding: 0.35em;
+    font-family: "Poppins", sans-serif;
+  }
+
+  table th,
+  table td {
+    padding: 0.625em;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+  }
+
+  table th {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .dotted-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+
+  .dotted-steps .step {
+    flex: 1;
+    text-align: center;
+    color: black;
+  }
+
+  /* .dotted-steps .step::before {
+    content: "•";
+    font-size: 24px;
+    padding-bottom: 5px;
+    display: block;
+} */
+  #cms-page .page-header {
+    display: none !important;
+  }
+
+  #cms-page .contents[data-v-19639efc] {
+    padding: 0 !important;
+  }
+
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+
+    table caption {
+      font-size: 1.3em;
+    }
+
+    .tabcontent {
+      display: block;
+    }
+
+    .tab button {
+      float: none;
+      width: 100%;
+    }
+
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    table tr {
+      border-bottom: 3px solid #000000 !important;
+      display: block;
+      margin-bottom: 0.625em;
+    }
+
+    table td {
+      border-bottom: 2px solid #000000 !important;
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+    }
+
+    table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+</style>
+
+<div class="tab">
+  <button class="tablinks active" onclick="openCity(event, 'HowTo6')" id="defaultOpen">
+    <img
+      src="https://raw.githubusercontent.com/DinoBettaBets/BettaImages/42682ac6ce60f63b69c3d04fe04d75479d5ed2bc/LandingPageButtons/svgIcons/register.svg"
+      alt="Custom Icon" class="custom-icon">
+    <span class="button-text">How To: Register</span>
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'HowTo2')">
+    <img
+      src="https://raw.githubusercontent.com/DinoBettaBets/BettaImages/42682ac6ce60f63b69c3d04fe04d75479d5ed2bc/LandingPageButtons/svgIcons/deposit.svg"
+      alt="Custom Icon" class="custom-icon">
+    <span class="button-text">How To: Deposit</span>
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'HowTo7')">
+    <img
+      src="https://raw.githubusercontent.com/DinoBettaBets/BettaImages/42682ac6ce60f63b69c3d04fe04d75479d5ed2bc/LandingPageButtons/svgIcons/Withdrawal.svg"
+      alt="Custom Icon" class="custom-icon">
+    <span class="button-text">How To: Withdraw</span>
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'HowTo5')">
+    <img
+      src="https://raw.githubusercontent.com/DinoBettaBets/BettaImages/42682ac6ce60f63b69c3d04fe04d75479d5ed2bc/LandingPageButtons/svgIcons/promo.svg"
+      alt="Custom Icon" class="custom-icon">
+    <span class="button-text">How To: Promo's</span>
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'HowTo4')">
+    <img
+      src="https://raw.githubusercontent.com/DinoBettaBets/BettaImages/42682ac6ce60f63b69c3d04fe04d75479d5ed2bc/LandingPageButtons/svgIcons/FICA.svg"
+      alt="Custom Icon" class="custom-icon">
+    <span class="button-text">How To: FICA</span>
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'HowTo3')">
+    <img
+      src="https://raw.githubusercontent.com/DinoBettaBets/BettaImages/42682ac6ce60f63b69c3d04fe04d75479d5ed2bc/LandingPageButtons/svgIcons/aviator.svg"
+      alt="Custom Icon" class="custom-icon">
+    <span class="button-text">How To: Claim Aviator Rain</span>
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'HowTo8')">
+    <img
+      src="https://raw.githubusercontent.com/DinoBettaBets/BettaImages/42682ac6ce60f63b69c3d04fe04d75479d5ed2bc/LandingPageButtons/svgIcons/lotto.svg"
+      alt="Custom Icon" class="custom-icon">
+    <span class="button-text">How To: Betta Numbers</span>
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'HowTo9')">
+    <img
+      src="https://raw.githubusercontent.com/DinoBettaBets/BettaImages/42682ac6ce60f63b69c3d04fe04d75479d5ed2bc/LandingPageButtons/svgIcons/sport.svg"
+      alt="Custom Icon" class="custom-icon">
+    <span class="button-text">How To: Sports</span>
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'HowTo10')">
+    <img
+      src="https://raw.githubusercontent.com/DinoBettaBets/BettaImages/42682ac6ce60f63b69c3d04fe04d75479d5ed2bc/LandingPageButtons/svgIcons/register.svg"
+      alt="Custom Icon" class="custom-icon">
+    <span class="button-text">How To: Navigation</span>
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'HowTo11')">
+    <img
+      src="https://raw.githubusercontent.com/DinoBettaBets/BettaImages/e15357d9c2c0610cf7a031252972a12c035575a2/LandingPageButtons/svgIcons/games.svg"
+      alt="Custom Icon" class="custom-icon">
+    <span class="button-text">How To: Games</span>
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'HowTo12')">
+    <img
+      src="https://raw.githubusercontent.com/DinoBettaBets/BettaImages/e15357d9c2c0610cf7a031252972a12c035575a2/LandingPageButtons/svgIcons/games.svg"
+      alt="Custom Icon" class="custom-icon">
+    <span class="button-text">How To: Claim Welcome Bonuses</span>
+  </button>
+</div>
+
+<style>
+  .tablinks {
+    display: flex;
+    align-items: center;
+  }
+
+  .custom-icon {
+    width: 24px;
+    /*width icon */
+    height: 24px;
+    /*height icon */
+    margin-right: 10px;
+    /*spacing between icon and text */
+  }
+
+  .button-text {
+    text-align: left;
+    width: 100%;
+  }
+</style>
+<!--How to claim welcome offers-->
+<div id="HowTo12" class="tabcontent" style="display: none">
+  <table>
+    <caption>
+      <strong>How To: Claim Welcome bonus</strong>
+    </caption>
+  </table>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">Click To Watch Video Below:</div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <iframe width="734" height="413" src="https://www.youtube.com/embed/EUQtv3ytjAI"
+        title="HOW TO CLAIM WELCOME BONUS ON BETTABETS" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+
+</div>
+<table>
+  <caption>
+    <a style="color: #000000" href="https://bettabets.co.za/page/Promotions">Click Here For More</a>
+  </caption>
+</table>
+</div>
+<div id="HowTo2" class="tabcontent" style="display: none">
+  <table>
+    <caption>
+      <strong>How To: Deposit</strong>
+    </caption>
+  </table>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">Click To Watch Video Below:</div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ZVmVegvo4ZU" frameborder="0"
+        allowfullscreen=""></iframe>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 1:</strong>
+        <p>Click "Deposit"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 2:</strong>
+        <p>Choose Any Option Of Your Choice</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 3:</strong>
+        <p>Select Your Type Of Deposit</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 4:</strong>
+        <p>Add Your Amount/Voucher Code</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 5:</strong>
+        <p>Once Complete Click "Submit"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 6:</strong>
+        <p>Deposit Complete</p>
+      </div>
+    </div>
+  </div>
+  <table>
+    <caption>
+      <a style="color: #000000" href="https://bettabets.co.za/my-account/deposit">Click Here To Deposit</a>
+    </caption>
+  </table>
+</div>
+
+<!---------------->
+<!--Aviator Rain-->
+<!---------------->
+<div id="HowTo3" class="tabcontent" style="display: none">
+  <table>
+    <caption>
+      <strong>How To: Claim Aviator Rain</strong>
+    </caption>
+  </table>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">Click To Watch Video Below:</div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/WCp9qtM8uBw" frameborder="0"
+        allowfullscreen=""></iframe>
+    </div>
+  </div>
+
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 1:</strong>
+        <p>Click "Aviator" icon</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 2:</strong>
+        <p>Click the message box icon at the top right of aviator</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 3:</strong>
+        <p>Click "Claim" to claim your free money</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 4:</strong>
+        <p>Complete</p>
+      </div>
+    </div>
+  </div>
+  <table>
+    <caption>
+      <a style="color: #000000" href="https://bettabets.co.za/page/Promotions">Click Here For More</a>
+    </caption>
+  </table>
+</div>
+
+<div id="HowTo4" class="tabcontent" style="display: none">
+  <table>
+    <caption>
+      <strong>How To: Upload FICA Documents</strong>
+    </caption>
+  </table>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">Click To Watch Video Below:</div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/-117_Q5gQxw" frameborder="0"
+        allowfullscreen=""></iframe>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 1:</strong>
+        <p>Click your profile icon</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 2:</strong>
+        <p>Click "User info"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 3:</strong>
+        <p>Click "Verification"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 4:</strong>
+        <p>Choose document type</p>
+        <p>Make sure document is clear and valid</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 5:</strong>
+        <p>Choose a proof of address document</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 6:</strong>
+        <p>Click "Upload files"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 7:</strong>
+        <p>Upload Complete</p>
+      </div>
+    </div>
+  </div>
+  <table>
+    <caption>
+      <a style="color: #000000" href="https://bettabets.co.za/my-account/my-details">Click Here For More</a>
+    </caption>
+  </table>
+</div>
+
+<div id="HowTo5" class="tabcontent" style="display: none">
+  <table>
+    <caption>
+      <strong>How To: Find Promotion Section</strong>
+    </caption>
+  </table>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">Click To Watch Video Below:</div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Bpz7mNwhyTE" frameborder="0"
+        allowfullscreen=""></iframe>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 1:</strong>
+        <p>Click "Betta Promo's"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 2:</strong>
+        <p>Click "View More" to find out more about a promotion</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 3:</strong>
+        <p>Here you will find out how to enter a promo</p>
+      </div>
+    </div>
+  </div>
+  <table>
+    <caption>
+      <a style="color: #000000" href="https://bettabets.co.za/page/Promotions">Click Here For More</a>
+    </caption>
+  </table>
+</div>
+
+<div id="HowTo6" class="tabcontent" style="display: block;">
+  <table>
+    <caption>
+      <strong>How To: Register With Bettabets</strong>
+    </caption>
+  </table>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">Click To Watch Video Below:</div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/8_NNbujO6c0" frameborder="0"
+        allowfullscreen=""></iframe>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 1:</strong>
+        <p>Click "Join"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 2:</strong>
+        <p>Add your phone number</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 3:</strong>
+        <p>Once Complete, Click "I'm not a robot"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 4:</strong>
+        <p>Once Complete, Click "Send Code"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 5:</strong>
+        <p>Enter Verification Code, Which is sent to your SMS's</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 6:</strong>
+        <p>Click "Verify"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 7:</strong>
+        <p>Add Account Details</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 8:</strong>
+        <p>Once Complete, Agree to Ts &amp; Cs</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 9:</strong>
+        <p>Once Complete, Click 'Create Account"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 10:</strong>
+        <p>Fill In Your Personal Information</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 11:</strong>
+        <p>Once Complete, Click "Complete Registration"</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 12:</strong>
+        <p>Well Done, Registration Complete</p>
+      </div>
+    </div>
+  </div>
+  <table>
+    <caption>
+      <a style="color: #000000" href="https://bettabets.co.za/sign-up">Click Here To Register</a>
+    </caption>
+  </table>
+</div>
+
+<div id="HowTo7" class="tabcontent" style="display: none">
+  <table>
+    <caption>
+      <strong>How To: Find Withdrawals</strong>
+    </caption>
+  </table>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">Click To Watch Video Below:</div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Ua2MVEIH3kA" frameborder="0"
+        allowfullscreen=""></iframe>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 1:</strong>
+        <p>Click your profile icon</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="dotted-steps">
+      <div class="step">
+        <strong>• Step 2:</strong>
+        <p>Click "withdraw"</p>
+      </div>
+    </div>
+  </div>
+  <table>
+    <caption>
+      <a style="color: #000000" href="https://bettabets.co.za/my-account">Click Here To Withdraw</a>
+    </caption>
+  </table>
+</div>
+
+<!-- HowTo8 -->
+
+<div id="HowTo8" class="tabcontent" style="display: none">
+  <div class="tab">
+    <button class="subtablinks active" onclick="openSubCity(event, 'SubTab1')">
+      Introduction
+    </button>
+    <button class="subtablinks" onclick="openSubCity(event, 'SubTab2')">
+      Lucky Numbers
+    </button>
+    <button class="subtablinks" onclick="openSubCity(event, 'SubTab3')">
+      Multi Pick
+    </button>
+    <button class="subtablinks" onclick="openSubCity(event, 'SubTab4')">
+      Results
+    </button>
+    <!-- Add more buttons for additional sub tabs if needed -->
+  </div>
+
+  <div id="SubTab1" class="subtabcontent" style="display: block;">
+    <table>
+      <caption>
+        <strong>How To: Introduction</strong>
+      </caption>
+    </table>
+    <div>
+      <div class="dotted-steps">
+        <div class="step">Click To Watch Video Below:</div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JPBqCBBU3wA" frameborder="0"
+          allowfullscreen=""></iframe>
+      </div>
+    </div>
+    <table>
+      <caption>
+        <a style="color: #000000" href="https://bettabets.co.za/lotto">Click To: View Betta Numbers</a>
+      </caption>
+    </table>
+  </div>
+
+  <div id="SubTab2" class="subtabcontent" style="display: none">
+    <table>
+      <caption>
+        <strong>How To: Lucky Numbers</strong>
+      </caption>
+    </table>
+    <div>
+      <div class="dotted-steps">
+        <div class="step">Click To Watch Video Below:</div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vRVJDUWh43s" frameborder="0"
+          allowfullscreen=""></iframe>
+      </div>
+      <table>
+        <caption>
+          <a style="color: #000000" href="https://bettabets.co.za/lotto">Click To: View Betta Numbers</a>
+        </caption>
+      </table>
+    </div>
+
+    <!-- Your existing content for the main tab -->
+    <table>
+      <!-- ... -->
+    </table>
+  </div>
+
+  <div id="SubTab3" class="subtabcontent" style="display: none">
+    <table>
+      <caption>
+        <strong>How To: Multi Pick</strong>
+      </caption>
+    </table>
+    <div>
+      <div class="dotted-steps">
+        <div class="step">Click To Watch Video Below:</div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_lPO5kJj4Sg" frameborder="0"
+          allowfullscreen=""></iframe>
+      </div>
+      <table>
+        <caption>
+          <a style="color: #000000" href="https://bettabets.co.za/lotto">Click To: View Betta Numbers</a>
+        </caption>
+      </table>
+    </div>
+
+    <!-- Your existing content for the main tab -->
+    <table>
+      <!-- ... -->
+    </table>
+  </div>
+
+  <div id="SubTab4" class="subtabcontent" style="display: none">
+    <table>
+      <caption>
+        <strong>How To: Results</strong>
+      </caption>
+    </table>
+    <div>
+      <div class="dotted-steps">
+        <div class="step">Click To Watch Video Below:</div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YOg2SHgTOn8" frameborder="0"
+          allowfullscreen=""></iframe>
+      </div>
+      <table>
+        <caption>
+          <a style="color: #000000" href="https://bettabets.co.za/lotto">Click To: View Betta Numbers</a>
+        </caption>
+      </table>
+    </div>
+
+    <!-- Your existing content for the main tab -->
+    <table>
+      <!-- ... -->
+    </table>
+  </div>
+</div>
+<!-- End: HowTo8 -->
+
+<!-- HowTo9 -->
+<div id="HowTo9" class="tabcontent" style="display: none">
+  <div class="tab">
+    <button class="subtablinks" onclick="openSubCity(event, 'SubTabSoccer')">
+      Soccer
+    </button>
+    <!-- Add more buttons for additional sub tabs if needed -->
+  </div>
+
+  <div id="SubTabSoccer" class="subtabcontent" style="display: none;">
+    <table>
+      <caption>
+        <strong>How To Play: Soccer</strong>
+      </caption>
+    </table>
+    <div>
+      <div class="dotted-steps">
+        <div class="step">Click To Watch Video Below:</div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UQ0R5qUvj38" frameborder="0"
+          allowfullscreen=""></iframe>
+      </div>
+    </div>
+    <table>
+      <caption>
+        <a style="color: #000000" href="https://bettabets.co.za/sports/football">Click To: View Soccer</a>
+      </caption>
+    </table>
+  </div>
+</div>
+<!-- End: HowTo9 -->
+
+<!-- HowTo10 -->
+<div id="HowTo10" class="tabcontent" style="display: none">
+  <div class="tab">
+    <button class="subtablinks" onclick="openSubCity(event, 'SubTabNavigation')">
+      Navigation
+    </button>
+    <button class="subtablinks" onclick="openSubCity(event, 'SubTabChat')">
+      Live Chat
+    </button>
+    <!-- Add more buttons for additional sub tabs if needed -->
+  </div>
+
+  <div id="SubTabNavigation" class="subtabcontent" style="display: none;">
+    <table>
+      <caption>
+        <strong>How To: Navigate Bettabets</strong>
+      </caption>
+    </table>
+    <div>
+      <div class="dotted-steps">
+        <div class="step">Click To Watch Video Below:</div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LjdKiZ8R5G8" frameborder="0"
+          allowfullscreen=""></iframe>
+      </div>
+    </div>
+    <table>
+      <caption>
+        <a style="color: #000000" href="https://bettabets.co.za/">Click To: Bettabets</a>
+      </caption>
+    </table>
+  </div>
+
+  <div id="SubTabChat" class="subtabcontent" style="display: none;">
+    <table>
+      <caption>
+        <strong>How To Find: Live Chat</strong>
+      </caption>
+    </table>
+    <div>
+      <div class="dotted-steps">
+        <div class="step">Click To Watch Video Below:</div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xTHojiGOtyE" frameborder="0"
+          allowfullscreen=""></iframe>
+      </div>
+    </div>
+    <table>
+      <caption>
+        <a style="color: #000000" href="https://bettabets.co.za/">Click To: Live Chat</a>
+      </caption>
+    </table>
+  </div>
+</div>
+<!-- End: HowTo10 -->
+
+<!-- HowTo11 -->
+<div id="HowTo11" class="tabcontent" style="display: none">
+  <div class="tab">
+    <button class="subtablinks" onclick="openSubCity(event, 'SubTabSlots')">
+      Slots
+    </button>
+    <button class="subtablinks" onclick="openSubCity(event, 'SubTabBetGames')">
+      Betgames
+    </button>
+    <button class="subtablinks" onclick="openSubCity(event, 'SubTabCasino')">
+      Casino
+    </button> <button class="subtablinks" onclick="openSubCity(event, 'SubTabScratch')">
+      Scratch Cards
+    </button>
+    <!-- Add more buttons for additional sub tabs if needed -->
+  </div>
+
+  <div id="SubTabSlots" class="subtabcontent" style="display: none;">
+    <table>
+      <caption>
+        <strong>How To Find: Slots</strong>
+      </caption>
+    </table>
+    <div>
+      <div class="dotted-steps">
+        <div class="step">Click To Watch Video Below:</div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/L9mAt3vhkfw" frameborder="0"
+          allowfullscreen=""></iframe>
+      </div>
+    </div>
+    <table>
+      <caption>
+        <a style="color: #000000" href="https://bettabets.co.za/casino/slots">Click To: Slots</a>
+      </caption>
+    </table>
+  </div>
+
+  <div id="SubTabBetGames" class="subtabcontent" style="display: none;">
+    <table>
+      <caption>
+        <strong>How To Find: Betgames</strong>
+      </caption>
+    </table>
+    <div>
+      <div class="dotted-steps">
+        <div class="step">Click To Watch Video Below:</div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pi6P7ut1zrk" frameborder="0"
+          allowfullscreen=""></iframe>
+      </div>
+    </div>
+    <table>
+      <caption>
+        <a style="color: #000000" href="https://bettabets.co.za/betgames-external/4002">Click To: Betgames</a>
+      </caption>
+    </table>
+  </div>
+
+  <div id="SubTabCasino" class="subtabcontent" style="display: none;">
+    <table>
+      <caption>
+        <strong>How To Find: Casino</strong>
+      </caption>
+    </table>
+    <div>
+      <div class="dotted-steps">
+        <div class="step">Click To Watch Video Below:</div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QP8rsXbMtNQ" frameborder="0"
+          allowfullscreen=""></iframe>
+      </div>
+    </div>
+    <table>
+      <caption>
+        <a style="color: #000000" href="https://bettabets.co.za/casino/slots">Click To: Betta Casino</a>
+      </caption>
+    </table>
+  </div>
+
+  <div id="SubTabScratch" class="subtabcontent" style="display: none;">
+    <table>
+      <caption>
+        <strong>How To Find: Scratch Cards</strong>
+      </caption>
+    </table>
+    <div>
+      <div class="dotted-steps">
+        <div class="step">Click To Watch Video Below:</div>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RW-PKch8W2Y" frameborder="0"
+          allowfullscreen=""></iframe>
+      </div>
+    </div>
+    <table>
+      <caption>
+        <a style="color: #000000" href="https://bettabets.co.za/casino/slots/scratchcards">Click To: Scratch Cards</a>
+      </caption>
+    </table>
+  </div>
+
+</div>
+<!-- End: HowTo11 -->
+
+
+<script>
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+</script>
+
+<script>
+  function openSubCity(evt, subCityName) {
+    var i, subtabcontent, subtablinks;
+    subtabcontent = document.getElementsByClassName("subtabcontent");
+    for (i = 0; i < subtabcontent.length; i++) {
+      subtabcontent[i].style.display = "none";
+    }
+    subtablinks = document.getElementsByClassName("subtablinks");
+    for (i = 0; i < subtablinks.length; i++) {
+      subtablinks[i].className = subtablinks[i].className.replace(
+        " active",
+        ""
+      );
+    }
+    document.getElementById(subCityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Function to set default open tab
+  function setDefaultTab() {
+    document.querySelector(".subtablinks").click();
+  }
+
+  // Call function to set default tab
+  setDefaultTab();
+</script>

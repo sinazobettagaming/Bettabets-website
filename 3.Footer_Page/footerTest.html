@@ -4,7 +4,8 @@
 <script src="https://kit.fontawesome.com/b01430fafc.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
+<link rel="stylesheet" href="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/CSS/index.css">
+<script src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/JS/index.js"></script>
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
@@ -557,7 +558,7 @@
   #backToTop {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 0px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -568,6 +569,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     display: none;
     transition: opacity 0.3s ease-in-out;
+    z-index: 9999;
   }
 
   #backToTop:hover {
@@ -577,13 +579,14 @@
   .icon-bar {
     position: sticky;
     top: 90%;
+    border-radius: 18x;
     transform: translateY(0%);
   }
 
   .icon-bar a {
     display: flex;
     text-align: center;
-
+    border-radius: 18x;
     padding: 16px;
     transition: all 0.3s ease;
     color: white;
@@ -596,6 +599,37 @@
     background-color: #000;
   }
 
+  .facebook {
+    background: #2a2a2b;
+    color: white;
+
+  }
+
+  .twitter {
+    background: #2a2a2b;
+    color: white;
+  }
+
+  .google {
+    background: #2a2a2b;
+    color: white;
+  }
+
+  .linkedin {
+    background: #2a2a2b;
+    color: white;
+  }
+
+  .youtube {
+    background: #2a2a2b;
+    color: white;
+  }
+
+  .content {
+    margin-left: 75px;
+    font-size: 30px;
+  }
+
   .icon-bar {
     display: none;
   }
@@ -606,20 +640,21 @@
       text-align: center;
       transition: all 0.3s ease;
       color: white;
-      font-size: 20px;
+      font-size: 50px;
       z-index: 9999;
       /* Increased to ensure it's on top */
+      border-radius: 2px;
     }
 
     .icon-bar a {
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 18px;
       flex-grow: 1;
     }
 
     .icon-bar a:hover {
-      background-color: #555;
+      background-color: #464545;
     }
   }
 
@@ -628,43 +663,25 @@
     color: #ffffff;
   }
 
-  .facebook {
-    background: #8f9bb6;
-    color: white;
-  }
-
-  .twitter {
-    background: #8f9bb6;
-    color: white;
-  }
-
-  .google {
-    background: #8f9bb6;
-    color: white;
-  }
-
-  .linkedin {
-    background: #8f9bb6;
-    color: white;
-  }
-
-  .youtube {
-    background: #8f9bb6;
-    color: white;
-  }
-
-  .content {
-    margin-left: 75px;
-    font-size: 30px;
+  .link[data-v-241059e9],
+  .sub-menu-btn[data-v-241059e9] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 66px;
+    min-width: 60px;
+    max-width: 60px;
+    padding: 0;
+    border-radius: 14px;
+    background-color: #282727;
+    margin: 0 1px;
+    font-size: 10px;
+    color: inherit;
+    position: relative;
   }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-
-
-
-</style>
-
 
 
 
@@ -794,26 +811,25 @@
         <p style="margin: 0; color: #000000 !important">Warning Gambling Is Addictive</p>
       </div>
     </section>
-    <!--
-  <button id="backToTop" onclick="scrollToTop()">⬆ Back to Top</button>
 
-  <script>
-    const backToTopButton = document.getElementById('backToTop');
 
-    window.onscroll = function() {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopButton.style.display = 'block';
-      } else {
-        backToTopButton.style.display = 'none';
+    <script>
+      const backToTopButton = document.getElementById('backToTop');
+
+      window.onscroll = function () {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          backToTopButton.style.display = 'block';
+        } else {
+          backToTopButton.style.display = 'none';
+        }
+      };
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       }
-    };
-
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  </script>-->
+    </script>
   </footer>
 </div>

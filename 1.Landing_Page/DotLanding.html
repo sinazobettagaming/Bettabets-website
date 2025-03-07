@@ -1,105 +1,236 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>My Web Page</title>
-  <link rel="stylesheet" href="home.css">
-
-</head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<body>
+
+
+
+
+<!--Main - Featured Button-->
+<style>
+  .btn-a {
+    font-size: 1.9em;
+    font-weight: 1000;
+    color: #0a0a0a;
+    cursor: pointer;
+    border-radius: 1rem;
+    padding: 0.5rem 2.5rem;
+    background-image: radial-gradient(ellipse at 50% 150%, rgb(255, 215, 0), #ffd700);
+    border: none;
+    box-shadow: inset 0 0 0 1px rgba(28, 27, 27, .1), inset 0 0 1rem 0 rgba(6, 6, 6, .25), 0 0 0 1.5rem rgba(186, 162, 23, .025);
+    transition: all .25s ease-in-out;
+    width: 300px;
+    /* Set a fixed width */
+    height: 100px;
+    /* Set a fixed height */
+    text-transform: uppercase;
+  }
+
+  .mainPromoCard {
+    max-width: 100%;
+    /* margin: 0 auto; */
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .mainPromoCards {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+  }
+
+  button:hover {
+    background-color: #ffb703;
+    /* Change to the desired hover color */
+    color: #fff;
+    /* Optional: Change text color */
+  }
+
+  .mainPromoCardH {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* Center the buttons horizontally */
+  }
+
+  .line[data-v-7161da60] {
+    z-index: 9997;
+    -ms-flex-align: center;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--header-main-background);
+  }
+
+  .mainPromoCard div {
+    max-width: 100%;
+    /* margin: 0 auto; */
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 600px) {
+    .btn-a {
+      font-size: 19px;
+      /* Smaller font size for mobile */
+      padding: 1rem 2rem;
+      /* Smaller padding for mobile */
+      width: 180px;
+      /* Make buttons full width on mobile */
+      height: 100px;
+      /* Adjust height accordingly */
+    }
+
+    .mainPromoCardH {
+
+      align-items: center;
+    }
+
+    .mainPromoCard:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  #cms-page h1[data-v-2e1812f7] {
+    display: none;
+    background: var(--main-primary);
+    color: var(--main-primary-text);
+    padding: 0 15px;
+  }
+
+  .mainPromoCards_item {
+    flex: 0 0 auto;
+    padding: 0.7rem;
+    min-width: 270px;
+  }
+
+  .clicked {
+    background-color: #ff5722 !important;
+    /* Change to the desired color */
+    color: #fff !important;
+    /* Optional: Change text color */
+  }
+
+  .testimonial-carousel {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    height: 500px;
+    position: relative;
+    padding: 20px 0px;
+
+    .icon-container {
+      position: relative;
+      padding: 0 5px;
+      max-width: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+
+      @media (min-width: 768px) {
+        max-width: 50px;
+        padding: 0 10px;
+      }
+
+      span.lnr {
+        color: #dadada;
+        font-size: 1.6em;
+        cursor: pointer;
+        transition: color 0.3s linear;
+
+        @media (min-width: 768px) {
+          font-size: 2.6em;
+        }
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+
+    p {
+      font-family: 'Bad Script', cursive;
+      font-size: 1em;
+
+      @media (min-width: 768px) {
+        font-size: 1.4em;
+      }
+    }
+  }
+
+  .testimonial-items {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  .testimonial-item {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p.testimonial-author {
+      font-weight: bold;
+      text-align: right;
+    }
+
+    &.first {
+      left: 0;
+    }
+
+    &.second {
+      left: 100%;
+    }
+
+    &.third {
+      left: 200%;
+    }
+  }
+
+  .nav-arrow {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1000;
+  }
+
+  .nav-arrow:hover {
+    background-color: #555;
+  }
+
+  .arrow-left {
+    left: 10px;
+  }
+
+  .arrow-right {
+    left: 10px;
+    margin: 125px 90px;
+  }
+</style>
 <!--Ticker-->
-<div class="ticker1H">
-  <marquee id="ticker1" width="100%" direction="left" height="20px" scrollamount="4" loop="infinite" html=""
-    style="margin-top: 0.5em;">
-    Go to 'BETTA PROMOS' to partake in the following:
 
-    &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;
-    <a style="color: #ffc800" href="https://bettabets.co.za/page/Promotions">
-      BIG PAYBACK, FREE SPINS HOT DROP, LUCKY 500, AZIKHALE MATCHDAY MAGIC
-    </a>
-
-    <!--&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;-->
-    <a style="color: #ffc800" href="https://bettabets.co.za/page/Promotions">
-
-    </a>
-
-    <!--&nbsp;&nbsp; – &nbsp;&nbsp;-->
-
-    &nbsp;&nbsp; &nbsp;&nbsp; | &nbsp;&nbsp; &nbsp;&nbsp;
-    Congrats to our Top Weekily Winners |
-
-
-    <a style="color: #03a9f4" href="https://bettabets.co.za/lotto"><strong>&nbsp;
-        Global Numbers
-        (User: WM ):
-      </strong></a>
-    <span style="text-transform: uppercase">&nbsp; </span>
-    <strong> R79,125.00, &nbsp; </strong>
-
-    <a style="color: #03a9f4" href="https://bettabets.co.za/lotto"><strong>&nbsp; Evolution
-        (User:KM):
-      </strong></a>
-    <span style="text-transform: uppercase">&nbsp; </span>
-    <strong> R23,806.66, &nbsp; </strong>
-
-    <a style="color: #03a9f4" href="https://bettabets.co.za/lotto"><strong>&nbsp;
-        Global Numbers
-        (User: SM ):
-      </strong></a>
-    <span style="text-transform: uppercase">&nbsp; </span>
-    <strong> R14,274.00, &nbsp; </strong>
-
-    <a style="color: #03a9f4" href="https://bettabets.co.za/lotto&quot;"><strong>&nbsp; Pragmatic
-        (User: MV ):
-      </strong></a>
-    <span style="text-transform: uppercase">&nbsp; </span>
-    <strong> R13,663.75
-      , &nbsp; </strong>
-
-    <a style="color: #03a9f4" href="https://bettabets.co.za/lotto"><strong>&nbsp; Evolution
-        (User:KM):
-      </strong></a>
-    <span style="text-transform: uppercase">&nbsp; </span>
-    <strong> R20,110.80 &nbsp; </strong>
-
-    <a style="color: #03a9f4" href="https://bettabets.co.za/lotto"><strong>&nbsp;
-        Global Numbers (User:TPM ):
-      </strong></a>
-    <span style="text-transform: uppercase">&nbsp; </span>
-    <strong> R11,180.00, &nbsp; </strong>
-
-    <a style="color: #03a9f4" href="https://bettabets.co.za/betgames-external/4002"><strong>&nbsp;Pragmatic
-        (User:NM):
-      </strong></a>
-    <span style="text-transform: uppercase">&nbsp; </span>
-    <strong> R10,386.70, &nbsp; </strong>
-
-    <a style="color: #03a9f4" href="https://bettabets.co.za/lotto"><strong>&nbsp; Pragmatic
-
-        (User:MCM):
-      </strong></a>
-    <span style="text-transform: uppercase">&nbsp; </span>
-    <strong> R8,171.30, &nbsp; </strong>
-
-    <a style="color: #03a9f4" href="https://bettabets.co.za/spribe/8202"><strong>&nbsp; Pragmatic
-        (User: PL):
-      </strong></a>
-    <span style="text-transform: uppercase">&nbsp; </span>
-    <strong> R6,404.70, &nbsp; </strong>
-
-    <a style="color: #03a9f4" href="https://bettabets.co.za/casino/slots/providers/evolution"><strong>&nbsp;Global
-        Numbers (User:MM):
-      </strong></a>
-    <span style="text-transform: uppercase">&nbsp; </span>
-    <strong> R6,102.00 &nbsp; </strong>
-
-  </marquee>
-  <!--END - Ticker-->
-</div>
 
 
 <!--Banner Images-->
@@ -150,22 +281,22 @@
         <!-- Mobile Banner Images -->
         <a href="https://bettabets.co.za/page/BigPayBack">
           <img
-            src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Big%20Payback%20August-BannerMobile.png?raw=true"
+            src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/112%20AGT%20SPINS%20Dec-Thumb01.png?raw=true"
             alt="Mobile Banner" style="display:  block;">
         </a>
         <a href="https://bettabets.co.za/page/HotDrop">
           <img
-            src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Pragmatic%20AugustBannerMobile8.png?raw=true"
+            src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/112%20AGT%20SPINS%20Jan-Thumb01.png?raw=true"
             alt="Mobile Banner" style="display:  none;">
         </a>
         <a href="https://bettabets.co.za/page/Lucky500">
           <img
-            src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Lucky500Aug-BannerMobile.png?raw=true"
+            src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/112%20AGT%20SPINS%20Oct-Thumb01.png?raw=true"
             alt="Mobile Banner" style="display: none;">
         </a>
         <a href="https://bettabets.co.za/page/MatchDay">
           <img
-            src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/MM%20Revised-BannerMobile.png?raw=true"
+            src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Aviator%20Dec-Thumb01.png?raw=true"
             alt="Mobile Banner" style="display: none;">
         </a>
         <!-- Dots for Mobile -->
@@ -175,53 +306,245 @@
           <span class="dot" onclick="currentMobileSlide(3)"></span>
           <span class="dot" onclick="currentMobileSlide(4)"></span>
 
+          <!-- End Mobile Banner Images -->
         </div>
-
-        <!-- End Mobile Banner Images -->
       </div>
     </div>
+    <!--END -  Banner Images-->
   </div>
-  <!--END -  Banner Images-->
+
 </div>
 
+<!--Ticker-->
+<div class="ticker1H">
+  <marquee id="ticker1" width="100%" direction="left" height="20px" scrollamount="4" loop="infinite" html=""
+    style="margin-top: 0.5em;">
+    <a style="color: #ffc800" href="https://bettabets.co.za/page/Promotions">
+      Register & Deposit within 7 days to claim your Welcome Bonus
+    </a>
 
-<!--Main - Featured Button-->
+    &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;
+    <!-- <a style="color: #ffc800" href="https://bettabets.co.za/page/Promotions">
+    
+    </a>
 
-<div class="icon-bar">
-  <a href="https://bettabets.co.za/page/landing_page" class="facebook"><i class="fa fa-home"></i></a>
-  <a href="https://bettabets.co.za/page/Promotions" class="twitter"><i class="fa fa-gift"></i></a>
-  <a href="#" class="google"><i class="fa fa-money"></i></a>
-  <a href="https://bettabets.co.za/sports" class="linkedin"><i class="fa fa-basketball-ball"></i></a>
-  <a href="http://bettabets.co.za/my-account/betting-history" class="youtube"><i class="fa fa-ticket"></i></a>
+    &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;-->
+
+
+    <!--&nbsp;&nbsp; – &nbsp;&nbsp;-->
+
+    &nbsp;&nbsp; &nbsp;&nbsp; | &nbsp;&nbsp; &nbsp;&nbsp;
+    Congrats to our Top Weekly Winners |
+
+
+    <a style="color: #03a9f4" href="https://bettabets.co.za/lottery"><strong>&nbsp;
+        Aviator
+        (User: MM):
+      </strong></a>
+    <span style="text-transform: uppercase">&nbsp; </span>
+    <strong> R65,080.06, &nbsp; </strong>
+
+    <a style="color: #03a9f4" href="https://bettabets.co.za/lottery"><strong>&nbsp;Aviator (User:RM):
+      </strong></a>
+    <span style="text-transform: uppercase">&nbsp; </span>
+    <strong> R36,095.70, &nbsp; </strong>
+
+    <a style="color: #03a9f4" href="#"><strong>&nbsp;
+        Aviator
+        (User: SM ):
+      </strong></a>
+    <span style="text-transform: uppercase">&nbsp; </span>
+    <strong> R35,333.94, &nbsp; </strong>
+
+    <a style="color: #03a9f4" href="https://bettabets.co.za/lottery"><strong>&nbsp;Pragmatic
+        (User: ZL):
+      </strong></a>
+    <span style="text-transform: uppercase">&nbsp; </span>
+    <strong> R23,112.20
+      , &nbsp; </strong>
+
+    <a style="color: #03a9f4" href="#"><strong>&nbsp;Aviator
+        (User: ABM):
+      </strong></a>
+    <span style="text-transform: uppercase">&nbsp; </span>
+    <strong> R21,164.25, &nbsp; </strong>
+
+    <a style="color: #03a9f4" href="https://bettabets.co.za/lotto"><strong>&nbsp;
+        Betta Numbers (User: NKN):
+      </strong></a>
+    <span style="text-transform: uppercase">&nbsp; </span>
+    <strong> R17,564.00, &nbsp; </strong>
+
+    <a style="color: #03a9f4" href="https://bettabets.co.za/betgames-external/4002"><strong>&nbsp;
+        Aviator (User: MSM):
+      </strong></a>
+    <span style="text-transform: uppercase">&nbsp; </span>
+    <strong> R17,354.09 &nbsp; </strong>
+
+    <a style="color: #03a9f4" href="https://bettabets.co.za/lotto"><strong>&nbsp;
+        Betta Numbers (User: TM):
+      </strong></a>
+    <span style="text-transform: uppercase">&nbsp; </span>
+    <strong> R15,830.00, &nbsp; </strong>
+
+    <a style="color: #03a9f4" href="https://bettabets.co.za/spribe/8202"><strong>&nbsp;Aviator
+        (User: TK):
+      </strong></a>
+    <span style="text-transform: uppercase">&nbsp; </span>
+    <strong> R15,515.76, &nbsp; </strong>
+
+    <a style="color: #03a9f4" href="https://bettabets.co.za/casino/slots/providers/evolution"><strong>&nbsp; Betta
+        Numbers
+        (User:WM):
+      </strong></a>
+    <span style="text-transform: uppercase">&nbsp; </span>
+    <strong> R14,741.00 &nbsp; </strong>
+
+  </marquee>
+  <!--END - Ticker-->
 </div>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 
 <br>
-<br>
-<br><br>
-<!--
-<div class="mainPromoCardH">
 
-  <div class="mainPromoCard">
-    <a href="https://bettabets.co.za/page/Promotions">
-      <button style="background-color: #ffc800" type="button" class="btn-a">Betta <br> promos</button>
-    </a>
-  </div>
-  <br>
-  <div class="mainPromoCard">
-    <a href="https://bettabets.co.za/page/BettaInfoVideos">
-      <button style="background-color: #ffc800" type="button" class="btn-a">Betta <br> How-To Videos</button>
-    </a>
-  </div>
+
+<div class="line">
+  <x-sign id="MainNames" class="sports"> Hot Games </x-sign>
 </div>
+<br>
+<div id="FeaturedRow" class="rowH">
+
+  <div class="productsHolderFeaturedMain">
 
 
+    <a id="LPI2" class="productSmall" href="https://bettabets.co.za/lotto">
 
+      <img
+        src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/Numbers.png?raw=true"
+        alt="Betta Numbers" border="0" loading="lazy">
+      <br>
+    </a>
 
+    <a id="LPI2" class="productSmall" href="https://bettabets.co.za/spribe/8202">
+      <div class="glow-circle">HOT</div>
+      <img class="unique-glow"
+        src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/Aviator.png?raw=true"
+        alt="Aviator" border="0" loading="lazy">
+      <br>
+    </a>
 
+    <a id="LPI2" class="productSmall" href="https://bettabets.co.za/sports/football">
+      <img
+        src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/Sports.png?raw=true"
+        alt="Betta Sports" border="0" loading="lazy">
+      <br>
+    </a>
+
+    <a id="LPI2" class="productSmall" href="https://bettabets.co.za/casino/slots">
+      <img
+        src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/Slots.png?raw=true"
+        alt="Betta Slots" border="0" loading="lazy">
+      <br>
+    </a>
+
+    <a id="LPI2" class="productSmall" href="https://bettabets.co.za/betgames-external/4002">
+      <img
+        src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/BetGames.png?raw=true"
+        alt="Bet Games" border="0" loading="lazy">
+      <br>
+    </a>
+
+    <a id="LPI2" class="productSmall" href="https://bettabets.co.za/casino/slots/scratchcards">
+      <img
+        src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/Scratch.png?raw=true"
+        alt="scratch cards" border="0" loading="lazy">
+      <br>
+    </a>
+  </div>
+
+  <!-- End .testimonial-items -->
+
+</div>
+<br>
 <script>
+  function scrollProducts(amount) {
+    const container = document.getElementById('rowH');
+    container.scrollBy({ left: amount, behavior: 'smooth' });
+  }
+</script>
+<div class="icon-bar">
+  <a href="https://bettabets.co.za/page/landing_page" class="facebook"><i class="fa fa-home"><span
+        class="pMenu">Home</span></i></a>
+  <a href="https://bettabets.co.za/page/Promotions" class="twitter"><i class="fa fa-gift"><span
+        class="pMenu">Promos</span></i></a>
+  <a href="#" class="google"><i class="fa fa-money"><span class="pMenu">Deposit</span></i></a>
+  <a href="http://bettabets.co.za/my-account/betting-history" class="youtube"><i class="fa fa-ticket"><span
+        class="pMenu">Bets</span></i></a>
+  <a href="#" class="linkedin"><i class="fa-solid fa-comments"><span class="pMenu">Chats</span></i></a>
+
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+  (function () {
+    'use strict';
+    var slides = document.querySelectorAll('.testimonial-item'),
+      button = document.getElementById('button'),
+      arrows = document.querySelectorAll('.lnr'),
+      carouselCount = 0,
+      scrollInterval,
+      interval = 5000;
+
+    arrows[0].addEventListener('click', function (e) {
+      e = e || window.event;
+      e.preventDefault();
+      carouselCount -= 100;
+      slider();
+      if (e.type !== 'autoClick') {
+        clearInterval(scrollInterval);
+        scrollInterval = setInterval(autoScroll, interval);
+      }
+    });
+    arrows[1].addEventListener('click', sliderEvent);
+    arrows[1].addEventListener('autoClick', sliderEvent);
+
+    function sliderEvent(e) {
+      e = e || window.event;
+      e.preventDefault();
+      carouselCount += 100;
+      slider();
+      if (e.type !== "autoClick") {
+        clearInterval(scrollInterval);
+        scrollInterval = setInterval(autoScroll, interval);
+      }
+    }
+
+    function slider() {
+      switch (carouselCount) {
+        case -100:
+          carouselCount = 0;
+          break;
+        case 300:
+          carouselCount = 0;
+          break;
+        default:
+          break;
+      }
+      console.log(carouselCount);
+      for (var i = 0; i < slides.length; i += 1) {
+        slides[i].setAttribute('style', 'transform:translateX(-' + carouselCount + '%)');
+      }
+    }
+
+    // create new Event to dispatch click for auto scroll
+    var autoClick = new Event('autoClick');
+    function autoScroll() {
+      arrows[1].dispatchEvent(autoClick);
+    }
+
+    // set timing of dispatch click events
+    scrollInterval = setInterval(autoScroll, interval);
+
+  })();
+
   // Toggle visibility of buttons on mobile view
   document.querySelector('.show-more').addEventListener('click', function () {
     let cards = document.querySelectorAll('.mainPromoCardH .mainPromoCard');
@@ -243,72 +566,10 @@
       this.classList.toggle('clicked');
     });
   });
-</script>-->
+</script>
 
 
 <!--Featured Games Row-->
-<div id="GameRows">
-  <br>
-  <br>
-  <div id="FeaturedRow" class="rowH">
-    <div class="productsHolderFeaturedMain">
-
-
-      <a id="LPI2" class="productSmall" href="https://bettabets.co.za/lotto">
-
-        <img
-          src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/Numbers.png?raw=true"
-          alt="Betta Numbers" border="0" loading="lazy">
-        <br>
-      </a>
-
-      <a id="LPI2" class="productSmall" href="https://bettabets.co.za/spribe/8202">
-        <div class="glow-circle">HOT</div>
-        <img class="unique-glow"
-          src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/Aviator.png?raw=true"
-          alt="Aviator" border="0" loading="lazy">
-        <br>
-      </a>
-
-      <a id="LPI2" class="productSmall" href="https://bettabets.co.za/sports/football">
-        <img
-          src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/Sports.png?raw=true"
-          alt="Betta Sports" border="0" loading="lazy">
-        <br>
-      </a>
-
-      <a id="LPI2" class="productSmall" href="https://bettabets.co.za/casino/slots">
-        <img
-          src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/Slots.png?raw=true"
-          alt="Betta Slots" border="0" loading="lazy">
-        <br>
-      </a>
-
-      <a id="LPI2" class="productSmall" href="https://bettabets.co.za/betgames-external/4002">
-        <img
-          src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/BetGames.png?raw=true"
-          alt="Bet Games" border="0" loading="lazy">
-        <br>
-      </a>
-
-      <a id="LPI2" class="productSmall" href="https://bettabets.co.za/casino/slots/scratchcards">
-        <img
-          src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/3.%20FeaturedGames/Scratch.png?raw=true"
-          alt="scratch cards" border="0" loading="lazy">
-        <br>
-      </a>
-
-      <!-- <a id="LPI2" class="productSmall" href="https://bettabets.co.za/casino/slots/scratchcards">
-          <img
-            src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/3.%20Featured%20Icons/ScratchCards.png?raw=true"
-            alt="scratch cards" border="0" loading="lazy">
-          <br>
-        </a> -->
-    </div>
-  </div>
-  <br>
-
-</div>
 
 <div class="lineH">
   <x-sign id="MainNames" class="sportsH"> Vegas Games </x-sign>
@@ -398,10 +659,14 @@
     </a>
   </div>
 </div>
+<br>
+<br>
 
 <div class="line">
   <x-sign id="MainNames" class="sports"> BETTA SPORTS </x-sign>
 </div>
+<br>
+<br>
 
 <div class="row">
   <div class="productsHolder">
@@ -494,7 +759,6 @@
 </div>
 <br>
 
-
 <div class="lineH1">
   <x-sign id="MainNames" class="sportsH"> PROVIDERS </x-sign>
 </div>
@@ -556,9 +820,1636 @@
   </div>
 </div>
 <br>
-<script src="home.js"></script>
-</body>
-</html>
-<!--SCRIPTS-->
+<br>
+<br>
+<br>
+<br>
+<br>
 
+<!--END - Featured Games Row-->
+
+<!--STYLING-->
+<style>
+  body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'poppins', sans-serif;
+    background-color: #f2f2f2;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  #cms-page h1[data-v-df5136b0] {
+    display: none;
+    background: var(--main-primary);
+    color: var(--main-primary-text);
+    padding: 0 15px;
+  }
+
+  .pMenu {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .pMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    margin-right: 2px;
+    font-size: 9px;
+    text-align: center;
+    white-space: break-spaces;
+    word-break: break-word;
+    word-wrap: break-word;
+    line-height: 100%;
+    overflow: hidden;
+  }
+
+  .promoimage {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .promoimage-slide img {
+    width: 100%;
+    display: none;
+  }
+
+  .promoimage-slide img:first-child {
+    display: block;
+  }
+
+  .dots {
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #f0be08 !important;
+    border-radius: 50%;
+    display: inline-block;
+
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #e5d56b !important;
+  }
+
+  #arrowStyle {
+    color: #ffffff !important;
+    padding: 0px 0.1em !important;
+    font-size: 7em !important;
+  }
+
+  #cms-page h1[data-v-22f8d766] {
+    display: none;
+  }
+
+
+  .mainPromoCard {
+    max-width: 100%;
+    margin-right: 1em;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .mainPromo_image>img {
+    vertical-align: middle;
+    border-radius: 25px;
+    max-height: 9em;
+    width: auto;
+  }
+
+  .mainPromo_image>img:hover {
+    transform: scale(1.03);
+    transition: all 0.4s ease-in;
+    transition: all 0.2s ease-out;
+    filter: blur(1px);
+  }
+
+  .mainPromoCards {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+  }
+
+  #cms-page h1[data-v-66f3b1d6] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: none;
+    background: var(--main-primary);
+    color: var(--main-primary-text);
+    padding: 0 15px;
+  }
+
+  .mainPromoCards_item {
+    flex: 0 0 auto;
+    padding: 0.7rem;
+    min-width: 270px;
+  }
+
+  @media (max-width: 768px) {
+    .mainPromoCards_item {
+      min-width: auto;
+      width: 50%;
+    }
+  }
+
+  x-sign {
+    --interval: 1s;
+    display: block;
+    text-shadow: 0 0 10px var(--color1), 0 0 20px var(--color2),
+      0 0 40px var(--color3), 0 0 80px var(--color4);
+    will-change: filter, color;
+    filter: saturate(60%);
+    animation: flicker steps(100) var(--interval) 1s infinite;
+  }
+
+  x-sign:nth-of-type(1) {
+    color: gold;
+    --color1: gold;
+    --color2: gold;
+    --color3: gold;
+    --color4: gold;
+    font-family: "Poppins", sans-serif;
+  }
+
+  @keyframes flicker {
+    50% {
+      color: gold;
+    }
+  }
+
+  /* Base styles for the buttons */
+  .buttonFeatured-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 1em 7em;
+  }
+
+  .buttonFeatured {
+    width: 100%;
+    font-size: 20px;
+    height: 4.5em;
+    padding: 30px;
+    text-align: center;
+    background-color: #FFC900;
+    box-shadow: rgba(20, 18, 43, 0.6) 0px 4px 6px;
+    color: #000000;
+    font-weight: bold;
+    display: inline-block;
+    border: none;
+    border-radius: 20px;
+    object-fit: cover;
+    cursor: pointer;
+    background-image: url('https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v4/1.%20Banners/ButtonColor.png?raw=true');
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'poppins', sans-serif;
+    background-size: cover;
+  }
+
+
+  .buttonFeatured:hover {
+    background-color: #FFC900;
+  }
+
+  /* Media query for desktop mode (min-width: 768px) */
+  @media (min-width: 768px) {
+    .buttonFeatured-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .buttonFeatured-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* grid-template-columns: 1fr; */
+      gap: 15px;
+      padding: 0em 0.5em !important;
+    }
+
+    .buttonFeatured {
+      height: 6em;
+      font-size: 1em;
+    }
+  }
+
+  .promoimage {
+    margin-top: 0em;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+  }
+
+  @media only screen and (min-device-width: 1020px) {
+    .promoimage.desktop {
+      width: 88%;
+    }
+
+    .promoimage.mobile {
+      display: none;
+    }
+
+  }
+
+  @media only screen and (max-width: 768px) {
+    .promoimage.desktop {
+      display: none;
+    }
+
+    .promoimage.mobile {
+      display: block;
+    }
+
+
+
+    .promoimage img {
+      border-radius: 20px;
+      padding: 5px 5px;
+      border-bottom-right-radius: 20px !important;
+      border-bottom-left-radius: 20px !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .btn-a {
+      font-size: 19px;
+      padding: 1rem 2rem;
+      width: 189px !important;
+      height: 100px;
+    }
+  }
+
+  /*iPad Landscape*/
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .promoimage.desktop {
+      width: 88%;
+    }
+
+    .promoimage.mobile {
+      display: none;
+    }
+  }
+
+  /*iPad Portrait*/
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .promoimage.desktop {
+      width: 88%;
+    }
+
+    .promoimage.mobile {
+      display: none;
+    }
+  }
+
+  .promoimage img {
+    width: 100%;
+    height: auto;
+    display: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 24px;
+  }
+
+  .promoimage img:first-child {
+    display: block;
+  }
+
+
+  .promoimage.mobile img:first-child,
+  .promoimage.mobile img:nth-child(2) {
+    display: block;
+  }
+
+  @media only screen and (min-device-width: 1020px) {
+    .promoimage.mobile {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .promoimage.desktop {
+      display: none;
+    }
+  }
+
+  /*CMS STYLES*/
+  #cms-page .contents[data-v-7bfc2fd2] {
+    background: #0e0e0e !important;
+  }
+
+  .mobile-nav-sub-menu[data-v-89b93868],
+  .mobile-nav-wrapper-inner .menu-container[data-v-89b93868] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: auto;
+    background: #0e0e0e !important;
+  }
+
+  #signup-block .sign-up-btn[data-v-29b94c78] {
+    background: #000000;
+    color: #ffffff;
+    border-radius: 20px !important;
+  }
+
+
+  #signup-block .sign-up-btn[data-v-2a2865b2] {
+    background: #000;
+    color: #ffff;
+    border-radius: 20px !important;
+  }
+
+  .bettabets div[data-aardvark-id="MobileHeaderComp"].line .right-side .right-side-inner .action.register {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 20px !important;
+  }
+
+  .top-line .left[data-v-c3704732],
+  .top-line .right[data-v-c3704732] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #0e0e0e !important;
+  }
+
+  .bettabets div[data-aardvark-id="HeaderComp"] .top-line .links .link {
+    font-size: 11px;
+    line-height: 17px;
+    font-family: "Poppins", sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+  }
+
+  .cms-holder .row {
+    width: 100%;
+  }
+
+  .cms-holder .bg {
+    background-color: #0e0e0e;
+    background: #0e0e0e;
+    background-repeat: no-repeat;
+    background-position: top;
+    -webkit-background-size: cover;
+    background-size: contain;
+    height: 300px;
+    text-align: center;
+    padding: 20px 0px;
+  }
+
+  nav .button-holder[data-v-c9b9c43a] {
+    display: block;
+    text-align: center;
+  }
+
+  .cms-holder .text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+  }
+
+  .cms-holder h1 {
+    margin: 0;
+  }
+
+  .cms-holder .title {
+    font-size: 4.375rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: initial;
+  }
+
+  .cms-holder .subtitle {
+    font-size: 4.375rem;
+    font-weight: 700;
+    color: var(--main-primary);
+    line-height: initial;
+  }
+
+  .cms-holder .smalltext {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: initial;
+  }
+
+  .cms-holder .buttonArea {
+    padding-top: 20px;
+  }
+
+  .cms-holder .button {
+    height: 50px;
+    background: #000;
+    padding: 0px 40px;
+    color: var(--main-primary-text);
+    border: 0px none;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 30px;
+    font-weight: 700;
+  }
+
+  .cms-holder .button:hover {
+    background: #11e5b1;
+    cursor: pointer;
+    filter: brightness(85%);
+  }
+
+  .cms-holder .line {
+    background: #0e0e0e;
+    height: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0.5em;
+  }
+
+  .cms-holder .lineH {
+    background: #0e0e0e;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0.5em;
+  }
+
+  .cms-holder .lineH1 {
+    background: #0e0e0e;
+    height: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0.5em;
+  }
+
+  .cms-holder .line1 {
+    background: #0e0e0e;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0.5em;
+  }
+
+  .cms-holder .sports {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fcea1d;
+    line-height: initial;
+    justify-content: center;
+    display: flex;
+  }
+
+  .cms-holder .sportsH {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fcea1d;
+    line-height: initial;
+    justify-content: center;
+    display: flex;
+  }
+
+  .cms-holder .productsHolder {
+    background: #0e0e0e;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    grid-auto-rows: 240px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    grid-gap: 5em;
+    padding-bottom: 2px;
+  }
+
+  .cms-holder .productsHolderFeatured {
+    background: #0e0e0e;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    grid-auto-rows: 240px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    grid-gap: 5em;
+    padding-bottom: 2px;
+  }
+
+  element.style {
+    margin-top: 0.5em;
+    position: -webkit-sticky;
+    /* For Safari */
+    position: sticky;
+  }
+
+
+  .cms-holder .productsHolderFeaturedMain {
+    background: #0e0e0e;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    grid-auto-rows: 240px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    grid-gap: 5em;
+    padding-bottom: 2px;
+  }
+
+  .cms-holder .productsHolderFeaturedMain1 {
+    background: #0e0e0e;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    grid-auto-rows: 240px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    grid-gap: 5em;
+    padding-bottom: 2px;
+  }
+
+  .cms-holder .productsHolder2 {
+    background: #0e0e0e;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    grid-auto-rows: 240px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    grid-gap: 5em;
+    padding-bottom: 2px;
+  }
+
+  .cms-holder .productsHolder3 {
+    background: #0e0e0e;
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    grid-auto-rows: 240px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    grid-gap: 5em;
+    padding-bottom: 2px;
+  }
+
+  .cms-holder .productsHolderH {
+    background: #0e0e0e;
+    padding: 0 20px;
+    width: 100%;
+    display: grid;
+    grid-auto-rows: 240px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    grid-gap: 6px;
+    padding-bottom: 2px;
+  }
+
+  .cms-holder .productsHolderBig {
+    background: #0e0e0e;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 300px;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 1.5em;
+    padding-bottom: 50px;
+  }
+
+  .cms-holder .product {
+    border-radius: 10px;
+    background: #0e0e0e;
+    color: var(--main-first-background-text);
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cms-holder .productH {
+    border-radius: 10px;
+    background: #0e0e0e;
+    color: var(--main-first-background-text);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cms-holder .product1 {
+    border-radius: 10px;
+    background: #0e0e0e;
+    color: var(--main-first-background-text);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cms-holder .productsH2 {
+    border-radius: 10px;
+    background: #0e0e0e;
+    color: var(--main-first-background-text);
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cms-holder .product img {
+    object-fit: cover;
+    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 210px;
+    height: inherit;
+  }
+
+  .cms-holder .product1 img {
+    object-fit: contain;
+    border-radius: 10px;
+    width: 210px;
+    height: inherit;
+  }
+
+  .cms-holder .productH img {
+    object-fit: contain;
+    border-radius: 10px;
+    width: 210px;
+    height: inherit;
+  }
+
+  .cms-holder .productSmall img {
+    object-fit: cover;
+    border-radius: 1em;
+    width: 170px;
+    height: 7em;
+  }
+
+
+  .cms-holder .info {
+    width: 210px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--main-third-background);
+    color: var(--main-third-background-text);
+    padding: 5px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .cms-holder .infoW {
+    width: 210px;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    background: var(--main-third-background);
+    color: var(--main-third-background-text);
+    padding: 1px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .cms-holder .productName {
+    font-size: 1 rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    display: block;
+  }
+
+  .cms-holder .info:hover {
+    background: var(--main-primary);
+    color: rgb(0, 0, 0);
+  }
+
+  .cms-holder .infotext {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+    display: block;
+  }
+
+  .cms-holder .regLine {
+    background-color: #11e5b1;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding: 20px 20px;
+  }
+
+  .cms-holder .regText {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--main-primary-text);
+    line-height: initial;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cms-holder .joinButton {
+    background: #11e5b1;
+    padding: 0px 20px;
+    font-size: 1.125rem;
+    color: var(--main-primary-text);
+    border: 0px none;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 30px;
+    font-weight: 700;
+    margin-left: 1.875rem;
+    padding: 5px 20px;
+    text-align: center;
+  }
+
+  .cms-holder .joinButton:hover {
+    background: var(--main-primary);
+    color: var(--main-primary-text);
+    cursor: pointer;
+    filter: brightness(85%);
+  }
+
+  #cms-page .contents {
+    padding: 0 !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    .cms-holder .bg {
+      height: 130px;
+    }
+
+    .cms-holder .title,
+    .cms-holder .subtitle {
+      font-size: 2rem;
+    }
+
+    .cms-holder .joinButton {
+      height: 45px;
+    }
+
+    .cms-holder .button {
+      height: 45px;
+    }
+
+    ::-webkit-scrollbar-track {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    ::-webkit-scrollbar {
+      height: 4px;
+      width: 4px;
+      background: #000;
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+      background: var(--main-primary);
+      border-radius: 10px;
+    }
+
+    .cms-holder .row {
+      width: calc(100%);
+      height: 150px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      clear: both;
+      margin-bottom: 1px;
+    }
+
+    .cms-holder .rowH {
+      width: calc(100%);
+      height: 150px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      clear: both;
+      margin-bottom: 1px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .cms-holder .rowH {
+        width: calc(100%);
+        height: 120px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        clear: both;
+        margin-bottom: 1px;
+      }
+    }
+
+    #cms-page h1[data-v-ff340caa] {
+      display: none;
+      background: var(--main-primary);
+      color: var(--main-primary-text);
+      padding: 0 15px;
+    }
+
+    #FeaturedRow {
+      margin-bottom: -5em;
+    }
+
+    .cms-holder .productsHolder {
+      background: #0e0e0e;
+      display: flex;
+      flex-wrap: nowrap;
+      clear: both;
+      box-sizing: border-box;
+      overflow: auto;
+      padding: unset;
+      width: 68em;
+      grid-auto-rows: 200px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 1px;
+      padding-bottom: 1px;
+    }
+
+    .cms-holder .line {
+      padding-left: 1.5em;
+    }
+
+    .cms-holder .lineH {
+      padding-left: 1.5em;
+    }
+
+    .cms-holder .lineH1 {
+      padding-left: 2em;
+    }
+
+    .cms-holder .line1 {
+      padding-left: 1.5em;
+    }
+
+    .cms-holder .productsHolder2 {
+      background: #0e0e0e;
+      display: flex;
+      flex-wrap: nowrap;
+      clear: both;
+      box-sizing: border-box;
+      overflow: auto;
+      padding: unset;
+      width: 68em;
+      grid-auto-rows: 200px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 1px;
+      padding-bottom: 1px;
+    }
+
+    .cms-holder .productsHolder3 {
+      background: #0e0e0e;
+      display: flex;
+      flex-wrap: nowrap;
+      clear: both;
+      box-sizing: border-box;
+      overflow: auto;
+      padding: unset;
+      width: 79.5em;
+      grid-auto-rows: 200px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 1px;
+      padding-bottom: 1px;
+    }
+
+    .cms-holder .productsHolderFeatured {
+      background: #0e0e0e;
+      display: flex;
+      flex-wrap: nowrap;
+      clear: both;
+      box-sizing: border-box;
+      overflow: auto;
+      padding: unset;
+      width: 74.5em;
+      grid-auto-rows: 200px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 1px;
+      padding-bottom: 1px;
+    }
+
+    .cms-holder .productsHolderFeaturedMain {
+      background: #0e0e0e;
+      display: flex;
+      flex-wrap: nowrap;
+      clear: both;
+      box-sizing: border-box;
+      overflow: auto;
+      padding: unset;
+      width: 76.3em;
+      grid-auto-rows: 200px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 6px;
+      padding-bottom: 1px;
+    }
+
+    .cms-holder .productsHolderFeaturedMain1 {
+      background: #0e0e0e;
+      display: flex;
+      flex-wrap: nowrap;
+      clear: both;
+      box-sizing: border-box;
+      overflow: auto;
+      padding: unset;
+      width: 63.3em;
+      grid-auto-rows: 200px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 6px;
+      padding-bottom: 1px;
+    }
+
+    .cm-holder .productsHolderFeaturedMain {
+      background: #0e0e0e;
+      display: flex;
+      flex-wrap: nowrap;
+      clear: both;
+      box-sizing: border-box;
+      overflow: auto;
+      padding: unset;
+      width: 77.5em;
+      grid-auto-rows: 200px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 9px;
+      padding-bottom: 1px;
+    }
+
+    .cm-holder .productsHolderFeaturedMain1 {
+      background: #0e0e0e;
+      display: flex;
+      flex-wrap: nowrap;
+      clear: both;
+      box-sizing: border-box;
+      overflow: auto;
+      padding: unset;
+      width: 77.5em;
+      grid-auto-rows: 200px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 9px;
+      padding-bottom: 1px;
+    }
+
+    .cms-holder .product {
+      border-radius: 12px;
+      background: #000;
+      color: var(--main-first-background-text);
+      height: 150px;
+      position: relative;
+      flex: 0 0 150px;
+      overflow: hidden;
+      margin-right: 6px;
+      margin-bottom: 10px;
+    }
+
+    .cms-holder .product1 {
+      border-radius: 12px;
+      background: #000;
+      color: var(--main-first-background-text);
+      height: 150px;
+      position: relative;
+      flex: 0 0 150px;
+      overflow: hidden;
+      margin-right: 6px;
+      margin-bottom: 10px;
+    }
+
+    .cms-holder .productH {
+      border-radius: 12px;
+      background: #000;
+      color: var(--main-first-background-text);
+      height: 150px;
+      position: relative;
+      flex: 0 0 150px;
+      overflow: hidden;
+      margin-right: 6px;
+      margin-bottom: 10px;
+    }
+
+    .cms-holder .productW {
+      border-radius: 10px;
+      background: #000;
+      color: var(--main-first-background-text);
+      height: 150px;
+      position: relative;
+      flex: 0 0 180px;
+      overflow: hidden;
+      margin-right: 6px;
+      margin-bottom: 10px;
+    }
+
+    .cms-holder .product img {
+      object-fit: cover;
+      border-radius: 10px;
+      width: 200px;
+      height: 150px;
+    }
+
+    .cms-holder .productName {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1rem;
+      display: block;
+    }
+
+    .cms-holder .product:first-child {
+      margin-left: 10px;
+    }
+
+    .cms-holder .product:last-child {
+      margin-right: 10px;
+    }
+
+    .row {
+      padding-bottom: 0px !important;
+      width: 100%;
+    }
+
+    .grid {
+      padding-bottom: 0px !important;
+    }
+  }
+
+  .footer {
+    border-top: 0px solid #000 !important;
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+
+
+
+  #LPI1,
+  #LPI2 {
+    position: relative;
+    /* overflow: hidden; */
+  }
+
+  #FTButton::after,
+  #LPI1::after,
+  #LPI2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  #FTButton:hover::after,
+  #LPI1:hover::after,
+  #LPI2:hover::after {
+    opacity: 1;
+    width: 34.6px;
+    height: 40px;
+  }
+
+  #LPI1:hover {
+    transform: scale(1.03);
+    transition: all 0.4s ease-in;
+    transition: all 0.2s ease-out;
+
+    filter: blur(1px);
+  }
+
+  #LPI2:hover {
+    transform: scale(1.03);
+    transition: all 0.4s ease;
+    transition: all 0.2s ease-out;
+
+    filter: blur(1px);
+  }
+
+  #FTButton:hover {
+    transform: scale(1.01);
+    transition: all 0.4s ease;
+    transition: all 0.2s ease-out;
+
+    filter: blur(1px);
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .promoimage {
+    margin-top: 0em;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+  }
+
+  @media only screen and (min-device-width: 1020px) {
+    .promoimage {
+      width: 88%;
+    }
+  }
+
+  .promoimage img {
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+  .promoimage img:first-child {
+    display: block;
+  }
+
+  @media only screen and (min-device-width: 1020px) {
+    .cms-holder .productsHolder3 {
+      background: #0e0e0e;
+      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      grid-auto-rows: 240px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 1em;
+      padding-bottom: 2px;
+    }
+
+    .cms-holder .productsHolder {
+      background: #0e0e0e;
+      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      grid-auto-rows: 240px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 1em;
+      padding-bottom: 2px;
+    }
+
+    .cms-holder .productsHolder2 {
+      background: #0e0e0e;
+      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      grid-auto-rows: 240px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 1em;
+      padding-bottom: 2px;
+    }
+
+    .cms-holder .productsHolderFeatured {
+      background: #0e0e0e;
+      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      grid-auto-rows: 240px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 2em;
+      padding-bottom: 2px;
+    }
+
+    .cms-holder .productsHolderFeaturedMain {
+      background: #0e0e0e;
+      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      grid-auto-rows: 240px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 2em;
+      padding-bottom: 2px;
+    }
+
+    .cms-holder .productsHolderFeaturedMain1 {
+      background: #0e0e0e;
+      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      grid-auto-rows: 240px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 2em;
+      padding-bottom: 2px;
+    }
+  }
+
+  #ticker1 {
+    color: #ffc800;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    margin-top: 0.5em;
+    text-transform: uppercase;
+
+    position: -webkit-fixed;
+    /* For Safari */
+
+    top: 0;
+    background-color: #000;
+    /* Or any other background color */
+    z-index: 1000;
+  }
+
+  #fmain {
+    margin-bottom: 0;
+    color: #ffe600;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #LPI3 {
+    max-width: 1em;
+  }
+
+  .main-line .second-line[data-v-1cd5a667] {
+    z-index: 21;
+    background: linear-gradient(88deg, #ffe601, #ffc800);
+  }
+
+  .footer .back-to-top .arrow[data-v-7c0e5616] {
+    font-size: 22px;
+    display: none;
+  }
+
+  .right {
+    color: #ffffff !important;
+    cursor: pointer;
+  }
+
+  .LP_Promo_Container {
+    display: flex;
+    overflow-x: hidden;
+    scrollbar-width: auto;
+  }
+
+  .LP_Promo_Card-title,
+  .LP_Promo_Card-caption {
+    text-align: center;
+  }
+
+  .LP_Promo_Card:hover {
+    transform: scale(1.02);
+    transition: all 0.4s ease-in;
+    transition: all 0.2s ease-out;
+  }
+
+  @media screen and (max-width: 768px) {
+    .LP_Promo_Container {
+      padding: 0rem 0.5rem;
+      overflow-x: auto;
+      scroll-snap-type: none;
+    }
+
+    .LP_Promo_Card {
+      flex: 0 0 auto;
+      width: 300px;
+      margin-right: 1rem;
+    }
+
+    .LP_Promo_Card:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .LP_Promo_Container>* {
+    scroll-snap-align: start;
+  }
+
+  .arrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .LP_Promo_Card {
+    display: grid;
+    border-radius: 10px;
+    margin: auto;
+    margin-right: 5px;
+    background-color: #000000;
+    border: 5px solid #282828;
+    position: relative;
+  }
+
+  .LP_Promo_Card-img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 100%;
+    height: auto;
+  }
+
+  .LP_Promo_Card-title {
+    padding: 1rem 1rem 0rem;
+    font-family: 'poppins', sans-serif;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .LP_Promo_Card-caption {
+    display: -webkit-box;
+    font-family: 'poppins', sans-serif;
+    font-size: 12px;
+    padding: 0rem 1rem 0rem 1rem;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin: 0;
+    color: rgb(255, 255, 255);
+  }
+
+  .LP_Promo_Card-btn {
+    font-family: 'poppins', sans-serif;
+    padding: 10px;
+    margin: 10px;
+    display: block;
+    color: #000000;
+    background-color: #FFC800;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+  }
+
+  /* Responsive adjustments for larger screens */
+  @media screen and (min-width: 768px) {
+    .LP_Promo_Container {
+      padding: 1rem 5em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .LP_Promo_Card {}
+  }
+
+  /*Pulse animation*/
+  .productSmall {
+    position: relative;
+    display: inline-block;
+  }
+
+  .unique-glow {
+    position: relative;
+    z-index: 1;
+  }
+
+  .glow-circle {
+    position: absolute;
+    content: '';
+    width: 3em;
+    height: 1.5em;
+    background-color: red;
+    border-radius: 10px;
+    animation: pulsate 1.5s infinite;
+    top: 0.5em;
+    left: 0.5em;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 768px) {
+    .cms-holder .productsHolderFeaturedMain {
+      background: #0e0e0e;
+      display: flex;
+      flex-wrap: nowrap;
+      clear: both;
+      box-sizing: border-box;
+      overflow: auto;
+      padding: unset;
+      width: 44.3em;
+      grid-auto-rows: 200px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+      grid-gap: 5px;
+      padding-bottom: 1px;
+    }
+  }
+
+  @keyframes pulsate {
+    0% {
+      box-shadow: 0 0 10px 0 #E30538;
+    }
+
+    50% {
+      box-shadow: 0 0 20px 15px rgba(255, 0, 0, 0);
+    }
+
+    100% {
+      box-shadow: 0 0 10px 0 #E30538;
+    }
+  }
+
+  /*END - Pulse animation*/
+
+  /*END -- CMS STYLES*/
+</style>
+<!-- END - STYLING-->
+
+<!--SCRIPTS-->
+<script>
+
+
+  let desktopSlideIndex = 0;
+  let mobileSlideIndex = 0;
+  let desktopInterval;
+  let mobileInterval;
+
+  function showDesktopSlides() {
+    const desktopImages = document.querySelectorAll('.desktop-slide img');
+    const desktopDots = document.querySelectorAll('.desktop .dot');
+
+    desktopImages.forEach((img, index) => {
+      img.style.display = 'none';
+      desktopDots[index].classList.remove('active');
+    });
+
+    desktopSlideIndex++;
+    if (desktopSlideIndex >= desktopImages.length) {
+      desktopSlideIndex = 0;
+    }
+
+    desktopImages[desktopSlideIndex].style.display = 'block';
+    desktopDots[desktopSlideIndex].classList.add('active');
+  }
+
+  function showMobileSlides() {
+    const mobileImages = document.querySelectorAll('.mobile-slide img');
+    const mobileDots = document.querySelectorAll('.mobile .dot');
+
+    mobileImages.forEach((img, index) => {
+      img.style.display = 'none';
+      mobileDots[index].classList.remove('active');
+    });
+
+    mobileSlideIndex++;
+    if (mobileSlideIndex >= mobileImages.length) {
+      mobileSlideIndex = 0;
+    }
+
+    mobileImages[mobileSlideIndex].style.display = 'block';
+    mobileDots[mobileSlideIndex].classList.add('active');
+  }
+
+  function startDesktopRotation() {
+    showDesktopSlides();
+    desktopInterval = setInterval(showDesktopSlides, 5000);
+  }
+
+  function startMobileRotation() {
+    showMobileSlides();
+    mobileInterval = setInterval(showMobileSlides, 5000);
+  }
+
+  function pauseDesktopBanner() {
+    clearInterval(desktopInterval);
+  }
+
+  function resumeDesktopBanner() {
+    startDesktopRotation();
+  }
+
+  function pauseMobileBanner() {
+    clearInterval(mobileInterval);
+  }
+
+  function resumeMobileBanner() {
+    startMobileRotation();
+  }
+
+  function currentDesktopSlide(n) {
+    clearInterval(desktopInterval);
+    const desktopImages = document.querySelectorAll('.desktop-slide img');
+    const desktopDots = document.querySelectorAll('.desktop .dot');
+
+    desktopImages.forEach((img, index) => {
+      img.style.display = 'none';
+      desktopDots[index].classList.remove('active');
+    });
+
+    desktopSlideIndex = n - 1;
+    desktopImages[desktopSlideIndex].style.display = 'block';
+    desktopDots[desktopSlideIndex].classList.add('active');
+
+    resumeDesktopBanner();
+  }
+
+  function currentMobileSlide(n) {
+    clearInterval(mobileInterval);
+    const mobileImages = document.querySelectorAll('.mobile-slide img');
+    const mobileDots = document.querySelectorAll('.mobile .dot');
+
+    mobileImages.forEach((img, index) => {
+      img.style.display = 'none';
+      mobileDots[index].classList.remove('active');
+    });
+
+    mobileSlideIndex = n - 1;
+    mobileImages[mobileSlideIndex].style.display = 'block';
+    mobileDots[mobileSlideIndex].classList.add('active');
+
+    resumeMobileBanner();
+  }
+
+  function showNextImage(images, currentIndex) {
+    images[currentIndex].style.display = 'none';
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].style.display = 'block';
+    return currentIndex;
+  }
+
+  function showPreviousImage(images, currentIndex) {
+    images[currentIndex].style.display = 'none';
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    images[currentIndex].style.display = 'block';
+    return currentIndex;
+  }
+
+  function showPreviousDesktopImage() {
+    desktopSlideIndex = showPreviousImage(document.querySelectorAll('.desktop-slide img'), desktopSlideIndex);
+    updateDotState('desktop', desktopSlideIndex);
+  }
+
+  function showNextDesktopImage() {
+    desktopSlideIndex = showNextImage(document.querySelectorAll('.desktop-slide img'), desktopSlideIndex);
+    updateDotState('desktop', desktopSlideIndex);
+  }
+
+  function showPreviousMobileImage() {
+    mobileSlideIndex = showPreviousImage(document.querySelectorAll('.mobile-slide img'), mobileSlideIndex);
+    updateDotState('mobile', mobileSlideIndex);
+  }
+
+  function showNextMobileImage() {
+    mobileSlideIndex = showNextImage(document.querySelectorAll('.mobile-slide img'), mobileSlideIndex);
+    updateDotState('mobile', mobileSlideIndex);
+  }
+
+  function updateDotState(type, index) {
+    const dots = document.querySelectorAll(`.${type} .dot`);
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    startDesktopRotation();
+    startMobileRotation();
+  });
+</script>
 <!--END - SCRIPTS-->
