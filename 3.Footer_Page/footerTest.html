@@ -526,7 +526,15 @@
       transition: transform 0.3s;
     }
   }
-
+  @media (max-width: 768px) {
+    .paymentImagesContainer1 {
+        display: flex
+;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        justify-content: flex-start;
+    }
+}
   .Bettabets-footer-container {
     overflow-x: auto;
     justify-content: center;
@@ -535,12 +543,17 @@
     padding: 20px 50px;
     margin-top: 20px;
   }
-
+  #signup-block .sign-up-btn[data-v-f3d529e3] {
+    background: #6eb020;
+    color: var(--main-extra-join-color, var(--main-second-background-text));
+    margin-left: 13px;
+}
   .paymentImagesContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    background-color: azure;
   }
 
   .paymentImagesContainer img {
@@ -587,10 +600,10 @@
     display: flex;
     text-align: center;
     border-radius: 18x;
-    padding: 16px;
+    padding: 21px;
     transition: all 0.3s ease;
     color: white;
-    font-size: 20px;
+    font-size: 27px;
     z-index: 9999;
     /* Increased to ensure it's on top */
   }
@@ -609,7 +622,20 @@
     background: #2a2a2b;
     color: white;
   }
-
+  .pMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    margin-right: 2px;
+    font-size: 5px;
+    text-align: center;
+    white-space: break-spaces;
+    word-break: break-word;
+    word-wrap: break-word;
+    line-height: 100%;
+    overflow: hidden;
+  }
   .google {
     background: #2a2a2b;
     color: white;
@@ -649,7 +675,7 @@
     .icon-bar a {
       color: white;
       text-align: center;
-      padding: 18px;
+      padding: 12.5px;
       flex-grow: 1;
     }
 

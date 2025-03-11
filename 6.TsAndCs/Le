@@ -172,7 +172,7 @@
     <script>
       // Set the date for your promotion end
       // Set the date for your promotion end
-      const promotionEnd = new Date('2025-03-05T20:00:59').getTime();
+      const promotionEnd = new Date('2025-03-07T20:00:59').getTime();
       const countdownElement = document.getElementById('countdown');
 
       function updateCountdown() {
