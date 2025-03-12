@@ -1,0 +1,423 @@
+<div data-v-19639efc="" class="full-page">
+  <div data-v-19639efc="" id="cms-footer-content-holder" class="content-holder contents">
+    <br>
+    <br>
+    <!--SUB-Text-->
+    <!--<h3 style="text-align: center; margin-top: 14px">
+      BET R2+ ON ANY SLOT EVERY WEDNESDAY AND RECEIVE FREE SPINS ON THURSDAY! 
+    </h3>-->
+   
+    </div>
+    <br>
+  <div class="outer">
+    <div class="popup">
+        <i class="far fa-check-circle"></i>
+        <h3 class="wel">Welcome To Betta Betting Partake on the Following</h3>
+        <img src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Jan%20Welcome%20Bonus-BannerMobile.png?raw=true">
+        <br />
+        <button id="closebtn">Close</button>
+    </div>
+    <button id="showbtn">LogIn</button>
+    </div>
+    <br />
+</div>
+<br>
+    <style>
+      #cms-page img {
+        max-width: 100%;
+        border-radius: 14px;
+      }
+  .outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+.wel  {
+    color: #4CAF50;
+    line-height: 1.5;
+}
+.heading {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    justify-content: center;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+h1 {
+    color: green;
+    background-color: white;
+    display: inline;
+}
+
+h2 {
+    color: rgb(139, 52, 52);
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.popup {
+    background-color: #fafafa;
+    width: 366px;
+    height: 222px;
+    border-radius: 26px;
+    text-align: center;
+    display: none;
+    margin-bottom: 13em;
+    transition: all 0.5s ease;
+    transition-duration: 1s;
+    z-index: 9999;
+}
+
+#showbtn {
+    margin: 200px auto;
+}
+
+#closebtn {
+    margin-top: 3px;
+}
+
+.popup button {
+    margin-top: 6px;
+}
+
+button {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 5px;
+    height: 36px;
+    width: 77px;
+    border: none;
+    transition-duration: 0.5s;
+    font-size: 17px;
+}
+
+.far.fa-check-circle {
+    color: blue;
+    font-size: 37px;
+    margin-top: 7px;
+}
+
+button:hover {
+    background-color: rgb(113, 140, 139);
+    color: white;
+    /* transition-delay: 0.4s; */
+}
+      .button-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .buttonClass {
+        flex: 1;
+        margin: 10px;
+        text-align: center;
+      }
+
+      .buttonClass :hover {
+        background-color: rgba(0, 0, 0, 0.12);
+        color: #ffc800;
+        border: 2px solid #ffc800;
+      }
+
+      .buttonClass a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        height: 60px;
+        background: #ffe600;
+        color: #000;
+        text-decoration: none;
+        border-radius: 25px;
+        text-transform: uppercase;
+      }
+
+      .buttonClass2 {
+        flex: 1;
+        margin: 10px;
+        text-align: center;
+      }
+
+      .buttonClass2 a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        height: 40px;
+        background: #ffe600;
+        color: #000;
+        text-decoration: none;
+        border-radius: 25px;
+      }
+
+      @media (max-width: 768px) {
+        .buttonClass {
+          flex: 1;
+          margin: 5px;
+        }
+      }
+
+      .countdown {
+        text-align: center;
+        font-size: 24px;
+        margin: 5px -35px;
+        height: 38px;
+        width: 348px;
+        background-color: #00CD46;
+        border-radius: 14px;
+        color: #000;
+        padding: 7px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    </style>
+
+    <!--HEADER-->
+    
+    
+
+      <!-- Countdown Timer -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+  // To access the show button element
+let showbtn = document.getElementById("showbtn");
+
+// To access the Close button element
+let closebtn = document.getElementById("closebtn");
+
+// To acces the popup element
+let popup = document.querySelector(".popup");
+let subp = document.getElementById("sub-p");
+
+// To show the popup on click
+showbtn.addEventListener("click", () => {
+    popup.style.display = "block";
+    showbtn.style.display = "none";
+    document.body.style.backgroundColor = "#9EA9B1";
+    subp.style.display = "none";
+});
+
+// To close the popup on click
+closebtn.addEventListener("click", () => {
+    popup.style.display = "none";
+    showbtn.style.display = "block";
+    document.body.style.backgroundColor = "#09dbd450";
+    subp.style.display = "block";
+});
+
+  (function () {
+    'use strict';
+    var slides = document.querySelectorAll('.testimonial-item'),
+      button = document.getElementById('button'),
+      arrows = document.querySelectorAll('.lnr'),
+      carouselCount = 0,
+      scrollInterval,
+      interval = 5000;
+
+    arrows[0].addEventListener('click', function (e) {
+      e = e || window.event;
+      e.preventDefault();
+      carouselCount -= 100;
+      slider();
+      if (e.type !== 'autoClick') {
+        clearInterval(scrollInterval);
+        scrollInterval = setInterval(autoScroll, interval);
+      }
+    });
+    arrows[1].addEventListener('click', sliderEvent);
+    arrows[1].addEventListener('autoClick', sliderEvent);
+
+    function sliderEvent(e) {
+      e = e || window.event;
+      e.preventDefault();
+      carouselCount += 100;
+      slider();
+      if (e.type !== "autoClick") {
+        clearInterval(scrollInterval);
+        scrollInterval = setInterval(autoScroll, interval);
+      }
+    }
+
+    function slider() {
+      switch (carouselCount) {
+        case -100:
+          carouselCount = 0;
+          break;
+        case 300:
+          carouselCount = 0;
+          break;
+        default:
+          break;
+      }
+      console.log(carouselCount);
+      for (var i = 0; i < slides.length; i += 1) {
+        slides[i].setAttribute('style', 'transform:translateX(-' + carouselCount + '%)');
+      }
+    }
+
+    // create new Event to dispatch click for auto scroll
+    var autoClick = new Event('autoClick');
+    function autoScroll() {
+      arrows[1].dispatchEvent(autoClick);
+    }
+
+    // set timing of dispatch click events
+    scrollInterval = setInterval(autoScroll, interval);
+
+  })();
+
+  // Toggle visibility of buttons on mobile view
+  document.querySelector('.show-more').addEventListener('click', function () {
+    let cards = document.querySelectorAll('.mainPromoCardH .mainPromoCard');
+    let hidden = false;
+    for (let i = 1; i < cards.length; i++) { // Start from 1 to leave the first button always visible
+      if (cards[i].style.display === 'none') {
+        cards[i].style.display = 'block';
+        hidden = true;
+      } else {
+        cards[i].style.display = 'none';
+      }
+    }
+    this.innerHTML = hidden ? '&#9650; Show Less' : '&#9660; Show More'; // Toggle arrow direction and text
+  });
+
+  // Add click event listener to change color
+  document.querySelectorAll('.btn-a').forEach(button => {
+    button.addEventListener('click', function () {
+      this.classList.toggle('clicked');
+    });
+  });
+</script>
+      <script>
+        // Set the date for your promotion end
+        const promotionEnd = new Date('2025-02-16T23:59:59').getTime();
+        const countdownElement = document.getElementById('countdown');
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = promotionEnd - now;
+
+          if (distance < 0) {
+            if (countdownElement) {
+              countdownElement.innerHTML = 'Promotion has ended!';
+            }
+            return; // Stop calling updateCountdown
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          countdownElement.innerHTML = `${days}days ${hours}hours ${minutes}m ${seconds}s`;
+
+          // Request the next frame
+          requestAnimationFrame(updateCountdown);
+        }
+
+        // Start the countdown
+        updateCountdown();
+
+      </script>
+    </ul>
+
+   
+    <br>
+    <div class="buttonClass2">
+      <div class="ButtonJoin">
+        <a href="https://bettabets.co.za/lotto">
+          <div class="bettaButton BettaButtonYellow"><span>PLAY NOW</span></div>
+        </a>
+      </div>
+    </div>
+
+    <p></p>
+
+    <style>
+      #cms-page .page-header {
+        display: none !important;
+      }
+
+      .grey-background {
+        background-color: #2b2b2b;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .buttonClass {
+        justify-content: center;
+        flex: 1;
+        margin: 0 10px;
+      }
+
+      h3 {
+        color: #ffe600;
+        line-height: 1.5;
+      }
+
+      li {
+        line-height: 1.7;
+      }
+
+      a {
+        color: #ffe600;
+      }
+
+      .bettaButton {
+        cursor: pointer;
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+        padding: 10px 30px;
+        border: none;
+        border-radius: 25px;
+        background: #ffe600;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .content-holder.contents {
+        width: 66% !important;
+        margin: 0 auto;
+      }
+
+      p.promoback {
+        margin-bottom: -11px;
+      }
+
+      @media (max-width: 950px) {
+        .content-holder.contents {
+          width: 100% !important;
+          margin: 0 auto;
+        }
+
+        .buttonClass {
+          gap: 10px;
+        }
+
+        .buttonClass .ButtonJoin .BettaButtonYellow {
+          background-color: #ffe600 !important;
+          padding: 10.5px 35.3px !important;
+        }
+
+        .bettaButton {
+          padding: 10.5px 15.3px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 15px;
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+    </style>
+  </div>
+</div>
