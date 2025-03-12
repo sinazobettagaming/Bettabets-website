@@ -223,7 +223,10 @@
   .arrow-left {
     left: 10px;
   }
+.logOut{
+  color: #0d8400;
 
+}
   .arrow-right {
     left: 10px;
     margin: 125px 90px;
@@ -405,18 +408,20 @@
 
 
 <br>
-<!--
+<!---->
 <div class="outer">
-<div class="popup">
-    <i class="far fa-check-circle"></i>
+  <div class="popup">
+      <i class="far fa-check-circle"></i>
+  <h3 class="logOut">Come Back Soon For More Fun</h3>
 
-    <img src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Azikhale%20March-BannerMobile.png?raw=true">
-    <br />
-    <button id="closebtn">Close</button>
-</div>
-<button id="showbtn">Popup</button>
-</div>-->
-<br />
+      <br />
+      <button id="closebtn">Close</button>
+  </div>
+  <button id="showbtn">LogOut</button>
+  </div>
+  <br />
+
+
 
 <div class="line">
   <x-sign id="MainNames" class="sports"> Hot Games </x-sign>
@@ -505,6 +510,10 @@ let closebtn = document.getElementById("closebtn");
 let popup = document.querySelector(".popup");
 let subp = document.getElementById("sub-p");
 
+// Capitalize the first letter of each word in the popup
+document.querySelectorAll('.pMenu').forEach(span => {
+    span.textContent = span.textContent.charAt(0).toUpperCase() + span.textContent.slice(1).toLowerCase();
+  });
 // To show the popup on click
 showbtn.addEventListener("click", () => {
     popup.style.display = "block";

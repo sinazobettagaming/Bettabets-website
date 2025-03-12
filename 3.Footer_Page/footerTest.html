@@ -595,7 +595,10 @@
     border-radius: 18x;
     transform: translateY(0%);
   }
-
+  .icon[data-v-241059e9] {
+    margin: 0;
+    fill: #f8f6f6;
+}
   .icon-bar a {
     display: flex;
     text-align: center;
@@ -634,8 +637,10 @@
     word-break: break-word;
     word-wrap: break-word;
     line-height: 100%;
+    text-transform: capitalize;
     overflow: hidden;
   }
+
   .google {
     background: #2a2a2b;
     color: white;
@@ -856,6 +861,9 @@
           behavior: 'smooth'
         });
       }
+      document.querySelectorAll('.pMenu').forEach(span => {
+    span.textContent = span.textContent.charAt(0).toUpperCase() + span.textContent.slice(1).toLowerCase();
+  });
     </script>
   </footer>
 </div>
