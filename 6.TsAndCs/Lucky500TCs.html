@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="desktop-image">
-      <img src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/SheeshaSpina-Thumb01.png?raw=true" alt="">
+      <img src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Aviator%20March-Thumb01.png?raw=true" alt="">
     </div><br>
     <!--SUB-Text-->
     <!--<h3 style="text-align: center; margin-top: 14px">
@@ -24,22 +24,17 @@
         </a>
       </div>
       <div class="buttonClass">
-        <a href="https://bettabets.co.za/casino/slots" class="bettaButton BettaButtonYellow">
+        <a href="https://bettabets.co.za/spribe/8202" class="bettaButton BettaButtonYellow">
           Play Now
         </a>
       </div>
- <div class="buttonClass">
+      <div class="buttonClass">
         <a href="https://bettabets.co.za/page/BettaInfoVideos" class="bettaButton BettaButtonYellow">
           How-To <br> Deposit
         </a>
       </div>
     </div>
     <style>
-      #cms-page img {
-        max-width: 100%;
-        border-radius: 14px;
-      }
-
       .button-container {
         display: flex;
         justify-content: center;
@@ -49,12 +44,6 @@
         flex: 1;
         margin: 10px;
         text-align: center;
-      }
-
-      .buttonClass :hover {
-        background-color: rgba(0, 0, 0, 0.12);
-        color: #ffc800;
-        border: 2px solid #ffc800;
       }
 
       .buttonClass a {
@@ -86,6 +75,19 @@
         color: #000;
         text-decoration: none;
         border-radius: 25px;
+        text-transform: uppercase;
+      }
+
+      .buttonClass2 :hover {
+        background-color: rgba(0, 0, 0, 0.12);
+        color: #ffc800;
+        border: 2px solid #ffc800;
+      }
+
+      .buttonClass :hover {
+        background-color: rgba(0, 0, 0, 0.12);
+        color: #ffc800;
+        border: 2px solid #ffc800;
       }
 
       @media (max-width: 768px) {
@@ -98,141 +100,122 @@
       .countdown {
         text-align: center;
         font-size: 24px;
-         margin: 5px -35px;
+        margin: 5px -35px;
         height: 38px;
-        width: 348px;
+        width: 378px;
         background-color: #00CD46;
         border-radius: 14px;
         color: #000;
         padding: 7px;
-        text-transform: uppercase;
-        font-weight: bold;
       }
     </style>
 
     <!--HEADER-->
-    <h3>What do I Win?</h3>
-    <ul>
-      <h4>CASH Prize Breakdown:</h4>
-      <li>Position 1: R2,500</li>
-      <li>Position 2: 2,000</li>
-      <li>Position 3: R950 </li>
-      <li>Position 4 – 5: R500 each </li>
-      <li>Position 6 – 20: R170 each</li>
-      <li>Position 21 – 30: R100 each  </li>
-      <li>All winners will be chosen and credited at the end of the promo period on the following date: 01 April 2025. </li>
-    </ul>
 
+    <h3>What do I Win?</h3>
+
+    <ul>
+      <li>	Stand a chance to win your share of 55 000 Free Bets with Aviator Rain between 13 – 23 March 2025, 23:59p.m SAST.  </li>
+      <li>	There will be a total of 11 Rain events during the entire Promotion Period.</li>
+
+    </ul>
 
     <h3>What is the Promo Duration?</h3>
 
     <ul>
-      <li>	The Shesha Spina promotion is applicable between these dates: 10 – 31 March 2025, 23:59 SAST, only. (Considered “Promotion Period”)</li>
-   
-      <div class="countdown" id="countdown" style="background-color: whitesmoke;"></div>
+      <li>
+      	Aviator Rain promo is applicable between the date 13– 23 March 2025, 23:59p.m SAST, and time period between 17:00p.m – 20:00p.m, only. (Considered “Promotion Period”)
+      </li>
 
-      <!-- Countdown Timer -->
+    </ul>
+    <div class="countdown" id="countdown" style="background-color: rgb(246, 244, 244);"></div>
 
-      <script>
-        // Set the date for your promotion end
-        const promotionEnd = new Date('2025-03-31T23:59:59').getTime();
-        const countdownElement = document.getElementById('countdown');
+    <!-- Countdown Timer -->
 
-        function updateCountdown() {
-          const now = new Date().getTime();
-          const distance = promotionEnd - now;
+    <script>
+      // Set the date for your promotion end
+      const promotionEnd = new Date('2025-03-23T23:59:59').getTime();
+      const countdownElement = document.getElementById('countdown');
 
-          if (distance < 0) {
-            if (countdownElement) {
-              countdownElement.innerHTML = 'Promotion has ended!';
-            }
-            return; // Stop calling updateCountdown
-          }
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = promotionEnd - now;
 
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-          countdownElement.innerHTML = `${days}days ${hours}hours ${minutes}m ${seconds}s`;
-
-          // Request the next frame
-          requestAnimationFrame(updateCountdown);
+        if (distance < 0) {
+          countdownElement.innerHTML = 'Promotion has ended!';
+          return; // Stop the recursion
         }
 
-        // Start the countdown
-        updateCountdown();
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      </script>
-    </ul>
+        countdownElement.innerHTML = `${days}days ${hours}hours ${minutes}m ${seconds}s`;
+
+        // Request the next frame
+        requestAnimationFrame(updateCountdown);
+      }
+
+      // Start the countdown
+      updateCountdown();
+
+    </script>
+
+
+
 
     <h3>How do I Enter?</h3>
     <ul>
-      <li>Spin R4 or more on selected pragmatic play games, which allows 1x entry into the competition. 
+      <li> To be eligible and claim your Free Bets, simply place a bet of R10 or more on <a href="https://bettabets.co.za/spribe/8202">Aviator </a>within the last 15 minutes during the Promotion Period
+        and have a minimum R10 balance in your Bettabets main cash wallet.
       </li>
-      <li>Selected games:</li>
-      <ul><li>Fire 88</li>
-        <li>	Triple Tigers</li>
-        <li>	Master Joker</li>
-        <li>	Gold Train</li>
-        <li>	Vegas Nights</li>
-        <li>	Perking Luck</li>
-        <li>	Tree of Riches</li>
-        <li>	Voodoo Magic </li>
-        <li>Monkey Warrior</li>
-        <li>	Wild West Gold</li>
-        </ul>
-      <li>	There is no restriction on the number of entries per person. </li>
-      
-      <li>	You will be automatically opted into the competition when you spin R4 or more on the selected pragmatic play games, only.</li>
+      <li> Keep the game chat opened and as soon as it starts to RAIN Free Bets (within qualifying promo time), click
+        “CLAIM” to redeem your share </li>
+
 
     </ul>
+
+
 
     <br>
 
     <div class="grey-background">
       <!--Ts and Cs-->
       <h3>What are the Promo Rules?</h3>
+      <ul>
+        <li>There will be 2x Rain events each day throughout the Promotion Period.</li>
+        <li>Qualifying players can redeem their Free Bets worth R20 and R30 (twenty rands and thirty rands only) awarded at random intervals in the Aviator game chat. </li>
+        <li>You will have 30 minutes to use your Free Bets on Aviator until your Free Bets expire.</li>
+        <li>	Free Bets will be limited to 50 customers during each of the 2x Rain events for the duration of 13 – 23 March 2025, 23:59p.m SAST.</li>
+        <li>Free Bets are limited to one per qualifying customer during each rain event.</li>
+        <li>Your Free Bets are exclusive for Aviator use only.</li>
+        <li>Minimum multiplier to cashout is 3.00x.</li>
+        <li>Players must have placed real money bets for at least R10 in the completed rounds within the 15 minutes prior to claiming a Free Bet.</li>
+        <li>Players must have at least R10 in their main cash wallet in order to claim a Free Bet.</li>
+        <li>This promotion applies to online customers only who are over 18.</li>
+        <li>Any wagers placed and settled outside the promotional period will not count towards this promotion.</li>
+        <li>Only cash wagers will count towards earning your Free Bets (Bonus wagers and promo cash bets will not count).</li>
+        <li>Winnings from Free Bets will be credited to customers as real funds.</li>
+        <li>Duplicate accounts don't qualify for the promotion and Free Bets will be awarded once per account, person, IP, and household.</li>
+        <li>Fraudulent accounts and accounts open under false details don't qualify for any promotion. In such cases, all winnings and balances will be forfeited.</li>
+        <li>Bettabets reserves the right to revoke this promotion at any time, without cause or notice.</li>
+        <li>Bettabets reserves the right to change any of its terms and conditions at any time, without cause or notice.</li>
+        <li>Every entrant participating in the promotion shall be deemed to have acknowledged and accepted the rules by virtue of their participation.</li>
+        <li>Should any accounts be suspected of abuse (including any form of bonus abuse) or irregular activities noted at Bettabets discretion, Bettabets has the right to revoke any allocated funds and exclude any individual from the promotional campaign.</li>
 
-      <li>	All winners will be notified at the end of the promo period via SMS 01 April 2025.</li>
-      <li>	Cash winnings will be credited automatically to the winner’s Bettabets account, which can be withdrawn.</li>
-      <li>	Leaderboard ranking is based on the highest win multiplier achieved during the tournament.</li>
-      <ul class="sub-list">
-        <li>	Win Multiplier = Win Amount ÷ Bet Amount </li>
-        <li>	Example: if a player Spins R4 and wins R400, their score is R100x.</li>
-      
+        <li><a href="https://bettabets.co.za/terms-and-conditions">Bettabets Standard Terms and Conditions</a> apply.
+        </li>
+        <li>Winners Know When To Stop. National Responsible Gambling Program. Toll-Free Helpline: 0800 006 008 or
+          WhatsApp Help to 076 675 0710</li>
       </ul>
-      <li>The leaderboard updates in real-time based on the highest multipliers.</li>
-      <li>	The total prize pool is R10,000 distributed among thirty (30) winners as per the above prize breakdown.</li>
-      <li>	You may enter the competition an unlimited number of times, however, you may only win once during the promo period. </li>
-      <li>
-      	Any deposits placed and settled outside the promotional period will not count towards this promotion.
-       
-      </li>
-      <li>Duplicated and fraudulent accounts, and accounts opened under false details, do not qualify for any promotion.
-        In such cases, all winnings and balances will be forfeited.</li>
-      <li>In order to participate, the customer must be over the age of 18.</li>
-      <li>Bettabets reserves the right to revoke this promotion at any time, without cause or notice.</li>
-      <li>Bettabets reserves the right to change any of its terms and conditions at any time, without cause or notice.
-      </li>
-      <li>Every entrant participating in the promotion shall be deemed to have acknowledged and accepted the rules by
-        virtue of their participation.</li>
-      <li>Should any accounts be suspected of abuse (including any form of bonus abuse) or irregular activities noted at
-        Bettabets' discretion, Bettabets has the right to revoke any allocated funds and exclude any individual from the
-        promotional campaign.</li>
-
-      <li><a href="https://bettabets.co.za/terms-and-conditions">Bettabets Standard Terms and Conditions</a> apply.
-      </li>
-      <li>Winners Know When To Stop. National Responsible Gambling Program. Toll-Free Helpline: 0800 006 008 or
-        WhatsApp Help to 076 675 0710</li>
-
 
     </div>
 
     <br>
     <div class="buttonClass2">
       <div class="ButtonJoin">
-        <a href="https://bettabets.co.za/lotto">
+        <a href="https://bettabets.co.za/spribe/8202">
           <div class="bettaButton BettaButtonYellow"><span>PLAY NOW</span></div>
         </a>
       </div>
@@ -241,6 +224,11 @@
     <p></p>
 
     <style>
+      #cms-page img {
+        max-width: 100%;
+        border-radius: 14px;
+      }
+
       #cms-page .page-header {
         display: none !important;
       }
@@ -306,7 +294,12 @@
           padding: 10.5px 35.3px !important;
         }
 
-        .bettaButton {
+        #cms-page img {
+          max-width: 100%;
+          border-radius: 14px;
+        }
+
+        .bettaButton a {
           padding: 10.5px 15.3px;
           display: flex;
           justify-content: center;
@@ -314,8 +307,25 @@
           font-size: 15px;
           text-align: center;
           font-weight: bold;
+          text-transform: uppercase;
         }
       }
     </style>
   </div>
 </div>
+<script>
+  document.getElementById('deposit-button').addEventListener('click', function (event) {
+    // Assume we have a function isLoggedIn that checks the user's login status
+    if (!isLoggedIn()) {
+      event.preventDefault();
+      alert('Please log in first Or Join. Cancel if logged in');
+    }
+  });
+
+  function isLoggedIn() {
+    // This is a placeholder function. Replace with actual login check.
+    // For example, check a cookie or local storage value.
+    return false; // Set to true if the user is logged in
+  }
+
+</script>
