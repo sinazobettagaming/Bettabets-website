@@ -12,7 +12,7 @@
     </div>
     <div class="desktop-image">
       <img
-        src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/BZ%20March%201-Thumb01.png?raw=true"
+        src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BZ%20March%202-Thumb01.png?raw=true"
         alt="">
     </div><br>
     <!--SUB-Text-->
@@ -172,7 +172,7 @@
     <script>
       // Set the date for your promotion end
       // Set the date for your promotion end
-      const promotionEnd = new Date('2025-03-14T20:00:59').getTime();
+      const promotionEnd = new Date('2025-03-21T20:00:59').getTime();
       const countdownElement = document.getElementById('countdown');
 
       function updateCountdown() {
