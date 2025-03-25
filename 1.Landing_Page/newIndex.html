@@ -108,14 +108,16 @@
             alt="Desktop Banner" style="display:  block;" onmouseover="pauseDesktopBanner()"
             onmouseout="resumeDesktopBanner();">
         </a>
-   
+
         <a href="https://bettabets.co.za/page/BigPayBack">
-          <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Big%20Payback%20March-BannerDesktop.png?raw=true" alt="Desktop Banner" style="display:  none;" onmouseover="pauseDesktopBanner()"
+          <img
+            src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Big%20Payback%20March-BannerDesktop.png?raw=true"
+            alt="Desktop Banner" style="display:  none;" onmouseover="pauseDesktopBanner()"
             onmouseout="resumeDesktopBanner();">
         </a>
 
 
-      
+
 
         <a href="https://bettabets.co.za/page/SheshaSpin">
           <img
@@ -213,7 +215,7 @@
           <span class="dot" onclick="currentDesktopSlide(2)"></span>
           <span class="dot" onclick="currentDesktopSlide(3)"></span>
           <span class="dot" onclick="currentDesktopSlide(4)"></span>
-          
+
 
 
 
@@ -232,19 +234,19 @@
             src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Spina%20to%20Wina%20March-BannerMobile.png?raw=true"
             alt="Mobile Banner" style="display:  block;">
         </a>
-       
+
         <a href="https://bettabets.co.za/page/BigPayBack">
           <img
             src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Big%20Payback%20March-BannerMobile.png?raw=true"
             alt="Mobile Banner" style="display:  none;">
         </a>
-       
+
         <a href="https://bettabets.co.za/page/SheshaSpin">
           <img
             src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/SheeshaSpina-BannerMobile.png?raw=true"
             alt="Mobile Banner" style="display:  none;">
         </a>
-       
+
         <a href="https://bettabets.co.za/page/PPower">
           <img
             src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/PP4-BannerMobile.png?raw=true"
@@ -339,7 +341,7 @@
           <span class="dot" onclick="currentMobileSlide(2)"></span>
           <span class="dot" onclick="currentMobileSlide(3)"></span>
           <span class="dot" onclick="currentMobileSlide(4)"></span>
-        
+
 
 
         </div>
@@ -2463,7 +2465,8 @@
 <!--SCRIPTS-->
 <script>
 
-function showDesktopSlides() {
+  function showDesktopSlides() {
+    let desktopSlideIndex = 0;
     const desktopImages = document.querySelectorAll('.desktop-slide img');
     const desktopDots = document.querySelectorAll('.desktop .dot');
 
@@ -2476,21 +2479,21 @@ function showDesktopSlides() {
     desktopSlideIndex++;
     console.log('desktopSlideIndex:', desktopSlideIndex); //Verify the value of desktopSlideIndex.
     if (desktopSlideIndex >= desktopImages.length) {
-        //Reset the index to 0 when the maximum index is reached.
+      //Reset the index to 0 when the maximum index is reached.
       desktopSlideIndex = 0;
     }
 
-    if(desktopImages.length > 0){ //Check if there are any images before proceeding.
+    if (desktopImages.length > 0) { //Check if there are any images before proceeding.
       desktopImages[desktopSlideIndex].style.display = 'block';
       desktopDots[desktopSlideIndex].classList.add('active');
     }
   }
 
 
-  
+
 
   function showMobileSlides() {
-    let  mobileInterval;
+    let mobileInterval;
     let mobileSlideIndex = 0;
     const mobileImages = document.querySelectorAll('.mobile-slide img');
     const mobileDots = document.querySelectorAll('.mobile .dot');
@@ -2521,7 +2524,7 @@ function showDesktopSlides() {
     desktopInterval = setInterval(showDesktopSlides, 5000);
   }
   function startMobileRotation() {
-    let  mobileInterval;
+    let mobileInterval;
     let mobileSlideIndex = 0;
     const mobileImages = document.querySelectorAll('.mobile-slide img');
     if (mobileImages.length === 0) {
@@ -2549,7 +2552,7 @@ function showDesktopSlides() {
   }
 
   function pauseMobileBanner() {
-    let  mobileInterval;
+    let mobileInterval;
     clearInterval(mobileInterval);
   }
 
@@ -2586,7 +2589,7 @@ function showDesktopSlides() {
 
 
   function currentMobileSlide(n) {
-    let  mobileInterval;
+    let mobileInterval;
     let mobileSlideIndex = 0;
     clearInterval(mobileInterval);
     const mobileImages = document.querySelectorAll('.mobile-slide img');
