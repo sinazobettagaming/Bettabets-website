@@ -11,9 +11,7 @@
       </div>
     </div>
     <div class="desktop-image">
-      <img
-        src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BZ%20March%202-Thumb01.png?raw=true"
-        alt="">
+      <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BZ%20April%201-Thumb01.png?raw=true" alt="">
     </div><br>
     <!--SUB-Text-->
     <!--<h3 style="text-align: center; margin-top: 14px">
@@ -120,8 +118,8 @@
     <h3>What do I Win?</h3>
 
     <ul>
-      <li>250 Players will be chosen randomly to receive 25 FREE SPINS on the Pragmatic slots: 888 Dragons or Tree of
-        Riches.</li>
+      <li>250 Players will be chosen randomly to receive 25 FREE SPINS on the Pragmatic slots: Master Joker or Triple
+        Tigers.</li>
 
     </ul>
 
@@ -132,31 +130,41 @@
         BETTA ZONKE JACKPOT promo is applicable ONLY on the following days:
       </li>
       <li>
-        05 March
+        02 April
+
+
+
       </li>
 
       <li>
-        07 March
-      </li>
-      <li>
-        12 March
-      </li>
-      <li>
-        14 March
-      </li>
-      <li>
-        19 March
-      </li>
-      <li>
-        21 March
-      </li>
-      <li>
-        26 March
-      </li>
-      <li>
-        28 March
-      </li>
+        04 April
 
+      </li>
+      <li>
+        09 April
+
+      </li>
+      <li>
+        11 April
+
+      </li>
+      <li>
+        16 April
+
+      </li>
+      <li>
+        18 April
+
+      </li>
+      <li>
+        23 April
+
+      </li>
+      <li>
+        25 April
+
+      </li>
+      <li> 30 April</li>
       <li>
         And time: 18:00 – 20:00 SAST only
       </li>
@@ -172,7 +180,7 @@
     <script>
       // Set the date for your promotion end
       // Set the date for your promotion end
-      const promotionEnd = new Date('2025-03-21T20:00:59').getTime();
+      const promotionEnd = new Date('2025-04-02T20:00:59').getTime();
       const countdownElement = document.getElementById('countdown');
 
       function updateCountdown() {
@@ -207,14 +215,12 @@
 
     <h3>How do I Enter?</h3>
     <ul>
-      <li> Bet R2 or more on any slot every selected Wednesday & Friday between the 5th and 28th of March 2025, during
-        the promotional time to qualify for entry.
+      <li>	Bet R2 or more on any slot every selected Wednesday & Friday between the 02nd and 30th of April 2025, during the promotional time to qualify for entry.
       </li>
       <li> You will receive 1 entry for every R2 bet placed on slots – entries are unlimited.</li>
       <li> You will be automatically opted in when you take any bet of R2 or more on any slot games within the promotion
         period.</li>
-      <li>250 winners will be chosen randomly to each receive 25 Free Spins on Tree of Riches or 888 Dragons on Thursday
-        & Saturday after the Wednesday & Friday promotion period, only.</li>
+      <li>250 winners will be chosen randomly to each receive 25 Free Spins on Master Joker or Triple Tigers on Thursday & Saturday after the Wednesday & Friday promotion period, only.</li>
 
     </ul>
 

@@ -3,6 +3,12 @@
 <title></title>
 
 <style>
+  .bettabets div[data-aardvark-id="MobileHeaderComp"].line .right-side .right-side-inner .action.register {
+    background-color: #e80202;
+    color: #ffffff;
+    border-radius: 100px !important;
+  }
+
   .PromNav {
     max-width: 960px;
     mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
@@ -12,73 +18,83 @@
 
   .PromNav ul {
     text-align: center;
-    background: linear-gradient(90deg, rgb(255, 223, 1) 0%, rgb(255, 214, 1) 25%, #f5cd06e3 75%, rgb(255, 207, 1)100%);
+    background: #FFE600;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
   }
 
   .PromNav ul li {
     display: inline-block;
+    text-transform: capitalize;
   }
 
   .PromNav ul li a {
     padding: 18px;
-    font-family: "Open Sans";
-
-    color: rgba(30, 29, 29, 0.945);
-    font-size: 18px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(6, 6, 6);
+    text-transform: capitalize !important;
     text-decoration: none;
     display: block;
   }
 
+  .PromNav ul li a:hover {
+
+    background: rgba(9, 9, 9, 0.945);
+    color: rgb(250, 250, 250);
+  }
+
+  .PromNav ul li a.active {
+    background: rgba(9, 9, 9, 0.945);
+    color: rgb(253, 220, 7);
+
+  }
+
   @media only screen and (max-width: 576px) {
     .PromNav ul {
+      background: linear-gradient(90deg, rgb(46, 45, 44) 0%, rgba(19, 19, 19, 0.534) 25%, #2b2b29e3 75%, rgb(17, 17, 17)100%);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
       overflow-x: auto;
-      padding-bottom: 8px;
       align-items: center;
       display: flex;
       gap: 0.5rem;
       font-size: 15px;
+      border-bottom: 1px solid var(--main-primary);
     }
   }
 
   @media only screen and (max-width: 576px) {
     .PromNav ul li a {
-      color: rgba(255, 255, 255, 0.945);
+      color: rgba(247, 244, 244, 0.945);
       font-size: 13px;
-      padding: 7px;
+      text-transform: capitalize;
     }
   }
 
-  .PromNav ul li a:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
-    background: rgba(9, 9, 9, 0.945);
-    color: rgba(255, 255, 255, 0.7);
-  }
 
-  .PromNav ul li a.active {
-    background-color: #101110;
-    color: white;
-    border: rgb(249, 233, 0) solid;
-    border-radius: 13px;
-    margin: 3px;
+  @media only screen and (max-width: 768px) {
+    .PromNav ul li a:active {
+      color: rgb(247, 215, 4) !important;
+      text-transform: capitalize;
+    }
   }
 </style>
 
-<br><br>
+
 
 <nav class="PromNav">
   <ul id="main-menu" class="top-nav menu clearfix">
     <li class="menu-item">
-      <a href="https://bettabets.online.advbet.com/page/promotions2">All</a>
+      <a href="https://bettabets.co.za/page/Promotions">All</a>
     </li>
     <li class="menu-item">
-      <a href="https://bettabets.online.advbet.com/page/Featuring">Featuring</a>
+      <a href="https://bettabets.co.za/page/Featuring">Featuring</a>
     </li>
     <li class="menu-item">
-      <a class="active" href="https://bettabets.online.advbet.com/page/welcomeB">Welcome</a>
+      <a class="active" href="https://bettabets.co.za/page/welcomeP">Welcome</a>
     </li>
     <li class="menu-item">
-      <a href="https://bettabets.online.advbet.com/page/comingsoon">Coming </a>
+      <a href="https://bettabets.co.za/page/Coming">Coming </a>
 
     </li>
 

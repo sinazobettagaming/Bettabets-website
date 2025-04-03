@@ -2554,6 +2554,7 @@ button:hover {
   }
 
   function showPreviousDesktopImage() {
+    let desktopSlideIndex=0
     desktopSlideIndex = showPreviousImage(document.querySelectorAll('.desktop-slide img'), desktopSlideIndex);
     updateDotState('desktop', desktopSlideIndex);
   }

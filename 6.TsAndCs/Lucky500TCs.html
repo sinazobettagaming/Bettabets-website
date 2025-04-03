@@ -11,8 +11,8 @@
       </div>
     </div>
     <div class="desktop-image">
-      <img src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Spina%20to%20Wina%20March-Thumb01.png?raw=true" alt="">
-    </div><br>
+      <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/First500April-Thumb01.png?raw=true" alt="">
+    </div>
     <!--SUB-Text-->
     <!--<h3 style="text-align: center; margin-top: 14px">
       BET R2+ ON ANY SLOT EVERY WEDNESDAY AND RECEIVE FREE SPINS ON THURSDAY! 
@@ -24,11 +24,11 @@
         </a>
       </div>
       <div class="buttonClass">
-        <a href="https://bettabets.co.za/casino/slots" class="bettaButton BettaButtonYellow">
+        <a href="https://bettabets.co.za/lottery" class="bettaButton BettaButtonYellow">
           Play Now
         </a>
       </div>
- <div class="buttonClass">
+      <div class="buttonClass">
         <a href="https://bettabets.co.za/page/BettaInfoVideos" class="bettaButton BettaButtonYellow">
           How-To <br> Deposit
         </a>
@@ -38,29 +38,44 @@
       .button-container {
         display: flex;
         justify-content: center;
+
+      }
+
+      .buttonClass2 :hover {
+        background-color: rgb(248, 4, 4);
+        color: #ffc800;
+
+      }
+
+      .buttonClass :hover {
+        background-color: rgba(0, 0, 0, 0.12);
+        color: #ffc800;
+        border: 2px solid #ffc800;
       }
 
       .buttonClass {
         flex: 1;
-        margin: 10px;
+        margin: 1px;
         text-align: center;
+        height: 40px;
+      }
+
+      #cms-page img {
+        max-width: 100%;
+        border-radius: 14px;
       }
 
       .buttonClass a {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 10px;
-        height: 60px;
+        padding: 1px;
+        height: 40px;
         background: #ffe600;
         color: #000;
         text-decoration: none;
         border-radius: 25px;
-      }
-
-      #cms-page img {
-        max-width: 100%;
-        border-radius: 13px;
+        text-transform: uppercase;
       }
 
       .buttonClass2 {
@@ -79,61 +94,69 @@
         color: #000;
         text-decoration: none;
         border-radius: 25px;
+        text-transform: uppercase;
+      }
+
+      .buttonClass :hover {
+        background-color: rgba(0, 0, 0, 0.12);
+        color: #ffc800;
+        border: 2px solid #ffc800;
       }
 
       @media (max-width: 768px) {
         .buttonClass {
           flex: 1;
-          margin: 5px;
+          margin: 10px;
         }
-      }
-
-      @media (max-width: 768px) {
         .countdown {
-          text-align: center;
-          margin: 5px;
-          justify-content: center;
-        }
+        text-align: center;
+        font-size: 24px;
+        margin: 5px -35px;
+        padding: 5px;
+        height: 38px;
+        width: 348px;
+        border-radius: 14px;
+        color: #000;
+      }
       }
 
       .countdown {
         text-align: center;
         font-size: 24px;
-       margin: 5px -35px;
+        margin: 5px -35px;
+        padding: 5px;
         height: 38px;
         width: 358px;
-        background-color: #00CD46;
         border-radius: 14px;
         color: #000;
-        padding: 9px;
-        text-transform: uppercase;
-        font-weight: bold;
       }
     </style>
 
     <!--HEADER-->
-    <h3>What do I Win? </h3>
+    <h3>What do I Win?</h3>
     <ul>
-      <li>	Two (2) lucky player will each win a brand new Samsung Smartphone </li>
-      <li>	Four hundred (400) lucky players will each win 25 Free Spins on the game: Monkey Warrior.</li>
-      <li>	Winners will be chosen randomly, notified and credited at the end of the promotion: 03 April 2025.</li>
+      <li>	A share of 50,000 Bettabucks will be up for grabs during the entire Promotion Period.</li>
+      <li> There will be 500 winners in total for the entire Promotion Period, who will each receive R100 Bettabucks.
+      </li>
+      <li> 1 Bettabuck = R1 Bonus Money. </li>
 
     </ul>
 
     <h3>What is the Promo Duration?</h3>
     <ul>
       <li>
-       	The Spina To Wina promotion is applicable between 24 March – 02 April 2025, 23:59 SAST, only. (Considered “Promotion Period”)
-
+        	Betta Number First 500 promo is applicable between the date range 03 – 30 April 2025 (00:00 – 23:59 SAST) only. (Considered “Promotion Period”)
       </li>
-      <div class="countdown" id="countdown" style="background-color: white;">
-  </div>
+      <li>
+        	Winners are announced: 02 May 2025.
+      </li>
+      <div class="countdown" id="countdown" style="background-color: white;"></div>
 
       <!-- Countdown Timer -->
 
       <script>
-          // Set the date for your promotion end
-          const promotionEnd = new Date('2025-04-02T23:59:59').getTime();
+        // Set the date for your promotion end
+        var promotionEnd = new Date('2025-04-30T23:59:59').getTime();
         const countdownElement = document.getElementById('countdown');
 
         function updateCountdown() {
@@ -141,8 +164,10 @@
           const distance = promotionEnd - now;
 
           if (distance < 0) {
-            countdownElement.innerHTML = 'Promotion has ended!';
-            return; // Stop the recursion
+            if (countdownElement) {
+              countdownElement.innerHTML = 'Promotion has ended!';
+            }
+            return; // Stop calling updateCountdown
           }
 
           const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -163,9 +188,13 @@
 
     <h3>How do I Enter?</h3>
     <ul>
-      <li>	Spin R5 or more and play any slot for an entry into the competition.  </li>
-      <li>	There is no restriction to the number of entries per person. </li>
-      <li>You will be automatically opted into the competition when you Spin R5 or more and play on any slot, only.¬</li>
+      <li> 	Deposit and Play R40 or more on any of the Betta Numbers draws (Lucky Numbers), which allows one (1) entry into the competition. 
+      </li>
+      <li>There is no restriction to the number of entries per person. </li>
+      <li> You will be automatically opted into the competition when you take any bet of R40 or more on any Betta Numbers draws, only.
+ 
+      </li>
+
     </ul>
 
 
@@ -175,37 +204,48 @@
       <!--Ts and Cs-->
       <h3>What are the Promo Rules?</h3>
       <ul>
-        <li>	Winners of the Samsung smartphones will be notified directly by the Bettabets team, via a verified phone call on the 03rd of April 2025 after the end of the promotion.</li>
-        <li>All cash winners will be notified directly by the Bettabets team, via a verified phone call. </li>
-        <li>	The Samsung smartphones cannot be exchanged for cash.  </li>
-
-        <li>	Lost or stolen Prizes will not be replaced or refunded by Bettabets.</li>
-        <li>Delivery of prizes can take up to 21 business days.</li>
-        <li>You may enter the competition an unlimited number of times; however, you may only win once during the promo
-          period.</li>
+        <li>1 Bettabuck = R1 Bonus Money, which is set to expire within seven (7) days from the day of loading them in.
+          If not played within the expiration time, your Bettabucks bonus money will be forfeited.</li>
+        <li>Bettabucks bonus money received can be spent back on Prematch single bets (Sports) and Betta Numbers (Lucky
+          Numbers) single bets only.</li>
+        <li> All winners will be notified via Bettabets system notification on the 02nd of May 2025. </li>
         <li>Any wagers placed and settled outside the promotional period will not count towards this promotion.</li>
-        <li>	Winnings from free spins bonus rounds, once fully completed, will be transferred to players real money wallets. </li>
-        <li>Only cash wagers will count towards competition entry (bonus wagers and promo cash bets will not count).
+        <li>Only cash wagers will count towards earning your Bettabucks bonus money (Bonus wagers and promo cash bets
+          will not count).</li>
+        <li>Any winnings from all Bettabucks bonus money awarded has a maximum withdrawal limit of R350 (Three hundred
+          and fifty rands only) for all-inclusive betslips using Bettabucks (bonus money), provided the below is
+          fulfilled:
+          <ul>
+            <li>Bonus money can only be used to place bets with selections at minimum odds per bet leg of: 1.01 and
+              minimum odds per a bet of: 1.7.</li>
+            <li>Unless otherwise stated, bonus money cannot be withdrawn until the customers have wagered two times (5x
+              roll over) the value of the bonus money awarded.</li>
+            <li>Minimum stakes limit per selection is R10 and maximum stakes limit per selection is R100.</li>
+            <li>Once the above criteria are met, the bonus money can be transferred to your main cash wallet.
+              <strong>Note:</strong> Bonus wallet funds are shown separately under your account profile.</li>
+            <li>Bonus wallets expire after seven (7) days from activation of the bonus wallet, and available funds must
+              be transferred out of the bonus wallet before expiration.</li>
+          </ul>
         </li>
-        <li>Duplicate accounts don't qualify for the promotion. Free Spins will be awarded once per account, person, IP,
-          and household.</li>
-        <li>Fraudulent accounts and accounts opened under false details don't qualify for any promotion. In such cases,
+        <li>Duplicate accounts don't qualify for the promotion, and Bettabucks bonus money will be awarded once per
+          account, person, IP, and household.</li>
+        <li>Fraudulent accounts and accounts open under false details don't qualify for any promotion. In such cases,
           all winnings and balances will be forfeited.</li>
-        <li>	In order to participate, the customer must be over the age of 18.</li>
-        <li>Bettabets reserves the right to revoke this promotion at any time without cause or notice.</li>
-        <li>Bettabets reserves the right to change any of its terms and conditions at any time without cause or notice.
+        <li>In order to participate, the customer must be over the age of 18.</li>
+        <li>Bettabets reserves the right to revoke this promotion at any time, without cause or notice.</li>
+        <li>Bettabets reserves the right to change any of its terms and conditions at any time, without cause or notice.
         </li>
-        <li>	Every entrant participating in the promotion shall be deemed to have acknowledged and accepted the rules by virtue of their participation.
-        </li>
-        <li>Should any accounts be suspected of abuse (including any form of bonus abuse) or irregular activities noted at Bettabets discretion, Bettabets has the right to revoke any allocated funds and exclude any individual from the promotional campaign.</li>
-        
+        <li>Every entrant participating in the promotion shall be deemed to have acknowledged and accepted the rules by
+          virtue of their participation.</li>
+        <li>Should any accounts be suspected of abuse (including any form of bonus abuse) or irregular activities noted
+          at Bettabets discretion, Bettabets has the right to revoke any allocated funds and exclude any individual from
+          the promotional campaign.</li>
+
         <li><a href="https://bettabets.co.za/terms-and-conditions">Bettabets Standard Terms and Conditions</a> apply.
         </li>
         <li>Winners Know When To Stop. National Responsible Gambling Program. Toll-Free Helpline: 0800 006 008 or
           WhatsApp Help to 076 675 0710</li>
       </ul>
-
-
 
     </div>
 
@@ -234,7 +274,7 @@
       .buttonClass {
         justify-content: center;
         flex: 1;
-        margin: 0 10px;
+        margin: 0 3px;
       }
 
       h3 {
@@ -260,7 +300,6 @@
         background: #ffe600;
         text-align: center;
         font-weight: bold;
-        text-transform: uppercase;
       }
 
       .content-holder.contents {
@@ -279,12 +318,18 @@
         }
 
         .buttonClass {
-          gap: 10px;
+          gap: 1px;
         }
 
         .buttonClass .ButtonJoin .BettaButtonYellow {
           background-color: #ffe600 !important;
           padding: 10.5px 35.3px !important;
+        }
+
+        .buttonClass :hover {
+          background-color: rgba(0, 0, 0, 0.12);
+          color: #ffc800;
+          border: 2px solid #ffc800;
         }
 
         .bettaButton {
@@ -295,7 +340,6 @@
           font-size: 15px;
           text-align: center;
           font-weight: bold;
-          text-transform: uppercase;
         }
       }
     </style>
