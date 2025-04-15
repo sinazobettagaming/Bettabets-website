@@ -103,12 +103,12 @@
 </nav>
 <br>
 <!--Welcome offers-->
-
+<div class="main">
 <section id="welcome-offers" class="section">
 
   <div class="">
     <x-sign id="welcome-offers" class="">
-      <h1>Welcome Offers</h1>
+      <h1 class="testHead">Welcome Offers</h1>
     </x-sign>
   </div>
 
@@ -256,6 +256,16 @@ box-shadow: inset 0px 0px 0px 2px green; /* $lineWidth replaced with 2px */
 </div>
 
 <style>
+   .testHead {
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #f8e542, #FFDD00, #FFCF01);
+    -webkit-background-clip: text;
+    color: transparent;
+    /*border-bottom: yellow solid 1px !important;
+    text-transform: uppercase;*/
+  }
+
   .glow-circle {
     position: absolute;
     content: '';

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boss of Beat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: white;
+    }
+
+    /* Header wrapper */
+    header {
+      background-color: #000;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .desktop-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .desktop-nav li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .desktop-nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile nav */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+    }
+
+    .mobile-menu {
+      display: none;
+      background-color: black;
+      padding: 20px;
+    }
+
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      display: block;
+      margin: 10px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav {
+        display: block;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .mobile-menu.active {
+        display: block;
+      }
+    }
+
+    .menu-icon {
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .menu-items {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+    }
+
+    .menu-items a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      margin: 15px 0;
+    }
+
+    .menu-items a:hover {
+      background-color: #222;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #090909, #000000);
+      text-align: center;
+
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
+
+    .carouselMOB {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-imagesMOB {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-imagesMOB img {
+      width: 100%;
+      flex-shrink: 0;
+      border-radius: 12px;
+    }
+
+    .carouselDESK {
+      position: relative;
+      max-width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-imagesDESK {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-imagesDESK img {
+      width: 100%;
+      flex-shrink: 0;
+      border-radius: 12px;
+    }
+
+    /* Show desktop banners only on screens wider than 768px */
+    .carouselDESK {
+      display: block;
+    }
+
+    .carouselMOB {
+      display: none;
+    }
+
+    /* Show mobile banners only on smaller screens */
+    @media screen and (max-width: 768px) {
+      .carouselDESK {
+        display: none;
+      }
+
+      .carouselMOB {
+        display: block;
+      }
+    }
+
+    .content {
+      padding: 20px;
+      margin-left: 10%;
+
+    }
+
+    .content h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      margin-bottom: 15px;
+      line-height: 1.5;
+
+    }
+
+
+    .highlight {
+      font-weight: bold;
+      color: #ffa500;
+    }
+
+    @media (min-width: 768px) {
+      .menu-items {
+        display: none;
+        flex-direction: row;
+        position: static;
+        background: none;
+        padding: 0;
+      }
+
+      .menu-items a {
+        border: none;
+      }
+
+      .navbar {
+        justify-content: space-between;
+      }
+    }
+
+    .firstCont {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .firstCont p {
+      width: 50%;
+      margin: 0;
+      font-size: 11px;
+    }
+
+    .imageside {
+      width: 60%;
+      max-width: 300px;
+      height: auto;
+      float: right;
+      margin-left: 20px;
+
+    }
+
+    .imagesidep {
+      width: 60%;
+      max-width: 300px;
+      height: auto;
+      float: right;
+      margin-left: 20px;
+      margin-bottom: 10%;
+    }
+
+    .lifooter li {
+      list-style: disc;
+      text-align: left;
+      padding-left: 20px;
+      display: inline-block;
+      margin: 20px 0;
+    }
+
+    .requirements {
+
+      margin-top: 30px;
+    }
+
+    .enter-button {
+      display: block;
+      margin: 30px auto 10px;
+      padding: 15px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+      background-color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .enter-button:hover {
+      background-color: #ddd;
+    }
+
+    .logo a {
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: sans-serif;
+      margin: 400px 0 0 10px;
+      padding-left: 0px;
+    }
+
+    .desktop-nav ul {
+      list-style: none;
+      display: flex;
+      padding: 1;
+      margin: 0px 0 4px 240px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .desktop-nav li a {
+      color: white;
+      padding: 15px 25px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .desktop-nav li a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .logo img {
+        align-items: right;
+        margin-right: 200px;
+        padding-left: 0%;
+        margin-top: 110%;
+      }
+
+      .content {
+        padding: 0px;
+        margin-left: 10%;
+
+      }
+
+      .content h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .content p {
+        margin-bottom: 15px;
+        line-height: 1.5;
+
+      }
+    }
+
+    .logo {
+      align-items: left;
+
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+
+    <nav class="desktop-nav">
+
+      <ul>
+        <div><a href="/1.Landing_Page/indexboss.html"><img
+              src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/bb%20logo%20white.png?raw=true"
+              alt="betta bets" height="50" style="padding-right: 100%;" /></a></div>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">DO I QUALIFY?</a></li>
+        <li><a href="#">ENTER NOW</a></li>
+
+      </ul>
+
+    </nav>
+    <div class="mobile-nav">
+      <div class="menu-icon" onclick="toggleMenu()">☰ <a href="/1.Landing_Page/indexboss.html"><img
+            src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/bb%20logo%20white.png?raw=true"
+            alt="betta bets" height="30" style="padding-left: 75px;" /></a></div>
+
+    </div>
+    <div class="menu-items" id="menu">
+      <div style="position: absolute; top: 20px; right: 30px; font-size: 30px; cursor: pointer;" onclick="toggleMenu()">
+        ✖
+      </div>
+      <a href="/1.Landing_Page/indexboss.html">Home</a>
+      <a href="/1.Landing_Page/boss.html">Do I Qualify</a>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSehI25VyAv7lTq1qVC0pdyYctvuTmuf9xbmbcf3X2WbowtWBA/viewform?usp=header">Enter
+        Now</a>
+
+    </div>
+  </header>
+
+
+
+  <!-- Hero -->
+ 
+  <!-- Hero -->
+  <div class="hero">
+
+    <div class="carouselDESK">
+      <div class="carousel-imagesDESK" id="carouselImages">
+        <img
+          src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Azikhale%20March-BannerDesktop.png?raw=true"
+          alt="Boss of Beat 1" />
+        <img
+          src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BZ%20April%201-BannerDesktop.png?raw=tru"
+          alt="Boss of Beat 2" />
+        <img
+          src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Spina%20to%20Wina%20March-BannerDesktop.png?raw=true"
+          alt="Boss of Beat 3" />
+      </div>
+    </div>
+
+    <div class="carouselMOB">
+      <div class="carousel-imagesMOB" id="carouselImages">
+        <img
+          src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BossOfBeat%20Artwork-Mobile.png?raw=true"
+          alt="Boss of Beat 1" />
+        <img
+          src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Spinoleague-BannerMobile.png?raw=true"
+          alt="Boss of Beat 2" />
+        <img
+          src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/First500April-BannerMobile.png?raw=true"
+          alt="Boss of Beat 3" />
+      </div>
+    </div>
+  </div>
+  <script>
+    let mobIndex = 0;
+    const mobImages = document.querySelectorAll(".carousel-imagesMOB img");
+
+    function showMobSlide(index) {
+      mobImages.forEach((img, i) => {
+        img.style.display = i === index ? "block" : "none";
+      });
+    }
+
+    function nextMobSlide() {
+      mobIndex = (mobIndex + 1) % mobImages.length;
+      showMobSlide(mobIndex);
+    }
+
+    let mobInterval = setInterval(nextMobSlide, 5000); // 5 seconds
+
+    // Optional: Pause on hover
+    const mobCarousel = document.querySelector(".carouselMOB");
+    if (mobCarousel) {
+      mobCarousel.addEventListener("mouseover", () => clearInterval(mobInterval));
+      mobCarousel.addEventListener("mouseout", () => {
+        mobInterval = setInterval(nextMobSlide, 5000);
+      });
+    }
+
+    // Initialize
+    showMobSlide(mobIndex);
+  </script>
+
+  <!-- Content -->
+  <div class="content">
+    <h3>Do I qualify?</h3>
+    <div class="firstCont">
+      <p style="font-size: medium;">Your <span>MUSIC</span> is BOSS<br>
+        Your <span>PASSION</span> is BOSS<br>
+        Now it’s time to<strong>LEVEL</strong> up<br>
+        <strong>Get NOTICED</strong><br>
+        <strong>Live your DREAM!</strong>
+      </p>
+
+    </div>
+
+    <p>Bettabets supports new artists who are ready to breakout and become a hit. Are you the next BOSS of BEAT? We are
+      looking for BOSSES from the following 4 genres of music
+
+      Hip-hop, Maskhandi , Amapiono/Gqom and Lekompo.</p>
+
+    <p><strong>First stage:</strong><br>
+      Entries will be accepted from all qualifying artists. Closing date 15 May.  Our judging panel of music industry
+      and entertainment specialists will then select 2 winners per genre.  Each winner will receive R5000 cash prize.
+      One prize per winning entry. <br>
+      <strong>Hip-hop, Maskhandi, Amapiano/Gqom and Lekompo.</strong>
+    </p>
+
+    <p><strong>Second Stage:</strong><br>
+      End May to end July<br>We will take all 8 first round winners and promote them heavily across all our Bettabets
+      platforms, exposing artists to 100’s of thousands of potential new fans. We will be asking for South Africa to
+      vote for their favourite finalist. The one with the most votes will win first place and R20k second place R10k and
+      third place R5k in cash. A total of R75 000 in total prize money to winning artists. 
+    </p>
+    <section style=" background-color: #000; color: white;">
+      <h2 style="font-size: 14px; margin-bottom: 15px;">You Qualify if you meet the following criteria:</h2>
+      <ul style="line-height: 1.8;">
+        <li>You do not have a recording contract in place but may have an expired contract.</li>
+        <li>You may have an agent who represents you in the industry, but not required.</li>
+        <li>
+          You must not have more than <strong>60 000 followers</strong> on one of the following:
+          TikTok, X, Instagram or Facebook. You can have up to 60 000 followers on each though.
+        </li>
+        <li>You must have more than <strong>5 000 followers</strong> on at least one of the following: TikTok, X,
+          Instagram or Facebook.</li>
+        <li>You are over 18.</li>
+        <li>You are a South African citizen with a valid South African Identity Document.</li>
+        <li>You are a soloist or part of a duo or group.</li>
+        <li>You have a Spotify profile.</li>
+        <li>Your music is available in an audio format.</li>
+        <li>
+          Your created music is from one of the following genres:
+          <div class="menu-ites">
+
+
+            <p font-size: 1px; id="contentb" class="firstCont">Amapiano/Gqom<br>Hip-hop<br>Maskandi<br>Lekompo </p>
+         
+          </div>
+        </li>
+      </ul>
+
+    </section>
+    <div class="requirements">
+      <p>Do you meet these requirements?<br>
+        Are ready to be taken seriously as an artist?<br>
+        Do you want the potential to explode on the music scene?</p>
+
+      <button class="enter-button">Enter Now</button>
+    </div>
+  </div>
+  <footer
+    style="background-color: #000; color: white; padding: 30px 20px; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6;       border-top: white 1px solid; ">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <p class="cc">
+        © Bettabets Boss of Beat 2025 by Boss of Beat. All rights reserved. Powered and secured by Bettabets.<br>
+        <a href="#" style="color: white; text-decoration: underline;">Privacy Policy & Terms of Service</a>
+      </p>
+      <ul style="list-style: none; text-align: left; padding-left: 20px; display: inline-block; margin: 20px 0;">
+        <li><a href="#" style="color: white; text-decoration: underline;">Home</a></li>
+        <li><a href="#" style="color: white; text-decoration: underline;">Enter Now</a></li>
+        <li><a href="#" style="color: white; text-decoration: underline;">Do I Qualify</a></li>
+      </ul>
+      <p>bossofbeat@bettabets.co.za | Tel: 0861238822</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+
+    let menuOpen = false;
+    const menu = document.getElementById('menu');
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      menu.style.display = menuOpen ? 'flex' : 'none';
+    }
+
+
+    function toggleMenu() {
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    const carousel = document.getElementById('carouselImages');
+    let index = 0;
+
+    function showImage(i) {
+      const width = carousel.clientWidth;
+      carousel.style.transform = `translateX(-${i * width}px)`;
+    }
+
+    function autoSlide() {
+      index = (index + 1) % carousel.children.length;
+      showImage(index);
+    }
+
+    window.addEventListener('resize', () => showImage(index));
+    setInterval(autoSlide, 2000); // change every 2 seconds
+  </script>
+
+</body>
+
+</html>

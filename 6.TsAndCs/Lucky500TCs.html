@@ -11,8 +11,10 @@
       </div>
     </div>
     <div class="desktop-image">
-      <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/First500April-Thumb01.png?raw=true" alt="">
-    </div>
+      <img
+        src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/P2PApril-Thumb01.png?raw=true"
+        alt="">
+    </div><br>
     <!--SUB-Text-->
     <!--<h3 style="text-align: center; margin-top: 14px">
       BET R2+ ON ANY SLOT EVERY WEDNESDAY AND RECEIVE FREE SPINS ON THURSDAY! 
@@ -24,7 +26,7 @@
         </a>
       </div>
       <div class="buttonClass">
-        <a href="https://bettabets.co.za/lottery" class="bettaButton BettaButtonYellow">
+        <a href="https://bettabets.co.za/casino/slots/spinoleague" class="bettaButton BettaButtonYellow">
           Play Now
         </a>
       </div>
@@ -38,39 +40,20 @@
       .button-container {
         display: flex;
         justify-content: center;
-
-      }
-
-      .buttonClass2 :hover {
-        background-color: rgb(248, 4, 4);
-        color: #ffc800;
-
-      }
-
-      .buttonClass :hover {
-        background-color: rgba(0, 0, 0, 0.12);
-        color: #ffc800;
-        border: 2px solid #ffc800;
       }
 
       .buttonClass {
         flex: 1;
-        margin: 1px;
+        margin: 10px;
         text-align: center;
-        height: 40px;
-      }
-
-      #cms-page img {
-        max-width: 100%;
-        border-radius: 14px;
       }
 
       .buttonClass a {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 1px;
-        height: 40px;
+        padding: 10px;
+        height: 60px;
         background: #ffe600;
         color: #000;
         text-decoration: none;
@@ -97,6 +80,12 @@
         text-transform: uppercase;
       }
 
+      .buttonClass2 :hover {
+        background-color: rgba(0, 0, 0, 0.12);
+        color: #ffc800;
+        border: 2px solid #ffc800;
+      }
+
       .buttonClass :hover {
         background-color: rgba(0, 0, 0, 0.12);
         color: #ffc800;
@@ -106,96 +95,94 @@
       @media (max-width: 768px) {
         .buttonClass {
           flex: 1;
-          margin: 10px;
+          margin: 5px;
         }
-        .countdown {
-        text-align: center;
-        font-size: 24px;
-        margin: 5px -35px;
-        padding: 5px;
-        height: 38px;
-        width: 348px;
-        border-radius: 14px;
-        color: #000;
-      }
       }
 
       .countdown {
         text-align: center;
         font-size: 24px;
         margin: 5px -35px;
-        padding: 5px;
         height: 38px;
         width: 358px;
+        background-color: #00CD46;
         border-radius: 14px;
         color: #000;
+        padding: 7px;
+        text-transform: uppercase;
+        font-weight: bold;
+
       }
     </style>
 
     <!--HEADER-->
-    <h3>What do I Win?</h3>
-    <ul>
-      <li>	A share of 50,000 Bettabucks will be up for grabs during the entire Promotion Period.</li>
-      <li> There will be 500 winners in total for the entire Promotion Period, who will each receive R100 Bettabucks.
-      </li>
-      <li> 1 Bettabuck = R1 Bonus Money. </li>
 
+    <h3>What do I Win?</h3>
+
+    <ul>
+      <li>A share of 5,000 in Bettabucks to be shared amongst 50 players.</li>
+      <li> Ten (10) players to each win JBL headphones.</li>
+      <li>Winners drawn and notified at the end of the promotion: 22 April 2025.</li>
     </ul>
 
     <h3>What is the Promo Duration?</h3>
+
     <ul>
+
       <li>
-        	Betta Number First 500 promo is applicable between the date range 03 – 30 April 2025 (00:00 – 23:59 SAST) only. (Considered “Promotion Period”)
+        The Pennies into Paychecks promotion runs between 15 – 21 April, only. (Considered “Promotion Period”)
       </li>
-      <li>
-        	Winners are announced: 02 May 2025.
-      </li>
-      <div class="countdown" id="countdown" style="background-color: white;"></div>
 
-      <!-- Countdown Timer -->
+    </ul>
+    <div class="countdown" id="countdown" style="background-color: white;"></div>
 
-      <script>
-        // Set the date for your promotion end
-        var promotionEnd = new Date('2025-04-30T23:59:59').getTime();
-        const countdownElement = document.getElementById('countdown');
+    <!-- Countdown Timer -->
 
-        function updateCountdown() {
-          const now = new Date().getTime();
-          const distance = promotionEnd - now;
+    <script>
+      // Set the date for your promotion end
+      // Set the date for your promotion end
+      const promotionEnd = new Date('2025-04-21T23:59:59').getTime();
+      const countdownElement = document.getElementById('countdown');
 
-          if (distance < 0) {
-            if (countdownElement) {
-              countdownElement.innerHTML = 'Promotion has ended!';
-            }
-            return; // Stop calling updateCountdown
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = promotionEnd - now;
+
+        if (distance < 0) {
+          if (countdownElement) {
+            countdownElement.innerHTML = 'Promotion has ended!';
           }
-
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-          countdownElement.innerHTML = `${days}days ${hours}hours ${minutes}m ${seconds}s`;
-
-          // Request the next frame
-          requestAnimationFrame(updateCountdown);
+          return; // Stop calling updateCountdown
         }
 
-        // Start the countdown
-        updateCountdown();
-      </script>
-    </ul>
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `${days}days ${hours}hours ${minutes}m ${seconds}s`;
+
+        // Request the next frame
+        requestAnimationFrame(updateCountdown);
+      }
+
+      // Start the countdown
+      updateCountdown();
+
+    </script>
+
+
+
 
     <h3>How do I Enter?</h3>
     <ul>
-      <li> 	Deposit and Play R40 or more on any of the Betta Numbers draws (Lucky Numbers), which allows one (1) entry into the competition. 
+      <li>Deposit R50 or more and play any game for an entry into the competition.
       </li>
-      <li>There is no restriction to the number of entries per person. </li>
-      <li> You will be automatically opted into the competition when you take any bet of R40 or more on any Betta Numbers draws, only.
- 
-      </li>
-
+      <li> There is no restriction to the number of entries per person. </li>
+      <li> You will be automatically opted into the competition when you deposit R50 or more and play your favourite
+        game between 15 – 21 April 2025, only.¬</li>
     </ul>
+
 
 
     <br>
@@ -204,39 +191,46 @@
       <!--Ts and Cs-->
       <h3>What are the Promo Rules?</h3>
       <ul>
-        <li>1 Bettabuck = R1 Bonus Money, which is set to expire within seven (7) days from the day of loading them in.
-          If not played within the expiration time, your Bettabucks bonus money will be forfeited.</li>
-        <li>Bettabucks bonus money received can be spent back on Prematch single bets (Sports) and Betta Numbers (Lucky
-          Numbers) single bets only.</li>
-        <li> All winners will be notified via Bettabets system notification on the 02nd of May 2025. </li>
-        <li>Any wagers placed and settled outside the promotional period will not count towards this promotion.</li>
-        <li>Only cash wagers will count towards earning your Bettabucks bonus money (Bonus wagers and promo cash bets
-          will not count).</li>
-        <li>Any winnings from all Bettabucks bonus money awarded has a maximum withdrawal limit of R350 (Three hundred
-          and fifty rands only) for all-inclusive betslips using Bettabucks (bonus money), provided the below is
-          fulfilled:
-          <ul>
-            <li>Bonus money can only be used to place bets with selections at minimum odds per bet leg of: 1.01 and
-              minimum odds per a bet of: 1.7.</li>
-            <li>Unless otherwise stated, bonus money cannot be withdrawn until the customers have wagered two times (5x
-              roll over) the value of the bonus money awarded.</li>
-            <li>Minimum stakes limit per selection is R10 and maximum stakes limit per selection is R100.</li>
-            <li>Once the above criteria are met, the bonus money can be transferred to your main cash wallet.
-              <strong>Note:</strong> Bonus wallet funds are shown separately under your account profile.</li>
-            <li>Bonus wallets expire after seven (7) days from activation of the bonus wallet, and available funds must
-              be transferred out of the bonus wallet before expiration.</li>
-          </ul>
+        <li>Winners of the JBL headphones will be notified directly by the Bettabets team, via a verified phone call on
+          the 22nd of April 2025 after the end of the promotion.</li>
+        <li>All Bettabucks winners will be notified via Bettabets SMS.</li>
+        <li>Bonus money received can be spent back on Sports and Betta Numbers single bets only.</li>
+
+        <li>1 Bettabuck = R1 Bonus Money, which is set to expire within Seven (7) days from the day of loading them in.
+          If not played within expiration time, your Bettabucks bonus money will be forfeited.</li>
+
+        <li>Any winnings from all Bettabucks bonus money awarded has a maximum withdrawal limit of R250 (Two hundred and
+          fifty rands only) for all-inclusive betslips using Bettabucks (bonus money), provided the below is fulfilled.
         </li>
-        <li>Duplicate accounts don't qualify for the promotion, and Bettabucks bonus money will be awarded once per
-          account, person, IP, and household.</li>
+        <li> Bonus money can only be used to place bets with selections at minimum odds per bet leg of 1.01 and minimum
+          odds per a bet of: 1.7</li>
+        <li> Unless otherwise stated, bonus money cannot be withdrawn until the customers have wagered to five times (5x
+          roll over) the value of the bonus money awarded.</li>
+        <li> Delivery of prizes can take up to 21 business days. This will be delivered to the winners Branch of choice.
+        </li>
+        <li>JBL headphones cannot be exchanged for cash.</li>
+        <li> Lost or stolen vouchers code will not be replaced or refunded by Bettabets.</li>
+        <li>You may enter the competition an unlimited number of times, however, you may only win Once during the promo
+          period. </li>
+        <li>
+          Any wagers placed and settled outside the promotional period will not count towards this promotion.
+
+        </li>
+<li>Only cash wagers will count towards competition entry (Bonus wagers and promo cash bets will not count).</li>
+        <li>Duplicate accounts don't qualify for the promotion. Free Spins will be awarded once per account, person, IP,
+          and household.</li>
         <li>Fraudulent accounts and accounts open under false details don't qualify for any promotion. In such cases,
           all winnings and balances will be forfeited.</li>
         <li>In order to participate, the customer must be over the age of 18.</li>
         <li>Bettabets reserves the right to revoke this promotion at any time, without cause or notice.</li>
         <li>Bettabets reserves the right to change any of its terms and conditions at any time, without cause or notice.
         </li>
+        <li> Only one (1) prize per person, household, IP address and Bettabets account during the entire promo period.
+        </li>
         <li>Every entrant participating in the promotion shall be deemed to have acknowledged and accepted the rules by
           virtue of their participation.</li>
+        <li>The winners agree to take part in reasonable post-event publicity and to the use of their names in such
+          publicity if requested by Bettabets.</li>
         <li>Should any accounts be suspected of abuse (including any form of bonus abuse) or irregular activities noted
           at Bettabets discretion, Bettabets has the right to revoke any allocated funds and exclude any individual from
           the promotional campaign.</li>
@@ -252,7 +246,7 @@
     <br>
     <div class="buttonClass2">
       <div class="ButtonJoin">
-        <a href="https://bettabets.co.za/lottery">
+        <a href="https://bettabets.co.za/casino/slots/providers/agtslots">
           <div class="bettaButton BettaButtonYellow"><span>PLAY NOW</span></div>
         </a>
       </div>
@@ -261,6 +255,11 @@
     <p></p>
 
     <style>
+      #cms-page img {
+        max-width: 100%;
+        border-radius: 14px;
+      }
+
       #cms-page .page-header {
         display: none !important;
       }
@@ -274,7 +273,7 @@
       .buttonClass {
         justify-content: center;
         flex: 1;
-        margin: 0 3px;
+        margin: 0 10px;
       }
 
       h3 {
@@ -318,7 +317,7 @@
         }
 
         .buttonClass {
-          gap: 1px;
+          gap: 10px;
         }
 
         .buttonClass .ButtonJoin .BettaButtonYellow {
@@ -326,13 +325,12 @@
           padding: 10.5px 35.3px !important;
         }
 
-        .buttonClass :hover {
-          background-color: rgba(0, 0, 0, 0.12);
-          color: #ffc800;
-          border: 2px solid #ffc800;
+        #cms-page img {
+          max-width: 100%;
+          border-radius: 14px;
         }
 
-        .bettaButton {
+        .bettaButton a {
           padding: 10.5px 15.3px;
           display: flex;
           justify-content: center;
@@ -340,8 +338,25 @@
           font-size: 15px;
           text-align: center;
           font-weight: bold;
+          text-transform: uppercase;
         }
       }
     </style>
   </div>
 </div>
+<script>
+  document.getElementById('deposit-button').addEventListener('click', function (event) {
+    // Assume we have a function isLoggedIn that checks the user's login status
+    if (!isLoggedIn()) {
+      event.preventDefault();
+      alert('Please log in first Or Join. Cancel if logged in');
+    }
+  });
+
+  function isLoggedIn() {
+    // This is a placeholder function. Replace with actual login check.
+    // For example, check a cookie or local storage value.
+    return false; // Set to true if the user is logged in
+  }
+
+</script>

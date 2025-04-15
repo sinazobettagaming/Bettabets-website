@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boss of Beat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: white;
+    }
+
+    /* Header wrapper */
+    header {
+      background-color: #000;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .desktop-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .desktop-nav li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .desktop-nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile nav */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+    }
+
+    .mobile-menu {
+      display: none;
+      background-color: black;
+      padding: 20px;
+    }
+
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      display: block;
+      margin: 10px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav {
+        display: block;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .mobile-menu.active {
+        display: block;
+      }
+    }
+
+    .menu-icon {
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .menu-items {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+    }
+
+    .menu-items a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      margin: 15px 0;
+    }
+
+    .menu-items a:hover {
+      background-color: #222;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #090909, #000000);
+      text-align: center;
+
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
+
+    .carouselMOB {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-imagesMOB {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-imagesMOB img {
+      width: 100%;
+      flex-shrink: 0;
+      border-radius: 12px;
+    }
+
+    .carouselDESK {
+      position: relative;
+      max-width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-imagesDESK {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-imagesDESK img {
+      width: 100%;
+      flex-shrink: 0;
+      border-radius: 12px;
+    }
+
+    /* Show desktop banners only on screens wider than 768px */
+    .carouselDESK {
+      display: block;
+    }
+
+    .carouselMOB {
+      display: none;
+    }
+
+    /* Show mobile banners only on smaller screens */
+    @media screen and (max-width: 768px) {
+      .carouselDESK {
+        display: none;
+      }
+
+      .carouselMOB {
+        display: block;
+      }
+    }
+
+    .content {
+      padding: 20px;
+      margin-left: 10%;
+
+    }
+
+    .content h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      margin-bottom: 15px;
+      line-height: 1.5;
+
+    }
+
+
+    .highlight {
+      font-weight: bold;
+      color: #ffa500;
+    }
+
+    @media (min-width: 768px) {
+      .menu-items {
+        display: none;
+        flex-direction: row;
+        position: static;
+        background: none;
+        padding: 0;
+      }
+
+      .menu-items a {
+        border: none;
+      }
+
+      .navbar {
+        justify-content: space-between;
+      }
+    }
+
+    .firstCont {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .firstCont p {
+      width: 50%;
+      margin: 0;
+      font-size: 11px;
+    }
+
+    .imageside {
+      width: 60%;
+      max-width: 300px;
+      height: auto;
+      float: right;
+      margin-left: 20px;
+
+    }
+
+    .imagesidep {
+      width: 60%;
+      max-width: 300px;
+      height: auto;
+      float: right;
+      margin-left: 20px;
+      margin-bottom: 10%;
+    }
+
+    .lifooter li {
+      list-style: disc;
+      text-align: left;
+      padding-left: 20px;
+      display: inline-block;
+      margin: 20px 0;
+    }
+
+    .requirements {
+
+      margin-top: 30px;
+    }
+
+    .enter-button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 15px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+      background-color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .enter-button:hover {
+      background-color: #ddd;
+    }
+
+    .logo a {
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: sans-serif;
+      margin: 400px 0 0 10px;
+      padding-left: 0px;
+    }
+
+    .desktop-nav ul {
+      list-style: none;
+      display: flex;
+      padding: 1;
+      margin: 0px 0 4px 240px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .desktop-nav li a {
+      color: white;
+      padding: 15px 25px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .desktop-nav li a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .logo img {
+        align-items: right;
+        margin-right: 200px;
+        padding-left: 0%;
+        margin-top: 110%;
+      }
+
+      .content {
+        padding: 0px;
+        margin-left: 10%;
+
+      }
+
+      .content h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .content p {
+        margin-bottom: 15px;
+        line-height: 1.5;
+
+      }
+    }
+
+    .logo {
+      align-items: left;
+
+
+    }
+
+    .btn-a {
+      font-size: 12px;
+      font-weight: 1000;
+      color: #0a0a0a;
+      cursor: pointer;
+      border-radius: 100px;
+      /* padding: 0.5rem 2.5rem; */
+      /* background-image: radial-gradient(ellipse at 50% 150%, rgb(255, 215, 0), #ffd700); */
+      border: none;
+
+      transition: all .25s ease-in-out;
+      width: 100px;
+      height: 30px;
+      /* text-transform: uppercase; */
+    }
+
+
+    .mainPromoCard {
+      max-width: 100%;
+      /* margin: 0 auto; */
+      overflow-x: 0;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .mainPromoCards {
+      display: flex;
+      list-style: none;
+      padding: 30px;
+      justify-content: center;
+    }
+
+
+    .mainPromoCardH {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-right: 32px;
+      /* Center the buttons horizontally */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+
+    <nav class="desktop-nav">
+
+      <ul>
+        <div><a href="/1.Landing_Page/indexboss.html"><img
+              src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/bb%20logo%20white.png?raw=true"
+              alt="betta bets" height="50" style="padding-right: 100%;" /></a></div>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">DO I QUALIFY?</a></li>
+        <li><a href="#">ENTER NOW</a></li>
+
+      </ul>
+
+    </nav>
+    <div class="mobile-nav">
+      <div class="menu-icon" onclick="toggleMenu()">☰ <a href="/1.Landing_Page/indexboss.html"><img
+            src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/bb%20logo%20white.png?raw=true"
+            alt="betta bets" height="30" style="padding-left: 75px;" /></a></div>
+
+    </div>
+    <div class="menu-items" id="menu">
+      <div style="position: absolute; top: 20px; right: 30px; font-size: 30px; cursor: pointer;" onclick="toggleMenu()">
+        ✖
+      </div>
+      <a href="/1.Landing_Page/indexboss.html">Home</a>
+      <a href="/1.Landing_Page/boss.html">Do I Qualify</a>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSehI25VyAv7lTq1qVC0pdyYctvuTmuf9xbmbcf3X2WbowtWBA/viewform?usp=header">Enter
+        Now</a>
+
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+
+    <div class="carouselDESK">
+      <div class="carousel-imagesDESK" id="carouselImages">
+        <img
+          src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Azikhale%20March-BannerDesktop.png?raw=true"
+          alt="Boss of Beat 1" />
+        <img
+          src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BZ%20April%201-BannerDesktop.png?raw=tru"
+          alt="Boss of Beat 2" />
+        <img
+          src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/Spina%20to%20Wina%20March-BannerDesktop.png?raw=true"
+          alt="Boss of Beat 3" />
+      </div>
+    </div>
+
+    <div class="carouselMOB">
+      <div class="carousel-imagesMOB" id="carouselImages">
+        <img
+          src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BossOfBeat%20Artwork-Mobile.png?raw=true"
+          alt="Boss of Beat 1" />
+        <img
+          src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Spinoleague-BannerMobile.png?raw=true"
+          alt="Boss of Beat 2" />
+        <img
+          src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/First500April-BannerMobile.png?raw=true"
+          alt="Boss of Beat 3" />
+      </div>
+    </div>
+  </div>
+  <script>
+    let mobIndex = 0;
+    const mobImages = document.querySelectorAll(".carousel-imagesMOB img");
+
+    function showMobSlide(index) {
+      mobImages.forEach((img, i) => {
+        img.style.display = i === index ? "block" : "none";
+      });
+    }
+
+    function nextMobSlide() {
+      mobIndex = (mobIndex + 1) % mobImages.length;
+      showMobSlide(mobIndex);
+    }
+
+    let mobInterval = setInterval(nextMobSlide, 5000); // 5 seconds
+
+    // Optional: Pause on hover
+    const mobCarousel = document.querySelector(".carouselMOB");
+    if (mobCarousel) {
+      mobCarousel.addEventListener("mouseover", () => clearInterval(mobInterval));
+      mobCarousel.addEventListener("mouseout", () => {
+        mobInterval = setInterval(nextMobSlide, 5000);
+      });
+    }
+
+    // Initialize
+    showMobSlide(mobIndex);
+  </script>
+
+  <!-- Content -->
+  <div class="content">
+    <h3>uREADY FOR THE BIG TIME?</h3>
+    <div class="firstCont">
+      <h4 class="highlight">Isikhathi sifikile<br>
+
+      </h4>
+
+    </div>
+
+    <p>ZWAKALA MANJE. <br>
+      Rocka uMzansi and live your dream. <br>
+      Bettabets is looking to launnch up and coming artists.<br>
+      If untswempu ngeNumber <br>
+      Then you are our star.
+    </p>
+
+    <div class="mainPromoCardH">
+
+
+      <div>
+        <a href="/1.Landing_Page/boss.html">
+          <button style="background-color: #fff" type="button" class="btn-a">Do I Qualify?</button>
+        </a>
+      </div>
+      &nbsp; &nbsp; &nbsp;
+      <br>
+      <div>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSehI25VyAv7lTq1qVC0pdyYctvuTmuf9xbmbcf3X2WbowtWBA/viewform?usp=header">
+          <button style="background-color: #fff" type="button" class="btn-a">Enter Now</button>
+        </a>
+      </div>
+    </div>
+
+    <h4>Hip-hop | Maskandi | Amapiano/Gqom | Lenkompo</h4>
+
+  </div>
+  <footer
+    style="background-color: #000; color: white; padding: 30px 20px; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6;       border-top: white 1px solid; ">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <p class="cc">
+        © Bettabets Boss of Beat 2025 by Boss of Beat. All rights reserved. Powered and secured by Bettabets.<br>
+        <a href="#" style="color: white; text-decoration: underline;">Privacy Policy & Terms of Service</a>
+      </p>
+      <ul style="list-style: none; text-align: left; padding-left: 20px; display: inline-block; margin: 20px 0;">
+        <li><a href="#" style="color: white; text-decoration: underline;">Home</a></li>
+        <li><a href="#" style="color: white; text-decoration: underline;">Enter Now</a></li>
+        <li><a href="#" style="color: white; text-decoration: underline;">Do I Qualify</a></li>
+      </ul>
+      <p>bossofbeat@bettabets.co.za | Tel: 0861238822</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+
+    let menuOpen = false;
+    const menu = document.getElementById('menu');
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      menu.style.display = menuOpen ? 'flex' : 'none';
+    }
+
+
+    function toggleMenu() {
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    const carousel = document.getElementById('carouselImages');
+    let index = 0;
+
+    function showImage(i) {
+      const width = carousel.clientWidth;
+      carousel.style.transform = `translateX(-${i * width}px)`;
+    }
+
+    function autoSlide() {
+      index = (index + 1) % carousel.children.length;
+      showImage(index);
+    }
+
+    window.addEventListener('resize', () => showImage(index));
+    setInterval(autoSlide, 2000); // change every 2 seconds
+  </script>
+
+</body>
+
+</html>
