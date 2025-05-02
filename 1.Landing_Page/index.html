@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: white;
+    }
+
+    #cms-page h1[data-v-66f3b1d6] {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: none;
+      background: var(--main-primary);
+      color: var(--main-primary-text);
+      padding: 0 15px;
+    }
+
+    #ticker1 {
+      color: #ffc800;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      margin-top: 0.5em;
+      text-transform: uppercase;
+
+
+    }
+
+    .arrow-container {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .arrow {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 24px;
+      pointer-events: auto;
+      user-select: none;
+      z-index: 10;
+    }
+
+    .desktop-arrows {
+      display: block;
+    }
+
+    .mobile-arrows {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .desktop-arrows {
+        display: none;
+      }
+
+      .mobile-arrows {
+        display: block;
+      }
+    }
+
+    .promoimage {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .promoimage-slide img {
+      width: 100%;
+      display: none;
+    }
+
+    .promoimage-slide img:first-child {
+      display: block;
+    }
+
+    .promoimage {
+      margin-top: 0em;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    @media only screen and (min-device-width: 1020px) {
+      .promoimage.desktop {
+        width: 88%;
+      }
+
+      .promoimage.mobile {
+        display: none;
+      }
+
+    }
+
+    @media only screen and (max-width: 768px) {
+      .promoimage.desktop {
+        display: none;
+      }
+
+      .promoimage.mobile {
+        display: block;
+      }
+
+      .arrows {
+        bottom: 10px;
+      }
+
+      .arrow {
+        color: #ffffff;
+        padding: 0px 0.1em;
+        font-size: 7em;
+        cursor: pointer;
+      }
+
+      .promoimage img {
+        border-radius: 20px;
+        padding: 5px 5px;
+        border-bottom-right-radius: 20px !important;
+        border-bottom-left-radius: 20px !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .btn-a {
+        font-size: 14px;
+        padding: 1rem 1rem;
+        width: 169px !important;
+        height: 59px;
+      }
+    }
+
+    /*iPad Landscape*/
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      .promoimage.desktop {
+        width: 88%;
+      }
+
+      .promoimage.mobile {
+        display: none;
+      }
+    }
+
+    /*iPad Portrait*/
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .promoimage.desktop {
+        width: 88%;
+      }
+
+      .promoimage.mobile {
+        display: none;
+      }
+    }
+
+    .promoimage img {
+      width: 100%;
+      height: auto;
+      display: none;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    .promoimage img:first-child {
+      display: block;
+    }
+
+
+    .promoimage.mobile img:first-child,
+    .promoimage.mobile img:nth-child(2) {
+      display: block;
+    }
+
+    @media only screen and (min-device-width: 1020px) {
+      .promoimage.mobile {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .promoimage.desktop {
+        display: none;
+      }
+    }
+    .btn-a {
+    font-size: 1.5em;
+    font-weight: 1000;
+    color: #0a0a0a;
+    cursor: pointer;
+    border-radius: 1rem;
+    padding: 0.5rem 2.5rem;
+    background-image: radial-gradient(ellipse at 50% 150%, rgb(255, 215, 0), #ffd700);
+    border: none;
+    box-shadow: inset 0 0 0 1px rgba(28, 27, 27, .1), inset 0 0 1rem 0 rgba(6, 6, 6, .25), 0 0 0 1.5rem rgba(186, 162, 23, .025);
+    transition: all .25s ease-in-out;
+    width: 300px;
+    /* Set a fixed width */
+    height: 100px;
+    /* Set a fixed height */
+    text-transform: uppercase;
+  }
+  
+  .mainPromoCard {
+    max-width: 100%;
+    /* margin: 0 auto;*/ 
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .mainPromoCards {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+  }
+
+  button .btn-a :hover {
+    background-color: rgba(0, 0, 0, 0.12);
+    /* Change to the desired hover color */
+    color: #ffb803;
+    /* Optional: Change text color */
+  }
+
+  .mainPromoCardH {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* Center the buttons horizontally */
+  }
+
+  .line[data-v-7161da60] {
+    z-index: 9997;
+    -ms-flex-align: center;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--header-main-background);
+  }
+
+  .mainPromoCard div {
+    max-width: 100%;
+    /* margin: 0 auto; */
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center;
+  }
+  #cms-page h1[data-v-2e1812f7] {
+    display: none;
+    background: var(--main-primary);
+    color: var(--main-primary-text);
+    padding: 0 15px;
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 600px) {
+    .btn-a {
+      text-align: center;
+      font-size: 10px;
+      /* Smaller font size for mobile */
+      padding: 1rem 1rem;
+      /* Smaller padding for mobile */
+      width: 129px;
+      /* Make buttons full width on mobile */
+      height: 100px;
+      /* Adjust height accordingly */
+    }
+
+    .mainPromoCardH {
+
+      align-items: center;
+    }
+
+    .mainPromoCard:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  #cms-page h1[data-v-2e1812f7] {
+    display: none;
+    background: var(--main-primary);
+    color: var(--main-primary-text);
+    padding: 0 15px;
+  }
+
+  .mainPromoCards_item {
+    flex: 0 0 auto;
+    padding: 0.7rem;
+    min-width: 270px;
+  }
+  #cms-page h1[data-v-549bd703] {
+    display: none;
+    color: var(--main-primary-text);
+    background: var(--main-primary);
+    padding: 0px 15px;
+}
+
+  </style>
+</head>
+<script>
+  let desktopSlideIndex = 0;
+  let mobileSlideIndex = 0;
+
+  function showDesktopSlide(n) {
+    const slides = document.querySelectorAll('.desktop-slide a img');
+    if (!slides.length) return;
+    desktopSlideIndex = (n + slides.length) % slides.length;
+    slides.forEach((img, i) => {
+      img.style.display = i === desktopSlideIndex ? 'block' : 'none';
+    });
+  }
+
+  function changeDesktopSlide(n) {
+    showDesktopSlide(desktopSlideIndex + n);
+  }
+
+  function showMobileSlide(n) {
+    const slides = document.querySelectorAll('.mobile-slide a img');
+    if (!slides.length) return;
+    mobileSlideIndex = (n + slides.length) % slides.length;
+    slides.forEach((img, i) => {
+      img.style.display = i === mobileSlideIndex ? 'block' : 'none';
+    });
+  }
+
+  function changeMobileSlide(n) {
+    showMobileSlide(mobileSlideIndex + n);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    showDesktopSlide(0);
+    showMobileSlide(0);
+  });
+
+</script>
+
+<body>
+
+  <div class="ticker1H">
+    <marquee id="ticker1" width="100%" direction="left" height="20px" scrollamount="4" loop="infinite" html=""
+      style="margin-top: 0.5em;">
+      <a style="color: #ffc800" href="https://bettabets.co.za/page/Promotions">
+        Register &amp; Deposit within 7 days to claim your Welcome Bonus
+      </a>
+
+      &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;
+      <!-- <a style="color: #ffc800" href="https://bettabets.co.za/page/Promotions">
+    
+    </a>
+  
+    &nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;-->
+
+
+      <!--&nbsp;&nbsp; – &nbsp;&nbsp;-->
+
+      &nbsp;&nbsp; &nbsp;&nbsp; | &nbsp;&nbsp; &nbsp;&nbsp;
+      Congrats to our Top Weekly Winners |
+
+
+      <a style="color: #03a9f4" href="#"><strong>&nbsp;
+          AGT Slots
+          (Player: ES):
+        </strong></a>
+      <span style="text-transform: uppercase">&nbsp; </span>
+      <strong> R37,841.00, &nbsp; </strong>
+
+      <a style="color: #03a9f4" href="#"><strong>&nbsp;Pragmatic(Player:MQM):
+        </strong></a>
+      <span style="text-transform: uppercase">&nbsp; </span>
+      <strong> R29,002.00, &nbsp; </strong>
+
+      <a style="color: #03a9f4" href="#"><strong>&nbsp;
+          AGT Slots
+          (Player: DMK ):
+        </strong></a>
+      <span style="text-transform: uppercase">&nbsp; </span>
+      <strong> R25,575.00, &nbsp; </strong>
+
+      <a style="color: #03a9f4" href="#"><strong>&nbsp;Betta Numbers
+          (Player: JMS):
+        </strong></a>
+      <span style="text-transform: uppercase">&nbsp; </span>
+      <strong> R24,449.00
+        , &nbsp; </strong>
+
+      <a style="color: #03a9f4" href="#"><strong>&nbsp;AGT Slots
+          (Player: MM):
+        </strong></a>
+      <span style="text-transform: uppercase">&nbsp; </span>
+      <strong> R23,394.00, &nbsp; </strong>
+
+      <a style="color: #03a9f4" href="#"><strong>&nbsp;
+          AGT Slots (Player:CCS):
+        </strong></a>
+      <span style="text-transform: uppercase">&nbsp; </span>
+      <strong> R18,052.10, &nbsp; </strong>
+
+      <a style="color: #03a9f4" href="#"><strong>&nbsp;
+          AGT Slots(User: RMM):
+        </strong></a>
+      <span style="text-transform: uppercase">&nbsp; </span>
+      <strong> R17,055.28 &nbsp; </strong>
+
+      <a style="color: #03a9f4" href="#"><strong>&nbsp;
+          AGT Slots (Player: ES):
+        </strong></a>
+      <span style="text-transform: uppercase">&nbsp; </span>
+      <strong> R13,062.00, &nbsp; </strong>
+
+      <a style="color: #03a9f4" href="#"><strong>&nbsp;Betta Numbers
+          (Player: PM):
+        </strong></a>
+      <span style="text-transform: uppercase">&nbsp; </span>
+      <strong> R12,728.50, &nbsp; </strong>
+
+      <a style="color: #03a9f4" href="#"><strong>&nbsp; Aviator
+          (Player:NPR):
+        </strong></a>
+      <span style="text-transform: uppercase">&nbsp; </span>
+      <strong> R12,025.98&nbsp; </strong>
+
+    </marquee>
+    <!--END - Ticker-->
+  </div>
+
+  <!--Banner Images-->
+  <div class="promoimage-slideH">
+    <div align="center">
+      <div class="promoimage desktop">
+        <div class="promoimage-slide desktop-slide">
+          <!-- Desktop Banner Images -->
+          <a href="https://bettabets.co.za/page/BettaZonke">
+            <img
+              src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BZ%20April%202-BannerDesktop.png?raw=true"
+              alt="Desktop Banner" style="display: none;" onmouseover="pauseDesktopBanner()"
+              onmouseout="resumeDesktopBanner();">
+          </a>
+          <a href="https://bettabets.co.za/page/LadyLuck">
+            <img
+              src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/LadyLuck-BannerDesktop.png?raw=true"
+              alt="Desktop Banner" style="display: block;" onmouseover="pauseDesktopBanner()"
+              onmouseout="resumeDesktopBanner();">
+          </a>
+          <a href="https://bossofbeat.bettabets.co.za">
+            <img
+              src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BossOfBeatLaunch-BannerDesktop.png?raw=true"
+              alt="Desktop Banner" style="display: none;" onmouseover="pauseDesktopBanner()"
+              onmouseout="resumeDesktopBanner();">
+          </a>
+          <a href="https://bettabets.co.za/page/BigPayBack">
+            <img
+              src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Big%20Payback%20April-BannerDesktop.png?raw=true"
+              alt="Desktop Banner" style="display:  none;" onmouseover="pauseDesktopBanner()"
+              onmouseout="resumeDesktopBanner();">
+          </a>
+
+
+
+
+          <!--
+          <a href="https://bettabets.co.za/page/SpinaWin">
+          <img
+            src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Spina%20to%20Wina%20April-BannerDesktop.png?raw=true"
+            alt="Desktop Banner" style="display:  none;" onmouseover="pauseDesktopBanner()"
+            onmouseout="resumeDesktopBanner();">
+        </a>
+    
+      
+
+       
+  
+  <a href="">
+          <img
+            src=""
+            alt="Desktop Banner" style="display:  block;" onmouseover="pauseDesktopBanner()"
+            onmouseout="resumeDesktopBanner();">
+        </a>
+   
+      -->
+          <div class="arrow-container desktop-arrows">
+            <span class="arrow left" onclick="changeDesktopSlide(-1)">❮</span>
+            <span class="arrow right" onclick="changeDesktopSlide(1)">❯</span>
+          </div>
+
+
+          <!-- END - Desktop Banner Images -->
+        </div>
+      </div>
+
+
+      <div class="promoimage mobile">
+        <div class="promoimage-slide mobile-slide">
+          <!-- Mobile Banner Images-->
+
+
+
+          <a href="https://bettabets.co.za/page/BettaZonke">
+            <img
+              src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BZ%20April%202-BannerMobile%20(1).png?raw=true"
+              alt="Mobile Banner" style="display: block ;">
+          </a>
+          <a href="https://bettabets.co.za/page/LadyLuck">
+            <img
+              src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/LadyLuck-BannerMobile.png?raw=true"
+              alt="Mobile Banner" style="display:  none;">
+          </a>
+          <a href="https://bossofbeat.bettabets.co.za">
+            <img
+              src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BossOfBeatLaunch-BannerMobile.png?raw=true"
+              alt="Mobile Banner" style="display:   none;">
+          </a>
+
+          <a href="https://bettabets.co.za/page/BigPayBack">
+            <img
+              src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Big%20Payback%20April-BannerMobile.png?raw=true"
+              alt="Mobile Banner" style="display: none;">
+          </a>
+
+
+          <!--
+         <a href="https://bettabets.co.za/page/SpinaWin">
+          <img
+            src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Spina%20to%20Wina%20April-BannerMobile.png?raw=true"
+            alt="Mobile Banner" style="display:  none;">
+        </a>
+    
+
+              <a href="https://bettabets.co.za/page/MatchDay">
+          <img
+            src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Azikhale%20April-BannerMobile.png?raw=true"
+            alt="Mobile Banner" style="display:  none;">
+        </a>
+    
+
+        <a href="">
+          <img
+            src=""
+            alt="Mobile Banner" style="display:  block;">
+        </a>
+   
+    -->
+
+          <div class="arrow-container mobile-arrows">
+            <span class="arrow left" onclick="changeMobileSlide(-1)">❮</span>
+            <span class="arrow right" onclick="changeMobileSlide(1)">❯</span>
+          </div>
+          <!-- End Mobile Banner Images -->
+        </div>
+      </div>
+    </div>
+    <!--END -  Banner Images-->
+  </div>
+  <div class="mainPromoCardH">
+
+
+    <div class="mainPromoCard">
+      <a href="https://bettabets.co.za/page/Promotions">
+        <button style="background-color: #ffc800" type="button" class="btn-a">Betta <br> promos</button>
+      </a>
+    </div>
+    <br>
+    <div class="mainPromoCard">
+      <a href="https://bettabets.co.za/page/BettaInfoVideos">
+        <button style="background-color: #ffc800" type="button" class="btn-a">Betta <br> How-To Videos</button>
+      </a>
+    </div>
+  </div>
+  
+
+
+</body>
+
+</html>

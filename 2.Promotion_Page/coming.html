@@ -113,44 +113,45 @@
   <!--COMING SOON-->
 
   <section id="comingSoon" class="section">
-    <div class="">
+
       <x-sign id="" class="">
         <h1 class="testHead">coming soon</h1>
       </x-sign>
-    </div>
-
-    <br>
-
 
     <ul class="cards">
    
 
+   
+    
       <li class="cards_item">
         <div class="card">
           <div class="card_image">
-            <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/BZ%20April%202-Thumb02.png?raw=true"
+            <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Aviator%20May-Thumb02.png?raw=true"
               loading="lazy" alt="Promo Image">
           </div>
         </div>
       </li>
   
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image">
+            <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/FreeSpinsMay-Thumb02.png?raw=true"
+              loading="lazy" alt="Promo Image">
+          </div>
+        </div>
+      </li>
+  
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image">
+            <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Spina%20to%20Wina%20May-Thumb02.png?raw=true"
+              loading="lazy" alt="Promo Image">
+          </div>
+        </div>
+      </li>
     
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image">
-            <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Azikhale%20April-Thumb02.png?raw=true"
-              loading="lazy" alt="Promo Image">
-          </div>
-        </div>
-      </li>
-      <li class="cards_item">
-        <div class="card">
-          <div class="card_image">
-            <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Aviator%20April-Thumb02.png?raw=true"
-              loading="lazy" alt="Promo Image">
-          </div>
-        </div>
-      </li>
+  
+  
 
   <!--  hidden img
       <li
@@ -169,8 +170,8 @@
             </a>
           </div>
         </div>
-      </li> 
--->
+      </li> -->
+
   </ul>
 
   <!-- NEXT LINE -->
@@ -178,38 +179,18 @@
 
     
   
+  
+
+    
 
 
     <!---->
 
 
 
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image">
-          <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Big%20Payback%20April-Thumb02.png?raw=true"
-            loading="lazy" alt="Promo Image">
-        </div>
-      </div>
-    </li>
+  
 
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image">
-          <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Spina%20to%20Wina%20April-Thumb02.png?raw=true"
-            loading="lazy" alt="Promo Image">
-        </div>
-      </div>
-    </li>
-
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image">
-          <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/P2PApril-Thumb02.png?raw=true"
-            loading="lazy" alt="Promo Image">
-        </div>
-      </div>
-    </li>
+ 
 
     <!-- hidden img
     <li
@@ -242,16 +223,6 @@
 
   
    
-
-    <li class="cards_item">
-      <div class="card">
-        <div class="card_image">
-          <img src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/WinAtHome-POL-Thumb02.png?raw=true"
-            loading="lazy" alt="Promo Image">
-        </div>
-      </div>
-    </li>
-    
 
     <!-- hidden img
 
@@ -344,16 +315,23 @@
 </div>
 
 <style>
-   .testHead {
+ .testHead {
     font-size: 1.3rem;
     font-weight: bold;
-    background: linear-gradient(45deg, #f8e542, #FFDD00, #FFCF01);
+    background: linear-gradient(45deg, #FBCA00, #f8d700, #FFCF01);
     -webkit-background-clip: text;
     color: transparent;
     /*border-bottom: yellow solid 1px !important;
     text-transform: uppercase;*/
   }
 
+    .iconHead {
+    height: 15px;
+    width: 16px;
+    display: block;
+    margin: 10px 0;
+    color: black;
+  }
   .glow-circle {
     position: absolute;
     content: '';
@@ -509,27 +487,27 @@
 
   x-sign {
     --interval: 1s;
-    display: block;
+    display: flex;
     text-shadow: 0 0 10px var(--color1), 0 0 20px var(--color2),
       0 0 40px var(--color3), 0 0 80px var(--color4);
     will-change: filter, color;
     filter: saturate(60%);
     animation: flicker steps(100) var(--interval) 1s infinite;
+    margin-left: 29px;
   }
 
   x-sign:nth-of-type(1) {
     color: gold;
-    --color1: gold;
+
     --color2: gold;
     --color3: gold;
     --color4: gold;
     font-family: "Poppins", sans-serif;
+
   }
 
   @keyframes flicker {
-    50% {
-      color: gold;
-    }
+    50% {}
   }
 
   @media screen and (max-width: 768px) {
@@ -626,7 +604,6 @@
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin: 4em;
     padding: 0;
     justify-content: space-between;
   }
@@ -656,7 +633,6 @@
     border: 2px solid #333;
     border-radius: 23px;
     justify-content: space-between;
-
     margin-top: 1em;
     display: none;
   }

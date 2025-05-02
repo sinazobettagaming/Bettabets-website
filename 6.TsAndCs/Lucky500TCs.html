@@ -12,7 +12,7 @@
     </div>
     <div class="desktop-image">
       <img
-        src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/P2PApril-Thumb01.png?raw=true"
+        src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Lekompo1-Thumb01.png?raw=true"
         alt="">
     </div><br>
     <!--SUB-Text-->
@@ -26,15 +26,11 @@
         </a>
       </div>
       <div class="buttonClass">
-        <a href="https://bettabets.co.za/casino/slots/spinoleague" class="bettaButton BettaButtonYellow">
+        <a href="https://bettabets.co.za/lottery" class="bettaButton BettaButtonYellow">
           Play Now
         </a>
       </div>
-      <div class="buttonClass">
-        <a href="https://bettabets.co.za/page/BettaInfoVideos" class="bettaButton BettaButtonYellow">
-          How-To <br> Deposit
-        </a>
-      </div>
+
     </div>
     <style>
       .button-container {
@@ -109,9 +105,6 @@
         border-radius: 14px;
         color: #000;
         padding: 7px;
-        text-transform: uppercase;
-        font-weight: bold;
-
       }
     </style>
 
@@ -120,39 +113,64 @@
     <h3>What do I Win?</h3>
 
     <ul>
-      <li>A share of 5,000 in Bettabucks to be shared amongst 50 players.</li>
-      <li> Ten (10) players to each win JBL headphones.</li>
-      <li>Winners drawn and notified at the end of the promotion: 22 April 2025.</li>
+      <li>Prize Breakdown: 4 Parts During May:
+        <ul>
+          <li> 01 – 11 May: 5 players will each win a R1,000 Tech Voucher.</li>
+          <li> 12 – 18 May: 10 players will each win a R1,000 Tech Voucher. </li>
+          <li> 19 – 25 May: 5 players will each win a R1,000 Tech Voucher. </li>
+          <li> 26 May – 01 June: 10 players will each win a R1,000 Tech Voucher.</li>
+          <li> All winners will be chosen and credited throughout the promo period on the following dates: 12, 19, 26
+            May, and 02 June 2025. </li>
+
+        </ul>
+      </li>
+      <li>Prize Breakdown: 4 Parts During June:
+        <ul>
+          <li> 02 – 08 June: 5 players will each win a R1,000 Tech Voucher. </li>
+          <li> 09 – 15 June: 10 players will each win a R1,000 Tech Voucher. </li>
+          <li> 16 – 22 June: 5 players will each win a R1,000 Tech Voucher.</li>
+          <li> 23 – 30 June: 10 players will each win a R1,000 Tech Voucher.</li>
+          <li> All winners will be chosen and credited throughout the promo period on the following dates: 09, 16, 23
+            June, and 01 July 2025. </li>
+          <li> 23 – 30 June: 10 players will each win a R1,000 Tech Voucher.</li>
+        </ul>
+      </li>
+      <li>Prize Breakdown: 5 Parts During July:
+        <ul>
+          <li>01 – 06 July: 5 players will each win a R1,000 Tech Voucher. </li>
+          <li>07 – 13 July: 10 players will each win a R1,000 Tech Voucher.</li>
+          <li>14 – 20 July: 5 players will each win a R1,000 Tech Voucher. </li>
+          <li>21 – 27 July: 5 players will each win a R1,000 Tech Voucher. </li>
+          <li>28 – 31 July: 5 players will each win a R1,000 Tech Voucher.</li>
+          <li>All winners will be chosen and credited throughout the promo period on the following dates: 07, 14, 21, 28
+            July, and 01 August 2025. </li>
+        </ul>
+      </li>
     </ul>
 
     <h3>What is the Promo Duration?</h3>
 
     <ul>
-
       <li>
-        The Pennies into Paychecks promotion runs between 15 – 21 April, only. (Considered “Promotion Period”)
-      </li>
+        The Lekompo promotion is applicable between these dates: 01 May – 31 July 2025, 23:59 SAST, only. (Considered
+        “Promotion Period”)
 
     </ul>
-    <div class="countdown" id="countdown" style="background-color: white;"></div>
+    <div class="countdown" id="countdown" style="background-color: rgb(246, 244, 244);"></div>
 
     <!-- Countdown Timer -->
 
     <script>
       // Set the date for your promotion end
-      // Set the date for your promotion end
-      const promotionEnd = new Date('2025-04-21T23:59:59').getTime();
-      const countdownElement = document.getElementById('countdown');
-
+      const promotionEnd = new Date('2025-07-31T23:59:59').getTime();
+      const countdownElement = document.getElementById('countdown')
       function updateCountdown() {
         const now = new Date().getTime();
         const distance = promotionEnd - now;
 
         if (distance < 0) {
-          if (countdownElement) {
-            countdownElement.innerHTML = 'Promotion has ended!';
-          }
-          return; // Stop calling updateCountdown
+          countdownElement.innerHTML = 'Promotion has ended!';
+          return; // Stop the recursion
         }
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -176,11 +194,15 @@
 
     <h3>How do I Enter?</h3>
     <ul>
-      <li>Deposit R50 or more and play any game for an entry into the competition.
+      <li>Deposit and Bet R50 or more on your favourite game, which allows 1x entry into the competition.
       </li>
-      <li> There is no restriction to the number of entries per person. </li>
-      <li> You will be automatically opted into the competition when you deposit R50 or more and play your favourite
-        game between 15 – 21 April 2025, only.¬</li>
+      <li> There is no restriction to the number of entries per person.
+      </li>
+      <li> You will be automatically opted into the competition when you take any bet of R50 or more on your favourite
+        game, only.
+      </li>
+
+
     </ul>
 
 
@@ -191,49 +213,34 @@
       <!--Ts and Cs-->
       <h3>What are the Promo Rules?</h3>
       <ul>
-        <li>Winners of the JBL headphones will be notified directly by the Bettabets team, via a verified phone call on
-          the 22nd of April 2025 after the end of the promotion.</li>
-        <li>All Bettabucks winners will be notified via Bettabets SMS.</li>
-        <li>Bonus money received can be spent back on Sports and Betta Numbers single bets only.</li>
-
-        <li>1 Bettabuck = R1 Bonus Money, which is set to expire within Seven (7) days from the day of loading them in.
-          If not played within expiration time, your Bettabucks bonus money will be forfeited.</li>
-
-        <li>Any winnings from all Bettabucks bonus money awarded has a maximum withdrawal limit of R250 (Two hundred and
-          fifty rands only) for all-inclusive betslips using Bettabucks (bonus money), provided the below is fulfilled.
-        </li>
-        <li> Bonus money can only be used to place bets with selections at minimum odds per bet leg of 1.01 and minimum
-          odds per a bet of: 1.7</li>
-        <li> Unless otherwise stated, bonus money cannot be withdrawn until the customers have wagered to five times (5x
-          roll over) the value of the bonus money awarded.</li>
-        <li> Delivery of prizes can take up to 21 business days. This will be delivered to the winners Branch of choice.
-        </li>
-        <li>JBL headphones cannot be exchanged for cash.</li>
-        <li> Lost or stolen vouchers code will not be replaced or refunded by Bettabets.</li>
-        <li>You may enter the competition an unlimited number of times, however, you may only win Once during the promo
+        <li>90 (ninety) players will each receive a share of R90,000 in Tech Vouchers, which cannot be exchanged for
+          cash.</li>
+        <li> All winners will be notified directly by the Bettabets team, via a verified phone call.</li>
+        <li>Tech Voucher winners will each receive an SMS containing their voucher codes and info.</li>
+        <li>Lost or stolen vouchers will not be replaced or refunded by Bettabets.. </li>
+        <li> You may enter the competition an unlimited number of times, however, you may only win Once during the promo
           period. </li>
-        <li>
-          Any wagers placed and settled outside the promotional period will not count towards this promotion.
-
+        <li>Bettabets reserves the right to change or amend prizes for this promotion at any time of the promo period.
         </li>
-<li>Only cash wagers will count towards competition entry (Bonus wagers and promo cash bets will not count).</li>
-        <li>Duplicate accounts don't qualify for the promotion. Free Spins will be awarded once per account, person, IP,
-          and household.</li>
-        <li>Fraudulent accounts and accounts open under false details don't qualify for any promotion. In such cases,
+        <li>Any wagers placed and settled outside the promotional period will not count towards this promotion.</li>
+        <li>Only cash wagers will count towards competition entry (Bonus wagers and promo cash bets will not count).
+        </li>
+        <li>A valid Bettabets account is required to qualify for this promotion.</li>
+        <li>This promotion applies to online customers only who are over 18.</li>
+        <li>Duplicate accounts don't qualify for the promotion. Cashback is awarded once per account, person, IP, and
+          household.</li>
+        <li>Fraudulent accounts and accounts open under false details don't qualify for any promotion. In such a case,
           all winnings and balances will be forfeited.</li>
-        <li>In order to participate, the customer must be over the age of 18.</li>
-        <li>Bettabets reserves the right to revoke this promotion at any time, without cause or notice.</li>
-        <li>Bettabets reserves the right to change any of its terms and conditions at any time, without cause or notice.
-        </li>
-        <li> Only one (1) prize per person, household, IP address and Bettabets account during the entire promo period.
+        <li>Bettabets reserves the right to revoke or amend this promotion at any time without cause or notice.</li>
+        <li>Bettabets reserves the right to change any of its terms and conditions at any time without cause or notice.
         </li>
         <li>Every entrant participating in the promotion shall be deemed to have acknowledged and accepted the rules by
           virtue of their participation.</li>
-        <li>The winners agree to take part in reasonable post-event publicity and to the use of their names in such
-          publicity if requested by Bettabets.</li>
+        <li>Irregular play at Bettabets will be cause for instant dismissal from any Promotion.</li>
         <li>Should any accounts be suspected of abuse (including any form of bonus abuse) or irregular activities noted
-          at Bettabets discretion, Bettabets has the right to revoke any allocated funds and exclude any individual from
-          the promotional campaign.</li>
+          at Bettabets' discretion, Bettabets has the right to revoke any allocated funds and exclude any individual
+          from the promotional campaign.</li>
+
 
         <li><a href="https://bettabets.co.za/terms-and-conditions">Bettabets Standard Terms and Conditions</a> apply.
         </li>
@@ -246,7 +253,7 @@
     <br>
     <div class="buttonClass2">
       <div class="ButtonJoin">
-        <a href="https://bettabets.co.za/casino/slots/providers/agtslots">
+        <a href="https://bettabets.co.za/spribe/8202">
           <div class="bettaButton BettaButtonYellow"><span>PLAY NOW</span></div>
         </a>
       </div>

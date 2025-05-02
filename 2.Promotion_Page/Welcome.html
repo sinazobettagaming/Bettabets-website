@@ -108,11 +108,11 @@
 
   <div class="">
     <x-sign id="welcome-offers" class="">
-      <h1 class="testHead">Welcome Offers</h1>
+      <h1>Welcome Offers</h1>
     </x-sign>
   </div>
 
-  <br>
+
 
   <ul class="cards" id="target-element">
     <li class="cards_item">
@@ -256,16 +256,23 @@ box-shadow: inset 0px 0px 0px 2px green; /* $lineWidth replaced with 2px */
 </div>
 
 <style>
-   .testHead {
+ .testHead {
     font-size: 1.3rem;
     font-weight: bold;
-    background: linear-gradient(45deg, #f8e542, #FFDD00, #FFCF01);
+    background: linear-gradient(45deg, #FBCA00, #f8d700, #FFCF01);
     -webkit-background-clip: text;
     color: transparent;
     /*border-bottom: yellow solid 1px !important;
     text-transform: uppercase;*/
   }
 
+    .iconHead {
+    height: 15px;
+    width: 16px;
+    display: block;
+    margin: 10px 0;
+    color: black;
+  }
   .glow-circle {
     position: absolute;
     content: '';
@@ -421,27 +428,27 @@ box-shadow: inset 0px 0px 0px 2px green; /* $lineWidth replaced with 2px */
 
   x-sign {
     --interval: 1s;
-    display: block;
+    display: flex;
     text-shadow: 0 0 10px var(--color1), 0 0 20px var(--color2),
       0 0 40px var(--color3), 0 0 80px var(--color4);
     will-change: filter, color;
     filter: saturate(60%);
     animation: flicker steps(100) var(--interval) 1s infinite;
+    margin-left: 29px;
   }
 
   x-sign:nth-of-type(1) {
     color: gold;
-    --color1: gold;
+
     --color2: gold;
     --color3: gold;
     --color4: gold;
     font-family: "Poppins", sans-serif;
+
   }
 
   @keyframes flicker {
-    50% {
-      color: gold;
-    }
+    50% {}
   }
 
   @media screen and (max-width: 768px) {
@@ -487,7 +494,7 @@ box-shadow: inset 0px 0px 0px 2px green; /* $lineWidth replaced with 2px */
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    color: #ffffff;
+
     font-family: Poppins, sans-serif;
     text-transform: uppercase;
   }
@@ -538,8 +545,7 @@ box-shadow: inset 0px 0px 0px 2px green; /* $lineWidth replaced with 2px */
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin: 4em;
-    padding: 0;
+ 
     justify-content: space-between;
   }
 
@@ -568,7 +574,6 @@ box-shadow: inset 0px 0px 0px 2px green; /* $lineWidth replaced with 2px */
     border: 2px solid #333;
     border-radius: 23px;
     justify-content: space-between;
-
     margin-top: 1em;
     display: none;
   }
