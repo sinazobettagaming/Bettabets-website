@@ -11,9 +11,7 @@
       </div>
     </div>
     <div class="desktop-image">
-      <img
-        src="https://github.com/sinazobettagaming/Bettabets-website/blob/Sinazo's-branch/Lekompo1-Thumb01.png?raw=true"
-        alt="">
+      <img src="https://res.cloudinary.com/dejbuxtpn/image/upload/v1746512825/FreeSpinsMay-Thumb01_jge6e4.png" alt="">
     </div><br>
     <!--SUB-Text-->
     <!--<h3 style="text-align: center; margin-top: 14px">
@@ -26,11 +24,15 @@
         </a>
       </div>
       <div class="buttonClass">
-        <a href="https://bettabets.co.za/lottery" class="bettaButton BettaButtonYellow">
+        <a href="https://bettabets.co.za/casino/slots/providers/pragmatic" class="bettaButton BettaButtonYellow">
           Play Now
         </a>
       </div>
-
+      <div class="buttonClass">
+        <a href="https://bettabets.co.za/page/BettaInfoVideos" class="bettaButton BettaButtonYellow">
+          How-To <br> Deposit
+        </a>
+      </div>
     </div>
     <style>
       .button-container {
@@ -98,13 +100,16 @@
       .countdown {
         text-align: center;
         font-size: 24px;
-        margin: 5px -35px;
+         margin: 5px -35px;
         height: 38px;
         width: 358px;
         background-color: #00CD46;
         border-radius: 14px;
         color: #000;
         padding: 7px;
+        text-transform: uppercase;
+        font-weight: bold;
+
       }
     </style>
 
@@ -113,64 +118,40 @@
     <h3>What do I Win?</h3>
 
     <ul>
-      <li>Prize Breakdown: 4 Parts During May:
-        <ul>
-          <li> 01 – 11 May: 5 players will each win a R1,000 Tech Voucher.</li>
-          <li> 12 – 18 May: 10 players will each win a R1,000 Tech Voucher. </li>
-          <li> 19 – 25 May: 5 players will each win a R1,000 Tech Voucher. </li>
-          <li> 26 May – 01 June: 10 players will each win a R1,000 Tech Voucher.</li>
-          <li> All winners will be chosen and credited throughout the promo period on the following dates: 12, 19, 26
-            May, and 02 June 2025. </li>
-
-        </ul>
-      </li>
-      <li>Prize Breakdown: 4 Parts During June:
-        <ul>
-          <li> 02 – 08 June: 5 players will each win a R1,000 Tech Voucher. </li>
-          <li> 09 – 15 June: 10 players will each win a R1,000 Tech Voucher. </li>
-          <li> 16 – 22 June: 5 players will each win a R1,000 Tech Voucher.</li>
-          <li> 23 – 30 June: 10 players will each win a R1,000 Tech Voucher.</li>
-          <li> All winners will be chosen and credited throughout the promo period on the following dates: 09, 16, 23
-            June, and 01 July 2025. </li>
-          <li> 23 – 30 June: 10 players will each win a R1,000 Tech Voucher.</li>
-        </ul>
-      </li>
-      <li>Prize Breakdown: 5 Parts During July:
-        <ul>
-          <li>01 – 06 July: 5 players will each win a R1,000 Tech Voucher. </li>
-          <li>07 – 13 July: 10 players will each win a R1,000 Tech Voucher.</li>
-          <li>14 – 20 July: 5 players will each win a R1,000 Tech Voucher. </li>
-          <li>21 – 27 July: 5 players will each win a R1,000 Tech Voucher. </li>
-          <li>28 – 31 July: 5 players will each win a R1,000 Tech Voucher.</li>
-          <li>All winners will be chosen and credited throughout the promo period on the following dates: 07, 14, 21, 28
-            July, and 01 August 2025. </li>
-        </ul>
+      <li>A share of 46,500 Free Spins will be up for grabs during the entire Promotion Period.</li>
+      <li>
+       100 players will reach receive 15 Free Spins daily, on any of the Pragmatic Slot games: Monkey Warrior, Vegas Nights, Voodoo Magic, and Master Joker.
       </li>
     </ul>
 
     <h3>What is the Promo Duration?</h3>
 
     <ul>
+
       <li>
-        The Lekompo promotion is applicable between these dates: 01 May – 31 July 2025, 23:59 SAST, only. (Considered
-        “Promotion Period”)
+        	Free Spins Hot Drop promo is applicable between date range 06 May – 05 June 2025, 23:59 SAST, only. (Considered “Promotion Period”)
+      </li>
 
     </ul>
-    <div class="countdown" id="countdown" style="background-color: rgb(246, 244, 244);"></div>
+    <div class="countdown" id="countdown" style="background-color: white;"></div>
 
     <!-- Countdown Timer -->
 
     <script>
       // Set the date for your promotion end
-      const promotionEnd = new Date('2025-07-31T23:59:59').getTime();
-      const countdownElement = document.getElementById('countdown')
+      // Set the date for your promotion end
+      const promotionEnd = new Date('2025-06-05T23:59:59').getTime();
+      const countdownElement = document.getElementById('countdown');
+
       function updateCountdown() {
         const now = new Date().getTime();
         const distance = promotionEnd - now;
 
         if (distance < 0) {
-          countdownElement.innerHTML = 'Promotion has ended!';
-          return; // Stop the recursion
+          if (countdownElement) {
+            countdownElement.innerHTML = 'Promotion has ended!';
+          }
+          return; // Stop calling updateCountdown
         }
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -194,14 +175,9 @@
 
     <h3>How do I Enter?</h3>
     <ul>
-      <li>Deposit and Bet R50 or more on your favourite game, which allows 1x entry into the competition.
+      <li> Simply place your R3+ bet on any Pragmatic Slot, within the Promotion Period for entry.
       </li>
-      <li> There is no restriction to the number of entries per person.
-      </li>
-      <li> You will be automatically opted into the competition when you take any bet of R50 or more on your favourite
-        game, only.
-      </li>
-
+      <li>You will be automatically opted in when you take any bet to the value of R3 or more on any of the Pragmatic slot games.</li>
 
     </ul>
 
@@ -213,34 +189,36 @@
       <!--Ts and Cs-->
       <h3>What are the Promo Rules?</h3>
       <ul>
-        <li>90 (ninety) players will each receive a share of R90,000 in Tech Vouchers, which cannot be exchanged for
-          cash.</li>
-        <li> All winners will be notified directly by the Bettabets team, via a verified phone call.</li>
-        <li>Tech Voucher winners will each receive an SMS containing their voucher codes and info.</li>
-        <li>Lost or stolen vouchers will not be replaced or refunded by Bettabets.. </li>
-        <li> You may enter the competition an unlimited number of times, however, you may only win Once during the promo
-          period. </li>
-        <li>Bettabets reserves the right to change or amend prizes for this promotion at any time of the promo period.
-        </li>
         <li>Any wagers placed and settled outside the promotional period will not count towards this promotion.</li>
-        <li>Only cash wagers will count towards competition entry (Bonus wagers and promo cash bets will not count).
-        </li>
-        <li>A valid Bettabets account is required to qualify for this promotion.</li>
-        <li>This promotion applies to online customers only who are over 18.</li>
-        <li>Duplicate accounts don't qualify for the promotion. Cashback is awarded once per account, person, IP, and
-          household.</li>
-        <li>Fraudulent accounts and accounts open under false details don't qualify for any promotion. In such a case,
+        <li>Only cash wagers will count towards this promotion (Bonus wagers and promo cash bets will not count).</li>
+        <li>The total Free Spins prize pool will be as follows:</li>
+        <ul>
+          <li>100 Players will randomly be selected daily, within the Promo period (who meet the minimum Bet spend on any Pragmatic Slot game) to receive their 15 Free Spins on any of the above mentioned Pragmatic slots.</li>
+        </ul>
+        <li>Your Free Spins will expire within 48 hours from the day of loading them in. If not played within the
+          expiration time, they will be forfeited.</li>
+        <li>Free Spins will be added to the winners’ accounts within 24 hours from the finalization and acceptance of
+          the bet being placed.</li>
+        <li>Winnings from free spins bonus rounds, once fully completed, will be transferred to players' real money
+          wallets.</li>
+        <li>This promotion applies to online customers only, who are over the age of 18.</li>
+        <li>Winners will be notified via Bettabets notification message system – keep an eye out within 24 hours after
+          placing your qualifying bets.</li>
+        <li>Duplicate accounts don't qualify for the promotion. Free Spins will be awarded once per account, person, IP,
+          and household.</li>
+        <li>Fraudulent accounts and accounts open under false details don't qualify for any promotion. In such cases,
           all winnings and balances will be forfeited.</li>
-        <li>Bettabets reserves the right to revoke or amend this promotion at any time without cause or notice.</li>
-        <li>Bettabets reserves the right to change any of its terms and conditions at any time without cause or notice.
+        <li>In order to participate, the customer must be over the age of 18.</li>
+        <li>Bettabets reserves the right to revoke this promotion at any time, without cause or notice.</li>
+        <li>Bettabets reserves the right to change any of its terms and conditions at any time, without cause or notice.
         </li>
         <li>Every entrant participating in the promotion shall be deemed to have acknowledged and accepted the rules by
           virtue of their participation.</li>
-        <li>Irregular play at Bettabets will be cause for instant dismissal from any Promotion.</li>
+        <li>The winners agree to take part in reasonable post-event publicity and to the use of their names in such
+          publicity if requested by Bettabets.</li>
         <li>Should any accounts be suspected of abuse (including any form of bonus abuse) or irregular activities noted
-          at Bettabets' discretion, Bettabets has the right to revoke any allocated funds and exclude any individual
-          from the promotional campaign.</li>
-
+          at Bettabets discretion, Bettabets has the right to revoke any allocated funds and exclude any individual from
+          the promotional campaign.</li>
 
         <li><a href="https://bettabets.co.za/terms-and-conditions">Bettabets Standard Terms and Conditions</a> apply.
         </li>
@@ -253,7 +231,7 @@
     <br>
     <div class="buttonClass2">
       <div class="ButtonJoin">
-        <a href="https://bettabets.co.za/spribe/8202">
+        <a href="https://bettabets.co.za/casino/slots/providers/agtslots">
           <div class="bettaButton BettaButtonYellow"><span>PLAY NOW</span></div>
         </a>
       </div>
