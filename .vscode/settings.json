@@ -20,5 +20,6 @@
     "SPRIBE",
     "subp",
     "ZONKE"
-  ]
+  ],
+  "liveServer.settings.port": 5501
 }
