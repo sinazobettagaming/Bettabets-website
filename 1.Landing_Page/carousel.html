@@ -51,6 +51,7 @@
             transform: translateX(-50%);
             display: flex;
             gap: 10px;
+            z-index: 10;
         }
 
         .betta-dot {
@@ -65,47 +66,14 @@
         .betta-dot.active {
             background-color: white;
         }
-
-        .betta-carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.5);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            color: white;
-            transition: background-color 0.3s ease;
-        }
-
-        .betta-carousel-button:hover {
-            background-color: rgba(255, 255, 255, 0.8);
-        }
-
-        .betta-prev-button {
-            left: 20px;
-        }
-
-        .betta-next-button {
-            right: 20px;
-        }
     </style>
 </head>
 
 <body>
     <div class="betta-carousel-container">
         <div class="betta-carousel-slides">
-            <div class="betta-carousel-slide betta-slide-1">Slide 1</div>
-            <div class="betta-carousel-slide betta-slide-2">Slide 2</div>
-            <div class="betta-carousel-slide betta-slide-3">Slide 3</div>
-            <div class="betta-carousel-slide betta-slide-4">Slide 4</div>
+            <!-- Slides will be dynamically inserted here -->
         </div>
-
-        <button class="betta-carousel-button betta-prev-button">❮</button>
-        <button class="betta-carousel-button betta-next-button">❯</button>
 
         <div class="betta-carousel-dots"></div>
     </div>
@@ -122,15 +90,33 @@
             }
 
             const bettaSlides = document.querySelector('.betta-carousel-slides');
-            const bettaSlideItems = document.querySelectorAll('.betta-carousel-slide');
             const bettaDotsContainer = document.querySelector('.betta-carousel-dots');
-            const bettaPrevButton = document.querySelector('.betta-prev-button');
-            const bettaNextButton = document.querySelector('.betta-next-button');
             const bettaCarouselContainer = document.querySelector('.betta-carousel-container');
 
+            // Define slides
+            const bettaSlideData = [
+                { class: 'betta-slide-1', content: 'Slide 1' },
+                { class: 'betta-slide-2', content: 'Slide 2' },
+                { class: 'betta-slide-3', content: 'Slide 3' },
+                { class: 'betta-slide-4', content: 'Slide 4' }
+            ];
+
+            // Create slides with duplicates for infinite effect
+            function bettaCreateSlides() {
+                // Add clones at the end
+                [...bettaSlideData, ...bettaSlideData, ...bettaSlideData].forEach((slide, index) => {
+                    const slideElement = document.createElement('div');
+                    slideElement.className = `betta-carousel-slide ${slide.class}`;
+                    slideElement.textContent = slide.content;
+                    bettaSlides.appendChild(slideElement);
+                });
+            }
+
+            bettaCreateSlides();
+
             // State management
-            let bettaCurrentSlide = 0;
-            const bettaTotalSlides = bettaSlideItems.length;
+            let bettaCurrentSlide = bettaSlideData.length; // Start at first real slide
+            const bettaTotalSlides = bettaSlideData.length;
             let bettaAutoSlideInterval = null;
             let bettaIsAutoSliding = false;
             let bettaIsMouseOver = false;
@@ -142,25 +128,22 @@
             let bettaCurrentTranslate = 0;
             let bettaPrevTranslate = 0;
             let bettaAnimationID = 0;
-            let bettaCurrentIndex = 0;
-            let bettaDragThreshold = 50; // Minimum pixels to move before considering it a drag
-            let bettaIsClick = true; // Track if the interaction is a click
-            let bettaLastClickTime = 0; // Track last click time to prevent double-clicks
-
-            bettaDebugLog('Carousel initialized', {
-                totalSlides: bettaSlideItems.length,
-                containerWidth: bettaCarouselContainer.offsetWidth
-            });
+            let bettaDragThreshold = 50;
+            let bettaIsClick = true;
+            let bettaLastClickTime = 0;
+            let bettaClickTimeout = null;
+            let bettaMouseDownTime = 0;
+            let bettaHasMoved = false;
 
             // Create dots
-            bettaSlideItems.forEach((_, index) => {
+            bettaSlideData.forEach((_, index) => {
                 const bettaDot = document.createElement('div');
                 bettaDot.classList.add('betta-dot');
                 if (index === 0) bettaDot.classList.add('active');
                 bettaDot.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Prevent click from bubbling to slides
+                    e.stopPropagation();
                     bettaDebugLog('Dot clicked', { index });
-                    bettaGoToSlide(index);
+                    bettaGoToSlide(index + bettaTotalSlides);
                 });
                 bettaDotsContainer.appendChild(bettaDot);
             });
@@ -168,10 +151,29 @@
             const bettaDots = document.querySelectorAll('.betta-dot');
 
             function bettaUpdateDots() {
+                const realIndex = bettaCurrentSlide % bettaTotalSlides;
                 bettaDots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === bettaCurrentSlide);
+                    dot.classList.toggle('active', index === realIndex);
                 });
-                bettaDebugLog('Dots updated', { currentSlide: bettaCurrentSlide });
+                bettaDebugLog('Dots updated', { currentSlide: realIndex });
+            }
+
+            function bettaHandleInfiniteScroll() {
+                if (bettaCurrentSlide < bettaTotalSlides) {
+                    bettaCurrentSlide += bettaTotalSlides;
+                    bettaSlides.style.transition = 'none';
+                    bettaGoToSlide(bettaCurrentSlide);
+                    setTimeout(() => {
+                        bettaSlides.style.transition = 'transform 0.5s ease-in-out';
+                    }, 50);
+                } else if (bettaCurrentSlide >= bettaTotalSlides * 2) {
+                    bettaCurrentSlide -= bettaTotalSlides;
+                    bettaSlides.style.transition = 'none';
+                    bettaGoToSlide(bettaCurrentSlide);
+                    setTimeout(() => {
+                        bettaSlides.style.transition = 'transform 0.5s ease-in-out';
+                    }, 50);
+                }
             }
 
             function bettaGoToSlide(index) {
@@ -190,10 +192,10 @@
                     method: bettaIsDragging ? 'drag' : 'click'
                 });
 
-                // Reset transition flag after animation completes
                 setTimeout(() => {
                     bettaIsTransitioning = false;
-                }, 500); // Match this with CSS transition duration
+                    bettaHandleInfiniteScroll();
+                }, 500);
             }
 
             function bettaNextSlide() {
@@ -201,9 +203,9 @@
                     bettaDebugLog('Transition in progress, ignoring next slide');
                     return;
                 }
-                bettaCurrentSlide = (bettaCurrentSlide + 1) % bettaTotalSlides;
+                bettaCurrentSlide++;
                 bettaGoToSlide(bettaCurrentSlide);
-                bettaDebugLog('Next slide triggered', { newSlide: bettaCurrentSlide });
+                bettaDebugLog('Next slide triggered', { newSlide: bettaCurrentSlide % bettaTotalSlides });
             }
 
             function bettaPrevSlide() {
@@ -211,9 +213,9 @@
                     bettaDebugLog('Transition in progress, ignoring prev slide');
                     return;
                 }
-                bettaCurrentSlide = (bettaCurrentSlide - 1 + bettaTotalSlides) % bettaTotalSlides;
+                bettaCurrentSlide--;
                 bettaGoToSlide(bettaCurrentSlide);
-                bettaDebugLog('Previous slide triggered', { newSlide: bettaCurrentSlide });
+                bettaDebugLog('Previous slide triggered', { newSlide: bettaCurrentSlide % bettaTotalSlides });
             }
 
             function bettaStartAutoSlide() {
@@ -246,32 +248,43 @@
 
             // Touch and Mouse Event Handlers
             function bettaTouchStart(event) {
-                event.preventDefault(); // Prevent default behavior
-                bettaIsClick = true; // Reset click state
+                event.preventDefault();
+                bettaIsClick = true;
                 bettaIsDragging = true;
+                bettaHasMoved = false;
                 bettaStartPos = bettaGetPositionX(event);
-                bettaPrevTranslate = -bettaCurrentSlide * 100; // Set initial translate
+                bettaPrevTranslate = -bettaCurrentSlide * 100;
                 bettaCurrentTranslate = bettaPrevTranslate;
-                bettaAnimationID = requestAnimationFrame(bettaAnimation);
+                bettaMouseDownTime = Date.now();
                 bettaSlides.style.cursor = 'grabbing';
                 bettaStopAutoSlide();
+
+                // Set a timeout to detect long press
+                bettaClickTimeout = setTimeout(() => {
+                    if (bettaIsDragging && !bettaHasMoved) {
+                        bettaIsClick = false;
+                        bettaDebugLog('Long press detected');
+                    }
+                }, 200);
+
                 bettaDebugLog('Drag started', {
                     startPosition: bettaStartPos,
                     eventType: event.type,
-                    currentSlide: bettaCurrentSlide
+                    currentSlide: bettaCurrentSlide % bettaTotalSlides
                 });
             }
 
             function bettaTouchMove(event) {
                 if (!bettaIsDragging) return;
 
-                event.preventDefault(); // Prevent default behavior
+                event.preventDefault();
                 const currentPosition = bettaGetPositionX(event);
                 const delta = currentPosition - bettaStartPos;
 
-                // If moved more than threshold, it's a drag, not a click
                 if (Math.abs(delta) > bettaDragThreshold) {
                     bettaIsClick = false;
+                    bettaHasMoved = true;
+                    clearTimeout(bettaClickTimeout);
                 }
 
                 bettaCurrentTranslate = bettaPrevTranslate + delta;
@@ -279,21 +292,24 @@
                     currentPosition,
                     translate: bettaCurrentTranslate,
                     delta,
-                    isClick: bettaIsClick
+                    isClick: bettaIsClick,
+                    hasMoved: bettaHasMoved
                 });
             }
 
             function bettaTouchEnd(event) {
                 if (!bettaIsDragging) return;
 
-                event.preventDefault(); // Prevent default behavior
+                event.preventDefault();
                 bettaIsDragging = false;
                 cancelAnimationFrame(bettaAnimationID);
                 bettaSlides.style.cursor = 'grab';
+                clearTimeout(bettaClickTimeout);
 
                 const movedBy = bettaCurrentTranslate - bettaPrevTranslate;
                 const now = Date.now();
                 const isDoubleClick = now - bettaLastClickTime < 300;
+                const isLongPress = now - bettaMouseDownTime > 200;
                 bettaLastClickTime = now;
 
                 bettaDebugLog('Drag ended', {
@@ -301,18 +317,19 @@
                     threshold: bettaDragThreshold,
                     willChange: Math.abs(movedBy) > bettaDragThreshold,
                     isClick: bettaIsClick,
-                    isDoubleClick
+                    isDoubleClick,
+                    isLongPress,
+                    hasMoved: bettaHasMoved
                 });
 
-                // Only handle slide change if it was a drag, not a click
-                if (!bettaIsClick && Math.abs(movedBy) > bettaDragThreshold) {
+                // Only handle slide change if it was a drag or long press
+                if ((!bettaIsClick && Math.abs(movedBy) > bettaDragThreshold) || isLongPress) {
                     if (movedBy < 0) {
                         bettaNextSlide();
                     } else {
                         bettaPrevSlide();
                     }
-                } else if (bettaIsClick && !isDoubleClick) {
-                    // If it was a click (not a drag) and not a double-click, maintain current position
+                } else if (bettaIsClick && !isDoubleClick && !isLongPress) {
                     bettaGoToSlide(bettaCurrentSlide);
                 }
 
@@ -333,19 +350,6 @@
             }
 
             // Event listeners
-            bettaNextButton.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent click from bubbling to slides
-                bettaDebugLog('Next button clicked');
-                bettaNextSlide();
-            });
-
-            bettaPrevButton.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent click from bubbling to slides
-                bettaDebugLog('Previous button clicked');
-                bettaPrevSlide();
-            });
-
-            // Mouse enter/leave events for auto-slide control
             bettaCarouselContainer.addEventListener('mouseenter', () => {
                 bettaIsMouseOver = true;
                 bettaDebugLog('Mouse entered carousel');
@@ -360,7 +364,6 @@
                 }
             });
 
-            // Touch and Mouse events
             bettaSlides.addEventListener('mousedown', bettaTouchStart);
             bettaSlides.addEventListener('touchstart', bettaTouchStart);
             bettaSlides.addEventListener('mousemove', bettaTouchMove);
@@ -369,7 +372,6 @@
             bettaSlides.addEventListener('mouseleave', bettaTouchEnd);
             bettaSlides.addEventListener('touchend', bettaTouchEnd);
 
-            // Prevent context menu and text selection
             bettaSlides.addEventListener('contextmenu', (e) => {
                 e.preventDefault();
                 bettaDebugLog('Context menu prevented');
@@ -379,7 +381,8 @@
                 e.preventDefault();
             });
 
-            // Start auto-advance slides
+            // Initialize carousel
+            bettaGoToSlide(bettaCurrentSlide);
             bettaStartAutoSlide();
 
             bettaDebugLog('All event listeners attached');
