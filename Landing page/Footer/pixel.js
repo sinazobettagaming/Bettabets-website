@@ -1,0 +1,136 @@
+//ConnexOne CHATSCRIPT
+var script = document.createElement('script');
+script.setAttribute('src','https://livechat-bettagamingmpumalanga.connexone.co.uk/widget?connid=afb7e249-0d8e-4b4e-95c7-a4558c27fb62');
+script.setAttribute('id','livechat-bettagamingmpumalanga');
+script.setAttribute('data-socket-uri','https://livechat-bettagamingmpumalanga.connexone.co.uk');
+document.body.appendChild(script);
+//END OF ConnexOne CHAT
+
+//Hider Script
+
+const SUB_DOMAIN = 'sport';
+const REDIRECT_TO_MAIN_PAGE_AFTER_REGISTRATION = true;
+const REDIRECT_TO_MAIN_PAGE_AFTER_LOGIN = false;
+const HIDDEN_CONTENT = [
+'.productH',
+'.productsH2',
+'#bannerH1',
+'.productsHolderH',
+'.sportsH',
+'.lineH',
+'.PromoH',
+'.cardH',
+'.ticker1H',
+'.promoimage-slideH',
+'.mainPromoCardH',
+'.rowH',
+  '.banner-row.center',
+  '.banner-row.right',
+  '.header-cms-links-row',
+  '.left-menu.side-menu-toggle-wrapper'
+];
+const HIDDEN_GAMES = [
+'slot-lobby',
+  'roulette',
+    'keno',
+  'betgames-iframe',
+  'greyhounds',
+  'undefined',
+  'pragmatic',
+  'agtslots',
+  'roulette-live',
+  'dogs',
+  'evolution',
+  'betgames-rng-wheel', 
+  'spribe',
+  'lottery',
+'game-aggregator-lotto'
+];
+
+const getElement = async selector => {
+  while (document.querySelectorAll(selector).length === 0) {
+    await new Promise(resolve => requestAnimationFrame(resolve))
+  }
+
+  return document.querySelectorAll(selector);
+}
+
+function hidePageContent() {
+  HIDDEN_CONTENT.forEach(element => {
+    getElement(element).then((selector) => {
+      selector.forEach((elem) => {
+        elem.remove();
+      })
+    })
+  });
+  HIDDEN_GAMES.forEach(game => {
+    getElement('.website-game-' + game).then((selector) => {
+      selector.forEach((elem) => {
+        elem.remove();
+      })
+    })
+  })
+}
+
+function addMeta() {
+  const meta = document.createElement("meta");
+  meta.name = "robots";
+  meta.content = "noindex";
+  document.head.appendChild(meta);
+}
+
+function getParsedSubDomain() {
+  const host = window.location.host;
+  return host.split('.')[1] ? host.split('.')[0] : ' ';
+}
+
+function redirectToMainPage() {
+  const host = window.location.origin;
+  const newURL = host.replace(SUB_DOMAIN + '.', '');
+  window.location.assign(newURL);
+}
+
+function startHider() {
+  const parsedSubDomain = getParsedSubDomain();
+  if (parsedSubDomain !== SUB_DOMAIN) return;
+
+  addMeta();
+  hidePageContent();
+  window.addEventListener('resize', hidePageContent);
+  document.addEventListener('routeChange', hidePageContent);
+  document.addEventListener('cmsPageLoaded', hidePageContent);
+  if (REDIRECT_TO_MAIN_PAGE_AFTER_REGISTRATION) {
+    document.body.addEventListener('userRegisterComplete', redirectToMainPage);
+  }
+  if (REDIRECT_TO_MAIN_PAGE_AFTER_LOGIN) {
+    document.body.addEventListener('userLogIn', redirectToMainPage);
+  }
+}
+
+startHider();
+
+//Hider Script End
+
+
+//HotJar
+// Hotjar Tracking Code for Bettaabets-SiteSinazo -->
+
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:5325433,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:3573795,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    
+//HotJar end

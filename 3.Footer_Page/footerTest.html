@@ -1,18 +1,54 @@
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Web Page</title>
-  <!-- Add the Font Awesome script here -->
-  <script src="https://kit.fontawesome.com/b01430fafc.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
 <script src="https://kit.fontawesome.com/b01430fafc.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Meta Pixel Code -->
 
-<link rel="stylesheet" href="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/CSS/index.css">
-<script src="https://github.com/sinazobettagaming/DinoBettaBets.github.io/blob/master/JS/index.js"></script>
+<script>
+
+  !function(f,b,e,v,n,t,s)
+  
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  
+  'https://connect.facebook.net/en_US/fbevents.js');
+  
+  fbq('init', '778667513805959');
+  
+  fbq('track', 'PageView');
+  
+  </script>
+  
+  <noscript>
+  
+  <img height="1" width="1"
+  
+  src="https://www.facebook.com/tr?id=778667513805959&ev=PageView
+  
+  &noscript=1"/>
+  
+  </noscript>
+  
+  <!-- End Meta Pixel Code -->
 </head>
+
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
@@ -20,14 +56,7 @@
     line-height: 1.5;
     font-family: "Poppins", sans-serif;
   }
-  .bettabets div[data-aardvark-id="MobileHeaderComp"].line .right-side .right-side-inner .action.register {
-    background-color: #f90505;
-    color: #ffffff;
-}
-.bettabets div[data-aardvark-id="MobileHeaderComp"].line .right-side .right-side-inner .action.register {
-    background-color: #ff0404;
-    color: #ffffff;
-}
+
   #signup-block .sign-up-btn[data-v-11e6d258] {
     border-radius: 20px !important;
     color: gold !important;
@@ -506,6 +535,7 @@
 
   .paymentImagesContainer1 {
     display: flex;
+  
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
@@ -526,7 +556,7 @@
 
   @media (max-width: 768px) {
     .paymentImagesContainer1 {
-      display: grid;
+      display: flex;
       grid-template-columns: 1fr 1fr;
       grid-gap: 10px;
       justify-content: flex-start;
@@ -540,15 +570,7 @@
       transition: transform 0.3s;
     }
   }
-  @media (max-width: 768px) {
-    .paymentImagesContainer1 {
-        display: flex
-;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 10px;
-        justify-content: flex-start;
-    }
-}
+
   .Bettabets-footer-container {
     overflow-x: auto;
     justify-content: center;
@@ -557,19 +579,21 @@
     padding: 20px 50px;
     margin-top: 20px;
   }
-  #signup-block .sign-up-btn[data-v-f3d529e3] {
-    background: #fa0000;
-    color: var(--main-extra-join-color, var(--main-second-background-text));
-    margin-left: 13px;
-}
+
   .paymentImagesContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
- 
   }
-
+  .paymentImagesContainer {
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* background-color: #2dc1c1; */
+}
   .paymentImagesContainer img {
     max-width: 100%;
     height: auto;
@@ -585,7 +609,7 @@
   #backToTop {
     position: fixed;
     bottom: 20px;
-    left: 0px;
+    right: 20px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -596,7 +620,6 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     display: none;
     transition: opacity 0.3s ease-in-out;
-    z-index: 9999;
   }
 
   #backToTop:hover {
@@ -606,79 +629,23 @@
   .icon-bar {
     position: sticky;
     top: 90%;
-    border-radius: 18x;
     transform: translateY(0%);
   }
-  .icon[data-v-241059e9] {
-    margin: 0;
-    fill: #f8f6f6;
-}
+
   .icon-bar a {
     display: flex;
     text-align: center;
-    border-radius: 18x;
-    padding: 21px;
+
+    padding: 16px;
     transition: all 0.3s ease;
     color: white;
-    font-size: 27px;
+    font-size: 20px;
     z-index: 9999;
     /* Increased to ensure it's on top */
   }
 
   .icon-bar a:hover {
     background-color: #000;
-  }
-
-  .facebook {
-    background: #2a2a2b;
-    color: white;
-
-  }
-
-  .twitter {
-    background: #2a2a2b;
-    color: white;
-  }
-  .pMenu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5px;
-    margin-right: 2px;
-    
-    text-align: center;
-    word-break: break-word;
-    word-wrap: break-word;
-    line-height: 100%;
-    text-transform: capitalize;
-    overflow: hidden;
-  }
-  .fa {
-    display: inline-block;
-    font-family: Poppins, sans-serif;
-    font-size: inherit;
-    /* text-rendering: auto; */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-  .google {
-    background: #2a2a2b;
-    color: white;
-  }
-
-  .linkedin {
-    background: #2a2a2b;
-    color: white;
-  }
-
-  .youtube {
-    background: #2a2a2b;
-    color: white;
-  }
-
-  .content {
-    margin-left: 75px;
-    font-size: 30px;
   }
 
   .icon-bar {
@@ -691,58 +658,71 @@
       text-align: center;
       transition: all 0.3s ease;
       color: white;
-      font-size: 50px;
+      font-size: 20px;
       z-index: 9999;
       /* Increased to ensure it's on top */
-      border-radius: 2px;
     }
 
     .icon-bar a {
       color: white;
       text-align: center;
-      padding: 12.5px;
+      padding: 20px;
       flex-grow: 1;
     }
 
     .icon-bar a:hover {
-      background-color: #464545;
+      background-color: #555;
     }
   }
 
   .bettabets div[data-aardvark-id="MobileHeaderComp"].line .right-side .right-side-inner .action.register {
-    background-color: #e80202;
-    color: #ffffff;
+    background-color: #020202;
+    color: #fff30a;
   }
-  .line .right-side .right-side-inner.login-register-holder .action[data-v-034fff7b] {
-    text-align: center;
-    min-width: 60px;
-    padding: 5px 10px;
-    text-transform: none;
-    color: var(--header-text-color);
-    font-weight: 600;
-    border-radius: 100px;
-    margin-right: 5px;
-    text-transform: capitalize;
+  .mobile-user-side-navigation .menu-holder .tabs .tab.active[data-v-110f8ea0] {
+    /* border-bottom: 1px solid var(--main-primary); */
+    /* color: var(--main-primary); */
 }
 
-  .link[data-v-241059e9],
-  .sub-menu-btn[data-v-241059e9] {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 66px;
-    min-width: 60px;
-    max-width: 60px;
-    padding: 0;
-    border-radius: 14px;
-    background-color: #282727;
-    margin: 0 1px;
-    font-size: 10px;
-    color: inherit;
-    position: relative;
+  .facebook {
+    background: #8f9bb6;
+    color: white;
+  }
+
+  .twitter {
+    background: #8f9bb6;
+    color: white;
+  }
+
+  .google {
+    background: #8f9bb6;
+    color: white;
+  }
+  .mobile-user-side-navigation .menu-holder .tabs .tab[data-v-110f8ea0] :active{
+  color: #000;
+  }
+  .linkedin {
+    background: #8f9bb6;
+    color: white;
+  }
+
+  .youtube {
+    background: #8f9bb6;
+    color: white;
+  }
+
+  .content {
+    margin-left: 75px;
+    font-size: 30px;
   }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+
+</style>
+
 
 
 
@@ -751,27 +731,13 @@
     <div class="Bettabets-footer-container1">
       <br>
       <div class="paymentImagesContainer1">
-        <a href="https://bettabets.co.za/my-account/deposit"><img
-            src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/1Voucher_New.png?raw=trueg"
-            alt="1 For You Vouchers" width="90px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img
-            src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/visa_New.png?raw=true"
-            alt="Visa Credit Card" width="100px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img
-            src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/mastercard_New.png?raw=trueg"
-            alt="Mastercard Credit Card" width="75px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img
-            src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/eft_New.png?raw=true"
-            alt="Instant EFT" width="45px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img
-            src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/BluVoucher2_New.png?raw=true"
-            alt="Blu Vouchers" width="125px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img
-            src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/OZOW_New.png?raw=trueg"
-            alt="OZOW" width="130px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img
-            src="https://github.com/DinoBettaBets/BettaImages/blob/main/Assets%20v3/9.%20Footer%20Icons/OTTVoucher1_New.png?raw=true"
-            alt="OTT Vouchers" width="200px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/1Voucher_New.png" alt="1 For You Vouchers" width="90px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/visa_New.png" alt="Visa Credit Card" width="100px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/mastercard_New.png" alt="Mastercard Credit Card" width="75px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/eft_New.png" alt="Instant EFT" width="45px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/BluVoucher1_New.png" alt="Blu Vouchers" width="125px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/OZOW_New.png" alt="OZOW" width="130px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/OTTVoucher1_New.png" alt="OTT Vouchers" width="200px" height="auto"></a>
       </div>
     </div>
   </section>
@@ -840,12 +806,9 @@
           <div class="footer-col">
             <h4 style="text-align: left; text-decoration: underline"></h4>
             <div class="social-links" style="text-align: center">
-              <a href="https://www.facebook.com/bettabetsonline"><i class="fab fa-facebook-f"
-                  aria-hidden="true"></i></a>
-              <a href="https://www.instagram.com/bettabetsonline/"><i class="fab fa-instagram"
-                  aria-hidden="true"></i></a>
-              <a href="https://www.linkedin.com/company/bettabets/"><i class="fab fa-linkedin-in"
-                  aria-hidden="true"></i></a>
+              <a href="https://www.facebook.com/bettabetsonline"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/bettabetsonline/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+              <a href="https://www.linkedin.com/company/bettabets/"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
               <a href="https://x.com/Bettabetsonline"> <i class="fab fa-twitter" aria-hidden="true"></i></a>
 
             </div>
@@ -872,8 +835,26 @@
         <p style="margin: 0; color: #000000 !important">Warning Gambling Is Addictive</p>
       </div>
     </section>
+    <!--
+  <button id="backToTop" onclick="scrollToTop()">⬆ Back to Top</button>
 
+  <script>
+    const backToTopButton = document.getElementById('backToTop');
 
-   
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>-->
   </footer>
 </div>
