@@ -8,24 +8,41 @@
     <style>
         .betta-carousel-container {
             position: relative;
-            max-width: 800px;
+            width: 100%;
             margin: 0 auto;
             overflow: hidden;
+            aspect-ratio: 16/9;
         }
 
         .betta-carousel-slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            width: 100%;
+            height: 100%;
         }
 
         .betta-carousel-slide {
             min-width: 100%;
-            height: 400px;
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: white;
+        }
+
+        .betta-carousel-slide a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .betta-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         .betta-slide-1 {
@@ -52,6 +69,10 @@
             display: flex;
             gap: 10px;
             z-index: 10;
+            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
         }
 
         .betta-dot {
@@ -60,11 +81,31 @@
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.5);
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .betta-dot:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: scale(1.1);
         }
 
         .betta-dot.active {
             background-color: white;
+            transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .betta-carousel-container {
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .betta-carousel-container {
+                aspect-ratio: 3/4;
+            }
         }
     </style>
 </head>
@@ -95,10 +136,26 @@
 
             // Define slides
             const bettaSlideData = [
-                { class: 'betta-slide-1', content: 'Slide 1' },
-                { class: 'betta-slide-2', content: 'Slide 2' },
-                { class: 'betta-slide-3', content: 'Slide 3' },
-                { class: 'betta-slide-4', content: 'Slide 4' }
+                {
+                    image: "https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/current+Banners/DeskTopBanner/Big+Payback+May-Desktop.png",
+                    link: "https://bettabets.co.za/page/BigPayBack",
+                    alt: "Big Payback Banner"
+                },
+                {
+                    image: "https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/current+Banners/DeskTopBanner/Spina+to+Wina+May-BannerDesktop.png",
+                    link: "https://bettabets.co.za/page/SpinaWin",
+                    alt: "Spina to Win Banner"
+                },
+                {
+                    image: "https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/current+Banners/DeskTopBanner/BossOfBeatLaunch-BannerDesktop.png",
+                    link: "https://bossofbeat.bettabets.co.za",
+                    alt: "Boss of Beat Banner"
+                },
+                {
+                    image: "https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/current+Banners/DeskTopBanner/Azikhale+May-BannerDesktop.png",
+                    link: "https://bettabets.co.za/page/MatchDay",
+                    alt: "Azikhale Banner"
+                }
             ];
 
             // Create slides with duplicates for infinite effect
@@ -106,8 +163,32 @@
                 // Add clones at the end
                 [...bettaSlideData, ...bettaSlideData, ...bettaSlideData].forEach((slide, index) => {
                     const slideElement = document.createElement('div');
-                    slideElement.className = `betta-carousel-slide ${slide.class}`;
-                    slideElement.textContent = slide.content;
+                    slideElement.className = 'betta-carousel-slide';
+
+                    const link = document.createElement('a');
+                    link.href = slide.link;
+                    link.addEventListener('click', (e) => {
+                        if (bettaIsDragging || !bettaIsClick) {
+                            e.preventDefault();
+                            bettaDebugLog('Link click prevented - was dragging', {
+                                isDragging: bettaIsDragging,
+                                isClick: bettaIsClick
+                            });
+                        } else {
+                            bettaDebugLog('Link click allowed', {
+                                isDragging: bettaIsDragging,
+                                isClick: bettaIsClick
+                            });
+                        }
+                    });
+
+                    const img = document.createElement('img');
+                    img.src = slide.image;
+                    img.alt = slide.alt;
+                    img.loading = 'lazy';
+
+                    link.appendChild(img);
+                    slideElement.appendChild(link);
                     bettaSlides.appendChild(slideElement);
                 });
             }
@@ -329,8 +410,6 @@
                     } else {
                         bettaPrevSlide();
                     }
-                } else if (bettaIsClick && !isDoubleClick && !isLongPress) {
-                    bettaGoToSlide(bettaCurrentSlide);
                 }
 
                 if (!bettaIsMouseOver) {
