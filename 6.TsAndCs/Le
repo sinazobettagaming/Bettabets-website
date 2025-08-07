@@ -11,7 +11,9 @@
       </div>
     </div>
     <div class="desktop-image">
-      <img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/PromosImage/Ts%26Cs/FeaturingNow/BZ+May+2-Thumb01.png" alt="">
+      <img
+        src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/PromosImage/Ts%26Cs/FeaturingNow/BZ1+Aug-Thumb01.webp"
+        alt="">
     </div><br>
     <!--SUB-Text-->
     <!--<h3 style="text-align: center; margin-top: 14px">
@@ -95,21 +97,29 @@
           flex: 1;
           margin: 5px;
         }
+
+      }
+
+      @media (max-width: 768px) {
+        .countdown {
+          text-align: center;
+          margin: 5px;
+          justify-content: center;
+        }
       }
 
       .countdown {
         text-align: center;
         font-size: 24px;
-        margin: 5px -35px;
+        margin: 0px -7px;
         height: 38px;
         width: 358px;
         background-color: #00CD46;
         border-radius: 14px;
         color: #000;
-        padding: 7px;
+        padding: 9px;
         text-transform: uppercase;
         font-weight: bold;
-
       }
     </style>
 
@@ -118,7 +128,7 @@
     <h3>What do I Win?</h3>
 
     <ul>
-      <li>200 Players will be chosen randomly to receive 25 FREE SPINS on the Pragmatic slots: VooDoo Magic or Wild Wild Gold.</li>
+      <li>	200 Players will be chosen randomly to receive 25 FREE SPINS on the Pragmatic slots: Aztec Gems & Triple Tigers.</li>
 
     </ul>
 
@@ -128,38 +138,37 @@
       <li>
         BETTA ZONKE JACKPOT promo is applicable ONLY on the following days:
       </li>
-      
+
 
       <li>
-        	07 May
+        	06 August
+      </li>
+      <li>
+        	08 August
+      </li>
+      <li>
+       13 August
 
       </li>
       <li>
-        09 May
+        	15 August
 
       </li>
       <li>
-        	14 May
+       20 August
 
       </li>
       <li>
-      	16 May
+       22 August
 
       </li>
       <li>
-        	21 May
+        27 August
 
       </li>
-      <li>
-        23 May
-
+<li>
+      29 August
       </li>
-      <li>
-        28 May
-
-      </li>
-      <li> 30 May</li>
-      
       <li>
         And time: 18:00 – 20:00 SAST only
       </li>
@@ -168,14 +177,14 @@
       </li>
 
     </ul>
-    <div class="countdown" id="countdown" style="background-color: white;"></div>
+    <div class="countdown" id="countdown" style="background-color: white;">Please Reload!</div>
 
     <!-- Countdown Timer -->
 
     <script>
       // Set the date for your promotion end
       // Set the date for your promotion end
-      const promotionEnd = new Date('2025-05-21T20:00:59').getTime();
+      const promotionEnd = new Date('2025-08-08T20:00:59').getTime();
       const countdownElement = document.getElementById('countdown');
 
       function updateCountdown() {
@@ -210,12 +219,12 @@
 
     <h3>How do I Enter?</h3>
     <ul>
-      <li>Bet R2 or more on any slot every selected Wednesday & Friday between the 07th and 30th of May 2025, during the promotional time to qualify for entry.
+      <li>Bet R2 or more on any slot every selected Wednesday & Friday between the 06th and 29th August 2025, during the promotional time to qualify for entry.
       </li>
       <li> You will receive 1 entry for every R2 bet placed on slots – entries are unlimited.</li>
       <li> You will be automatically opted in when you take any bet of R2 or more on any slot games within the promotion
         period.</li>
-      <li>	200 winners will be chosen randomly to each receive 25 Free Spins on VooDoo Magic or Wild Wild Gold on Thursday & Saturday after the Wednesday & Friday promotion period, only.</li>
+      <li>	200 winners will be chosen randomly to each receive 25 Free Spins on Aztec Gems & Triple Tigers on Thursday & Saturday after the Wednesday & Friday promotion period, only.</li>
 
     </ul>
 
@@ -227,25 +236,23 @@
       <!--Ts and Cs-->
       <h3>What are the Promo Rules?</h3>
       <ul>
-        <li>Free Spins rewarded on the following days only:
-          <ol class="sub-list">
-            <li>Thursday, for qualifying players randomly chosen on Wednesday.</li>
-            <li>Saturday, for qualifying players randomly chosen on Friday.</li>
+        <li>
+          <strong>Free Spins rewarded on the following days only:</strong>
+          <ol>
+            <li>Thursday, for qualifying players randomly chosen Wednesday.</li>
+            <li>Saturday, for qualifying players randomly chosen Friday.</li>
           </ol>
         </li>
         <li>Your Free Spins expire within 48 hours after they are loaded to your account. If not claimed within this
-          time,
-          the Free Spins will be forfeited.</li>
-        <li>Winnings from Free Spins bonus rounds will be transferred to players' real money wallets only once all game
-          rounds have completed (e.g., 25 Free Spins game rounds).</li>
+          time (48 hours), the free spins will be forfeited.</li>
+        <li>Winnings from free spins bonus rounds will be transferred to players' real money wallets only once all game
+          rounds have completed (e.g., all 25 free spins game rounds).</li>
         <li>You will be automatically opted in when you take any bet of R2 or more on any slot games within the
-          promotion
-          period.</li>
+          promotion period.</li>
         <li>Any wagers placed and settled outside the promotional period will not count towards this promotion.</li>
         <li>Only cash wagers will count towards this promotion (Bonus wagers and promo cash bets will not count).</li>
         <li>This promotion applies to online customers only, who are over the age of 18.</li>
-        <li>Winners will be notified via the Bettabets notification message system. Keep an eye out on Thursday after
-          the
+        <li>Winners will be notified via Bettabets notification message system – keep an eye out on Thursday after the
           Wednesday of the promotion period and Saturday after the Friday promotion period.</li>
         <li>Duplicate accounts don't qualify for the promotion. Free Spins will be awarded once per account, person, IP,
           and household.</li>
@@ -260,7 +267,7 @@
         <li> Should any accounts be suspected of abuse (including any form of bonus abuse) or irregular activities noted
           at Bettabets discretion, Bettabets has the right to revoke any allocated funds and exclude any individual from
           the promotional campaign.</li>
-        <li><a href="https://bettabets.co.za/terms-and-conditions">Bettabets Standard Terms and Conditions</a> apply.
+        <li><a href="https://bettabets.co.za/page/Terms%20And%20Conditions">Bettabets Standard Terms and Conditions</a> apply.
         </li>
         <li>Winners Know When To Stop. National Responsible Gambling Program. Toll-Free Helpline: 0800 006 008 or
           WhatsApp Help to 076 675 0710</li>
@@ -316,7 +323,7 @@
 
       .bettaButton {
         cursor: pointer;
-        font-size: 18px;
+        font-size: 11px;
         color: rgb(0, 0, 0);
         padding: 10px 30px;
         border: none;
