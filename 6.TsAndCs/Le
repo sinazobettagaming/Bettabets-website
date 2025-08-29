@@ -128,7 +128,7 @@
     <h3>What do I Win?</h3>
 
     <ul>
-      <li>	200 Players will be chosen randomly to receive 25 FREE SPINS on the Pragmatic slots: Aztec Gems & Triple Tigers.</li>
+      <li>	200 Players will be chosen randomly to receive 25 FREE SPINS on the AGT slots: Aliens & Grand Theft.</li>
 
     </ul>
 
@@ -184,7 +184,7 @@
     <script>
       // Set the date for your promotion end
       // Set the date for your promotion end
-      const promotionEnd = new Date('2025-08-08T20:00:59').getTime();
+      const promotionEnd = new Date('2025-08-27T20:00:59').getTime();
       const countdownElement = document.getElementById('countdown');
 
       function updateCountdown() {
@@ -224,7 +224,7 @@
       <li> You will receive 1 entry for every R2 bet placed on slots – entries are unlimited.</li>
       <li> You will be automatically opted in when you take any bet of R2 or more on any slot games within the promotion
         period.</li>
-      <li>	200 winners will be chosen randomly to each receive 25 Free Spins on Aztec Gems & Triple Tigers on Thursday & Saturday after the Wednesday & Friday promotion period, only.</li>
+      <li>	200 winners will be chosen randomly to each receive 25 Free Spins on Aliens & Grand Theft on Thursday & Saturday after the Wednesday & Friday promotion period, only.</li>
 
     </ul>
 

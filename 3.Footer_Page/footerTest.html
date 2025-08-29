@@ -1,51 +1,52 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
 
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-<script src="https://kit.fontawesome.com/b01430fafc.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<!-- Meta Pixel Code -->
+  <script src="https://kit.fontawesome.com/b01430fafc.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Meta Pixel Code -->
 
-<script>
+  <script>
 
-  !function(f,b,e,v,n,t,s)
-  
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  
-  s.parentNode.insertBefore(t,s)}(window,document,'script',
-  
-  'https://connect.facebook.net/en_US/fbevents.js');
-  
-  fbq('init', '778667513805959');
-  
-  fbq('track', 'PageView');
-  
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+
+      n.queue = []; t = b.createElement(e); t.async = !0;
+
+      t.src = v; s = b.getElementsByTagName(e)[0];
+
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+
+      'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '778667513805959');
+
+    fbq('track', 'PageView');
+
   </script>
-  
+
   <noscript>
+
+    <img height="1" width="1" src="https://www.facebook.com/tr?id=778667513805959&ev=PageView
   
-  <img height="1" width="1"
-  
-  src="https://www.facebook.com/tr?id=778667513805959&ev=PageView
-  
-  &noscript=1"/>
-  
+  &noscript=1" />
+
   </noscript>
-  
+
   <!-- End Meta Pixel Code -->
 </head>
 
@@ -535,7 +536,7 @@
 
   .paymentImagesContainer1 {
     display: flex;
-  
+
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
@@ -586,14 +587,15 @@
     align-items: center;
     flex-wrap: wrap;
   }
+
   .paymentImagesContainer {
-    display: flex
-;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     /* background-color: #2dc1c1; */
-}
+  }
+
   .paymentImagesContainer img {
     max-width: 100%;
     height: auto;
@@ -632,15 +634,30 @@
     transform: translateY(0%);
   }
 
+  .pMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    margin-right: 2px;
+    font-size: 8px !important;
+    text-align: center;
+    white-space: break-spaces;
+    word-break: break-word;
+    word-wrap: break-word;
+    line-height: 100%;
+    overflow: hidden;
+  }
+
   .icon-bar a {
     display: flex;
     text-align: center;
-
     padding: 16px;
     transition: all 0.3s ease;
     color: white;
     font-size: 20px;
-    z-index: 9999;
+
+    margin-top: -1.5em;
     /* Increased to ensure it's on top */
   }
 
@@ -652,6 +669,64 @@
     display: none;
   }
 
+  @media (max-width: 768px) {
+    .nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 55px;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+      background-color: #080808;
+      display: flex;
+      overflow-x: auto;
+      margin: 0;
+      /* Remove any default margins */
+      padding: 0;
+      /* Remove any default padding */
+      left: 0;
+      /* Ensure it aligns with the left edge */
+      right: 0;
+      z-index: 2;
+    }
+
+    .nav__link {
+      margin: 0;
+      /* Remove any default margins */
+      padding: 0;
+      /* Remove any default padding */
+      left: 0;
+      /* Ensure it aligns with the left edge */
+      right: 0;
+      margin-right: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      min-width: 50px;
+      overflow: hidden;
+      white-space: nowrap;
+      font-family: sans-serif;
+      font-size: 13px;
+      color: #fbfcfa;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: background-color 0.1s ease-in-out;
+    }
+
+    .nav__link:hover {
+      background-color: #eeeeee;
+    }
+
+    .nav__link--active {
+      color: #fed107;
+    }
+
+    .nav__icon {
+      font-size: 18px;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     .icon-bar {
       display: flex;
@@ -659,15 +734,16 @@
       transition: all 0.3s ease;
       color: white;
       font-size: 20px;
-      z-index: 9999;
+
       /* Increased to ensure it's on top */
     }
 
     .icon-bar a {
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 16px;
       flex-grow: 1;
+      overflow-x: auto;
     }
 
     .icon-bar a:hover {
@@ -679,36 +755,10 @@
     background-color: #020202;
     color: #fff30a;
   }
+
   .mobile-user-side-navigation .menu-holder .tabs .tab.active[data-v-110f8ea0] {
     /* border-bottom: 1px solid var(--main-primary); */
     /* color: var(--main-primary); */
-}
-
-  .facebook {
-    background: #8f9bb6;
-    color: white;
-  }
-
-  .twitter {
-    background: #8f9bb6;
-    color: white;
-  }
-
-  .google {
-    background: #8f9bb6;
-    color: white;
-  }
-  .mobile-user-side-navigation .menu-holder .tabs .tab[data-v-110f8ea0] :active{
-  color: #000;
-  }
-  .linkedin {
-    background: #8f9bb6;
-    color: white;
-  }
-
-  .youtube {
-    background: #8f9bb6;
-    color: white;
   }
 
   .content {
@@ -717,27 +767,71 @@
   }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
 
 
-
-</style>
-
-
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="nav">
+  <a href="https://bettabets.co.za/page/landing_page" class="nav__link">
+    <i class="fa fa-home" style="font-size: 30px;"></i>
+    <span class="nav__text">Home</span>
+  </a>
+  <a href="https://bettabets.co.za/page/Promotions" class="nav__link nav__link--active">
+    <i class="fa fa-gift" style="font-size: 30px;"></i>
+    <span class="nav__text">Promos</span>
+  </a>
+  <a href="https://bettabets.co.za/my-account/deposit" class="nav__link">
+    <i class="fa fa-money" style="font-size: 30px;"></i>
+    <span class="nav__text">Deposit</span>
+  </a>
+  <a href="https://bettabets.co.za/page/BettaInfoVideos" class="nav__link">
+    <i class="fa-solid fa-info" style="font-size: 30px;"></i>
+    <span class="nav__text">How To</span>
+  </a>
+  <a href="#" class="nav__link">
+    <i class="fa-solid fa-comments" style="font-size: 30px;"></i>
+    <span class="nav__text">Chat</span>
+  </a>
+</div>
 
 <div data-v-fa61a252="" data-v-7c0e5616="" id="cms-footer-content-holder" class="content-holder content-holder">
   <section>
     <div class="Bettabets-footer-container1">
+      <div class="rowFooter">
+        <div class="footer-col">
+          <h4 style="text-align: left; text-decoration: underline"></h4>
+          <div class="social-links" style="text-align: center">
+            <a href="https://www.facebook.com/bettabetsonline"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/bettabetsonline/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/bettabets/"><i class="fab fa-linkedin-in"
+                aria-hidden="true"></i></a>
+            <a href="https://x.com/Bettabetsonline"> <i class="fab fa-twitter" aria-hidden="true"></i></a>
+
+          </div>
+        </div>
+      </div>
       <br>
       <div class="paymentImagesContainer1">
-        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/1Voucher_New.png" alt="1 For You Vouchers" width="90px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/visa_New.png" alt="Visa Credit Card" width="100px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/mastercard_New.png" alt="Mastercard Credit Card" width="75px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/eft_New.png" alt="Instant EFT" width="45px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/BluVoucher1_New.png" alt="Blu Vouchers" width="125px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/OZOW_New.png" alt="OZOW" width="130px" height="auto"></a>
-        <a href="https://bettabets.co.za/my-account/deposit"><img src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/OTTVoucher1_New.png" alt="OTT Vouchers" width="200px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img
+            src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/1Voucher_New.png"
+            alt="1 For You Vouchers" width="90px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img
+            src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/visa_New.png"
+            alt="Visa Credit Card" width="100px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img
+            src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/mastercard_New.png"
+            alt="Mastercard Credit Card" width="75px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img
+            src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/eft_New.png"
+            alt="Instant EFT" width="45px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img
+            src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/BluVoucher1_New.png"
+            alt="Blu Vouchers" width="125px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img
+            src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/OZOW_New.png" alt="OZOW"
+            width="130px" height="auto"></a>
+        <a href="https://bettabets.co.za/my-account/deposit"><img
+            src="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/OTTVoucher1_New.png"
+            alt="OTT Vouchers" width="200px" height="auto"></a>
       </div>
     </div>
   </section>
@@ -745,75 +839,65 @@
   <footer class="footer">
     <section>
       <div class="container">
-        <div class="rowFooter">
-          <div class="footer-col">
-            <h4 style="text-align: left; text-decoration: underline"></h4>
-            <ul style="text-align: left">
-              <li>
-                <a href="https://bettabets.co.za/page/Contact_Us">Contact Info</a>
-              </li>
-              <li>
-                <a href="https://bettabets.co.za/page/Terms%20And%20Conditions">Terms and Conditions</a>
-              </li>
-              <li>
-                <a href="https://bettabets.co.za/page/Bettabets%20Game%20Rules">Betting Rules</a>
-              </li>
-              <li>
-                <a href="https://mer.org.za/live/">Mpumalanga Economic Regulator</a>
-              </li>
-              <li><a href="https://ngb.org.za/">National Gambling Board</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 style="
+
+        <div class="footer-col">
+          <h4 style="text-align: left; text-decoration: underline"></h4>
+          <ul style="text-align: left">
+            <li>
+              <a href="https://bettabets.co.za/page/Contact_Us">Contact Info</a>
+            </li>
+            <li>
+              <a href="https://bettabets.co.za/page/Terms%20And%20Conditions">Terms and Conditions</a>
+            </li>
+            <li>
+              <a href="https://bettabets.co.za/page/Bettabets%20Game%20Rules">Betting Rules</a>
+            </li>
+            <li>
+              <a href="https://mer.org.za/live/">Mpumalanga Economic Regulator</a>
+            </li>
+            <li><a href="https://ngb.org.za/">National Gambling Board</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 style="
                 text-align: left;
                 text-decoration: underline;
                 color: #00000000;
               "></h4>
-            <ul style="text-align: left">
-              <li><a href="https://popia.co.za/">POPIA</a></li>
-              <li>
-                <a href="https://bettabets.co.za/page/Terms%20And%20Conditions/PAIA_Manual">PAIA</a>
-              </li>
-              <li><a href="https://fic.gov.za/Pages/Home.aspx">FICA</a></li>
-              <li>
-                <a href="https://bettabets.co.za/page/Terms%20And%20Conditions/Responsible%20Gambling">Responsible
-                  Gambling</a>
-              </li>
-              <li>
-                <a href="https://github.com/DinoBettaBets/BettaImages/blob/main/PDF/Self-exclusion-form.pdf?raw=true">Self
-                  Exclusion Application</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 style="text-align: left; text-decoration: underline"></h4>
-            <ul style="text-align: left">
-              <li>
-                <a href="https://bettabets.co.za/page/Promotions">Promotions</a>
-              </li>
-              <li>
-                <a href="https://group.bettabets.co.za/soccer-fixtures/">Fixtures</a>
-              </li>
-              <li>
-                <a href="https://group.bettabets.co.za/our-stores/">Branches</a>
-              </li>
-              <li>
-                <a href="https://bettabets.co.za/page/Direct%20Deposit">Direct Deposits</a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4 style="text-align: left; text-decoration: underline"></h4>
-            <div class="social-links" style="text-align: center">
-              <a href="https://www.facebook.com/bettabetsonline"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-              <a href="https://www.instagram.com/bettabetsonline/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-              <a href="https://www.linkedin.com/company/bettabets/"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-              <a href="https://x.com/Bettabetsonline"> <i class="fab fa-twitter" aria-hidden="true"></i></a>
-
-            </div>
-          </div>
+          <ul style="text-align: left">
+            <li><a href="https://popia.co.za/">POPIA</a></li>
+            <li>
+              <a href="https://bettabets.co.za/page/Terms%20And%20Conditions/PAIA_Manual">PAIA</a>
+            </li>
+            <li><a href="https://fic.gov.za/Pages/Home.aspx">FICA</a></li>
+            <li>
+              <a href="https://bettabets.co.za/page/Terms%20And%20Conditions/Responsible%20Gambling">Responsible
+                Gambling</a>
+            </li>
+            <li>
+              <a href="https://github.com/DinoBettaBets/BettaImages/blob/main/PDF/Self-exclusion-form.pdf?raw=true">Self
+                Exclusion Application</a>
+            </li>
+          </ul>
         </div>
+        <div class="footer-col">
+          <h4 style="text-align: left; text-decoration: underline"></h4>
+          <ul style="text-align: left">
+            <li>
+              <a href="https://bettabets.co.za/page/Promotions">Promotions</a>
+            </li>
+            <li>
+              <a href="https://group.bettabets.co.za/soccer-fixtures/">Fixtures</a>
+            </li>
+            <li>
+              <a href="https://group.bettabets.co.za/our-stores/">Branches</a>
+            </li>
+            <li>
+              <a href="https://bettabets.co.za/page/Direct%20Deposit">Direct Deposits</a>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
@@ -823,12 +907,14 @@
       <div class="paymentImagesContainer">
         <h4 style="text-align: center; color: #000000; text-decoration:none">Disclaimer</h4>
         <p style="margin: 0; color: #000000 !important">
-          Winners Know When To Stop. National Responsible Gambling Program
-          Toll-Free Helpline: 0800 006 008 or WhatsApp Help to 076 675 0710 No
-          persons under the age of 18 allowed to gamble. Bettagaming Mpumalanga
-          (Pty) Ltd t/a BETTABETS Registration Number 2011/123025/07 with
-          License Number 9-2-1-09303 and License issue date 2020-10-26 is
-          licensed by the Mpumalanga Economic Regulator
+          Winners Know When To Stop. National Responsible Gambling Program Toll-Free Helpline: 0800 006 008 or WhatsApp
+          Help to 076 675 0710 No persons under the age of 18 allowed to gamble. Bettagaming Mpumalanga (Pty) Ltd t/a
+          BETTABETS Registration Number 2011/123025/07. License Number: <a
+            href="https://bettabetssiteimages.s3.eu-west-1.amazonaws.com/Landing+page/Footer/1460_001.pdf"
+            style=" text-decoration:none;"> <strong
+              style="color: #000000; text-decoration:underline;">9-2-1-09303</strong></a>, License issue date 2020-10-26
+          is licensed by the Mpumalanga Economic Regulator. Registered address: 28 Fricker Road, East Block Ground
+          Floor, Illovo, Gauteng, 2196
         </p>
         <br>
         <br>
